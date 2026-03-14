@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meine Empfehlungen</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ── Tokens ─────────────────────────────────────────────────── */
+:root,[data-theme="dark"]{
+  --bg:        #0c1410;
+  --surface:   #13201a;
+  --surface2:  #192b22;
+  --border:    #213328;
+  --accent:    #5d9e7a;
+  --accent-lt: #89c4a2;
+  --accent-dim:rgba(93,158,122,0.13);
+  --text:      #ddeee5;
+  --text-muted:#6e9480;
+}
+[data-theme="light"]{
+  --bg:        #f0f7f3;
+  --surface:   #ffffff;
+  --surface2:  #e6f2eb;
+  --border:    #bdd8c8;
+  --accent:    #2e7a50;
+  --accent-lt: #1e5c3a;
+  --accent-dim:rgba(46,122,80,0.10);
+  --text:      #0f1f16;
+  --text-muted:#4d7a5e;
+}
+@media(prefers-color-scheme:light){
+  :root:not([data-theme]){
+    --bg:#f0f7f3;--surface:#ffffff;--surface2:#e6f2eb;--border:#bdd8c8;
+    --accent:#2e7a50;--accent-lt:#1e5c3a;--accent-dim:rgba(46,122,80,0.10);
+    --text:#0f1f16;--text-muted:#4d7a5e;
+  }
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'IBM Plex Sans',sans-serif;font-weight:300;
+  min-height:100vh;padding:40px 20px 80px;
+  transition:background .25s,color .25s;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:
+    linear-gradient(rgba(93,158,122,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(93,158,122,0.04) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+
+.container{max-width:920px;margin:0 auto;position:relative;z-index:1;}
+
+/* Theme Toggle */
+.theme-toggle{
+  position:fixed;top:18px;right:20px;display:flex;gap:3px;
+  z-index:1000;background:var(--surface);border:1px solid var(--border);padding:4px;
+}
+.theme-btn{
+  width:28px;height:28px;background:transparent;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-muted);transition:all .2s;padding:0;
+}
+.theme-btn:hover{color:var(--accent);}
+.theme-btn.active{color:var(--accent);background:var(--accent-dim);}
+.theme-btn svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* Header */
+header{text-align:center;margin-bottom:48px;}
+.badge{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--accent);border:1px solid var(--accent-dim);
+  padding:4px 14px;margin-bottom:18px;
+}
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(26px,5vw,44px);font-weight:600;
+  line-height:1.15;color:var(--text);margin-bottom:10px;
+}
+h1 span{color:var(--accent);}
+.subtitle{
+  font-size:12px;color:var(--text-muted);
+  font-family:'IBM Plex Mono',monospace;letter-spacing:0.5px;
+}
+
+/* Filter Tabs */
+.filter-bar{
+  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;justify-content:center;
+}
+.filter-btn{
+  background:transparent;border:1px solid var(--border);
+  color:var(--text-muted);font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 14px;cursor:pointer;transition:all .2s;
+}
+.filter-btn:hover{border-color:var(--accent);color:var(--accent);}
+.filter-btn.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent);}
+
+/* Section label */
+.section-label{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);
+  margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.section-label span{color:var(--accent);font-size:9px;}
+
+/* Card */
+.card{
+  background:var(--surface);border:1px solid var(--border);
+  padding:22px 26px;margin-bottom:10px;
+  position:relative;transition:background .25s,border-color .25s,transform .2s;
+  cursor:default;
+}
+.card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:3px;height:100%;background:var(--accent);
+}
+.card:hover{
+  border-color:var(--accent);
+  background:var(--surface2);
+}
+
+.card-inner{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:12px;
+  align-items:start;
+}
+
+.card-cat{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;
+  letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--text-muted);margin-bottom:6px;
+}
+.card-name{
+  font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:600;
+  color:var(--text);margin-bottom:3px;
+}
+.card-provider{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  color:var(--accent);letter-spacing:0.5px;margin-bottom:10px;
+}
+.card-reason{
+  font-size:12px;color:var(--text-muted);line-height:1.7;
+}
+
+.card-tags{
+  display:flex;flex-wrap:wrap;gap:5px;margin-top:12px;
+}
+.tag{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;
+  letter-spacing:1px;text-transform:uppercase;
+  padding:3px 7px;border:1px solid var(--border);color:var(--text-muted);
+}
+
+.card-link{
+  display:inline-flex;align-items:center;gap:5px;margin-top:12px;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;
+  color:var(--accent);text-decoration:none;transition:color .2s;
+  text-transform:uppercase;
+}
+.card-link:hover{color:var(--accent-lt);}
+.card-link svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2;}
+
+.card-badge{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--accent);border:1px solid var(--accent-dim);
+  padding:4px 9px;white-space:nowrap;flex-shrink:0;
+  background:var(--accent-dim);
+}
+.card-badge.neutral{
+  color:var(--text-muted);border-color:var(--border);background:transparent;
+}
+
+/* Footer */
+footer{
+  text-align:center;padding:32px 0 24px;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  letter-spacing:1px;color:var(--text-muted);opacity:0.6;
+}
+
+@media(max-width:600px){
+  .card-inner{grid-template-columns:1fr;}
+  .card-badge{display:inline-block;width:fit-content;}
+}
+</style>
+</head>
+<body>
+
+<div class="theme-toggle">
+  <button class="theme-btn" id="btn-dark" onclick="setTheme('dark')" title="Dunkel">
+    <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+  <button class="theme-btn" id="btn-system" onclick="setTheme('system')" title="System">
+    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+  </button>
+  <button class="theme-btn" id="btn-light" onclick="setTheme('light')" title="Hell">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+</div>
+
+<div class="container">
+
+  <header>
+    <div class="badge">Persönliche Empfehlungen</div>
+    <h1>Was ich selbst <span>nutze.</span></h1>
+    <p class="subtitle">Keine Werbung &middot; Keine Provisionen &middot; Stand März 2025</p>
+  </header>
+
+  <!-- Filter -->
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filter('all', this)">Alle</button>
+    <button class="filter-btn" onclick="filter('finanzen', this)">Finanzen</button>
+    <button class="filter-btn" onclick="filter('energie', this)">Energie</button>
+    <button class="filter-btn" onclick="filter('technik', this)">Technik</button>
+  </div>
+
+  <!-- FINANZEN -->
+  <div class="section-label" data-cat="finanzen">Finanzen <span>04 Empfehlungen</span></div>
+
+  <div class="card" data-cat="finanzen">
+    <div class="card-inner">
+      <div>
+        <div class="card-cat">Girokonto · Deutschland</div>
+        <div class="card-name">DKB Cash</div>
+        <div class="card-provider">Deutsche Kreditbank</div>
+        <div class="card-reason">Kostenloses Konto mit Visa-Debitkarte, weltweites Abheben ohne Gebühren ab 700 € monatlichem Geldeingang. Solide App, zuverlässiger Service, seit Jahren mein Hauptkonto.</div>
+        <div class="card-tags">
+          <span class="tag">Kostenlos</span>
+          <span class="tag">Weltweit abheben</span>
+          <span class="tag">Online-Bank</span>
+        </div>
+        <a class="card-link" href="https://www.dkb.de" target="_blank">
+          dkb.de
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="card-badge">Mein Tipp</div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="finanzen">
+    <div class="card-inner">
+      <div>
+        <div class="card-cat">Girokonto · Schweiz</div>
+        <div class="card-name">Neon</div>
+        <div class="card-provider">Neon Switzerland AG</div>
+        <div class="card-reason">Günstigstes Schweizer Konto für Grenzgänger: keine Kontoführungsgebühr, faire Wechselkurse, übersichtliche App. Ideal für CHF-Lohneingang und Schweizer Zahlungen.</div>
+        <div class="card-tags">
+          <span class="tag">CHF-Konto</span>
+          <span class="tag">Grenzgänger</span>
+          <span class="tag">App-first</span>
+        </div>
+        <a class="card-link" href="https://www.neon-free.ch" target="_blank">
+          neon-free.ch
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="card-badge">Mein Tipp</div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="finanzen">
+    <div class="card-inner">
+      <div>
+        <div class="card-cat">Kreditkarte</div>
+        <div class="card-name">Barclays Visa</div>
+        <div class="card-provider">Barclays Bank Ireland</div>
+        <div class="card-reason">Echte Kreditkarte (kein Debit), dauerhaft kostenlos, kein Fremdwährungsaufschlag zum Visa-Kurs. Ideal für Reisen und internationales Online-Shopping.</div>
+        <div class="card-tags">
+          <span class="tag">Kostenlos</span>
+          <span class="tag">Kein FX-Aufschlag</span>
+          <span class="tag">Kreditrahmen</span>
+        </div>
+        <a class="card-link" href="https://www.barclays.de" target="_blank">
+          barclays.de
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="card-badge">Mein Tipp</div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="finanzen">
+    <div class="card-inner">
+      <div>
+        <div class="card-cat">Wertpapierdepot</div>
+        <div class="card-name">Trade Republic</div>
+        <div class="card-provider">Trade Republic Bank GmbH</div>
+        <div class="card-reason">1 € pro Order, kostenlose ETF-Sparpläne, übersichtliche App. Seit 2023 zusätzlich attraktive Zinsen auf das Verrechnungskonto. BaFin-reguliert, deutsches Einlagensicherungssystem.</div>
+        <div class="card-tags">
+          <span class="tag">1 € / Order</span>
+          <span class="tag">Sparplan</span>
+          <span class="tag">ETF</span>
+          <span class="tag">Zinsen</span>
+        </div>
+        <a class="card-link" href="https://www.traderepublic.com/de-de" target="_blank">
+          traderepublic.com
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="card-badge">Mein Tipp</div>
+    </div>
+  </div>
+
+  <!-- ENERGIE -->
+  <div class="section-label" data-cat="energie">Energie <span>02 Empfehlungen</span></div>
+
+  <div class="card" data-cat="energie">
+    <div class="card-inner">
+      <div>
+        <div class="card-cat">Stromanbieter</div>
+        <div class="card-name">Tibber</div>
+        <div class="card-provider">Tibber GmbH</div>
+        <div class="card-reason">Dynamische Strompreise nach Börsenkurs — wer Verbrauch zeitlich steuert (Waschmaschine nachts, E-Auto laden) zahlt spürbar weniger. App zeigt Preisverlauf in Echtzeit.</div>
+        <div class="card-tags">
+          <span class="tag">Dynamischer Tarif</span>
+          <span class="tag">Ökostrom</span>
+          <span class="tag">Smart Home</span>
+        </div>
+        <a class="card-link" href="https://tibber.com/de" target="_blank">
+          tibber.com
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="card-badge">Mein Tipp</div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="energie">
+    <div class="card-inner">
+      <div>
+        <div class="card-cat">Gasanbieter</div>
+        <div class="card-name">Grundversorger / Stadtwerk</div>
+        <div class="card-provider">Regionaler Anbieter</div>
+        <div class="card-reason">Nach den Marktverwerfungen 2022/23 setze ich bewusst auf den lokalen Grundversorger: planbare Preise, keine Insolvenzen, volle Rechtssicherheit. Günstiger Bestandsvertrag schlägt meist jeden Wechselanreiz.</div>
+        <div class="card-tags">
+          <span class="tag">Planbar</span>
+          <span class="tag">Sicher</span>
+          <span class="tag">Regional</span>
+        </div>
+      </div>
+      <div class="card-badge neutral">Aktuell</div>
+    </div>
+  </div>
+
+  <!-- TECHNIK -->
+  <div class="section-label" data-cat="technik">Technik <span>02 Empfehlungen</span></div>
+
+  <div class="card" data-cat="technik">
+    <div class="card-inner">
+      <div>
+        <div class="card-cat">Prepaid-Handyabo</div>
+        <div class="card-name">Congstar Prepaid</div>
+        <div class="card-provider">Congstar GmbH · Telekom-Netz</div>
+        <div class="card-reason">Telekom-Netz ohne Vertragsbindung — monatlich kündbar, Daten flexibel aufladen. Perfekt als Zweitkarte oder wenn ein teures Abo nicht nötig ist.</div>
+        <div class="card-tags">
+          <span class="tag">Telekom-Netz</span>
+          <span class="tag">Keine Bindung</span>
+          <span class="tag">Prepaid</span>
+        </div>
+        <a class="card-link" href="https://www.congstar.de" target="_blank">
+          congstar.de
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="card-badge">Mein Tipp</div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="technik">
+    <div class="card-inner">
+      <div>
+        <div class="card-cat">Notebook</div>
+        <div class="card-name">MacBook Air M2 / M3</div>
+        <div class="card-provider">Apple</div>
+        <div class="card-reason">Unschlagbare Akkulaufzeit (15–18 h real), komplett lautloser Betrieb, schnelle Performance für Office, Entwicklung und Medien. Das M3-Modell ist mein klarer Allround-Favorit — vor allem für alle, die viel unterwegs sind.</div>
+        <div class="card-tags">
+          <span class="tag">Lautlos</span>
+          <span class="tag">Akkulaufzeit</span>
+          <span class="tag">Apple Silicon</span>
+        </div>
+        <a class="card-link" href="https://www.apple.com/de/macbook-air/" target="_blank">
+          apple.com/de
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+      <div class="card-badge">Mein Tipp</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>&copy; Robin Glowania</footer>
+
+<script>
+// ── Theme ──────────────────────────────────────────────────────
+function setTheme(t) {
+  if (t === 'system') {
+    document.documentElement.removeAttribute('data-theme');
+  } else {
+    document.documentElement.setAttribute('data-theme', t);
+  }
+  try { localStorage.setItem('g-theme', t); } catch(e){}
+  document.querySelectorAll('.theme-btn').forEach(function(b){ b.classList.remove('active'); });
+  var btn = document.getElementById('btn-' + t);
+  if (btn) btn.classList.add('active');
+}
+(function(){
+  var saved = 'system';
+  try { saved = localStorage.getItem('g-theme') || 'system'; } catch(e){}
+  setTheme(saved);
+})();
+
+// ── Filter ─────────────────────────────────────────────────────
+function filter(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+
+  document.querySelectorAll('.card').forEach(function(c){
+    var show = cat === 'all' || c.dataset.cat === cat;
+    c.style.display = show ? '' : 'none';
+  });
+  document.querySelectorAll('.section-label').forEach(function(s){
+    var show = cat === 'all' || s.dataset.cat === cat;
+    s.style.display = show ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
