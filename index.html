@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meine Empfehlungen</title>
+<title>gSelection</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 
@@ -113,8 +113,7 @@ h1 span{color:var(--accent);}
 .card:hover{border-color:var(--accent);background:var(--surface2);}
 
 .card-inner{
-  display:grid;grid-template-columns:1fr auto;
-  gap:12px;align-items:start;
+  display:block;
 }
 
 .card-cat{
@@ -145,6 +144,18 @@ h1 span{color:var(--accent);}
   color:var(--accent);
 }
 
+/* KI-Tools grid */
+.ki-grid{
+  display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;
+}
+.ki-chip{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.5px;
+  padding:5px 10px;border:1px solid var(--border);color:var(--text-muted);
+  text-decoration:none;transition:border-color .2s,color .2s;
+}
+.ki-chip:hover{border-color:var(--accent);color:var(--accent);}
+.ki-chip.primary{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);}
+
 .card-tags{
   display:flex;flex-wrap:wrap;gap:5px;margin-top:10px;
 }
@@ -162,6 +173,9 @@ h1 span{color:var(--accent);}
 }
 .card-link:hover{color:var(--accent-lt);}
 .card-link svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2;}
+
+/* two links in one row */
+.card-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;}
 
 .card-badge{
   font-family:'IBM Plex Mono',monospace;font-size:9px;
@@ -200,7 +214,7 @@ footer{
 <div class="container">
 
   <header>
-    <h1>Was ich selbst <span>nutze.</span></h1>
+    <h1>g<span>Selection</span></h1>
     <p class="subtitle">Persönliche Empfehlungen &middot; Stand März 2025</p>
   </header>
 
@@ -209,8 +223,8 @@ footer{
     <button class="filter-btn" onclick="filter('finanzen',this)">Finanzen</button>
     <button class="filter-btn" onclick="filter('versorger',this)">Versorger</button>
     <button class="filter-btn" onclick="filter('software',this)">Software</button>
-    <button class="filter-btn" onclick="filter('hardware',this)">Hardware</button>
-    <button class="filter-btn" onclick="filter('streaming',this)">Streaming</button>
+    <button class="filter-btn" onclick="filter('hardware',this)">EDV-Hardware</button>
+    <button class="filter-btn" onclick="filter('sonstiges',this)">Sonstiges</button>
   </div>
 
   <!-- FINANZEN -->
@@ -231,9 +245,8 @@ footer{
           <span class="tag">App-first</span>
           <span class="tag">Tagesgeld</span>
         </div>
-        <a class="card-link" href="https://www.c24.de" target="_blank">c24.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://s.c24.de/Ua09r2JqkU" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
@@ -241,20 +254,19 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-cat">Kreditkarte</div>
-        <div class="card-name">Bank Norwegian</div>
-        <div class="card-reason">Dauerhaft kostenlos, kein Fremdwährungsaufschlag, weltweite Akzeptanz. Solide Alltagskarte ohne versteckte Gebühren.</div>
+        <div class="card-name">American Express Platinum</div>
+        <div class="card-reason">Premium-Karte mit starken Reiseleistungen, Lounge-Zugang und attraktivem Membership-Rewards-Programm. Für Vielreisende rechnet sich die Jahresgebühr schnell.</div>
         <div class="card-alt">
           <span class="alt-label">Meilensammler →</span>
           <span class="alt-value">Miles &amp; More Gold</span>
         </div>
         <div class="card-tags">
-          <span class="tag">Kostenlos</span>
-          <span class="tag">Kein FX-Aufschlag</span>
-          <span class="tag">Weltweit</span>
+          <span class="tag">Premium</span>
+          <span class="tag">Lounge-Zugang</span>
+          <span class="tag">Reiseschutz</span>
         </div>
-        <a class="card-link" href="https://www.banknorwegian.de" target="_blank">banknorwegian.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://americanexpress.com/de-de/referral/business-platinum?ref=vANESSwWeH&XL=MIMNS" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
@@ -262,20 +274,19 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-cat">Wertpapierdepot</div>
-        <div class="card-name">Scalable Capital</div>
-        <div class="card-reason">Flat-Fee-Modell für aktive Anleger, breites ETF-Angebot, übersichtliche App. Für Sparpläne und regelmäßige Orders kaum zu schlagen.</div>
-        <div class="card-alt">
-          <span class="alt-label">Für Profis →</span>
-          <span class="alt-value">Interactive Brokers</span>
-        </div>
+        <div class="card-name">Scalable Capital &amp; IBKR</div>
+        <div class="card-reason">Scalable für Sparpläne und ETF-Aufbau — breites Angebot, flache Kosten. Interactive Brokers für aktives Trading mit professionellen Ordertypen und günstigsten Konditionen weltweit.</div>
         <div class="card-tags">
-          <span class="tag">Flat Fee</span>
-          <span class="tag">ETF</span>
           <span class="tag">Sparplan</span>
+          <span class="tag">ETF</span>
+          <span class="tag">Trading</span>
+          <span class="tag">Profi</span>
         </div>
-        <a class="card-link" href="https://www.scalable.capital" target="_blank">scalable.capital <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <div class="card-links">
+          <a class="card-link" href="https://de.scalable.capital/einladung/b6mf3v" target="_blank">Scalable <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="card-link" href="https://ibkr.com/referral/robin601" target="_blank">IBKR <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        </div>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
@@ -295,7 +306,6 @@ footer{
         </div>
         <a class="card-link" href="https://www.wiso-steuer.de" target="_blank">wiso-steuer.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
@@ -316,7 +326,6 @@ footer{
         </div>
         <a class="card-link" href="https://www.lexware.de" target="_blank">lexware.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
@@ -333,7 +342,6 @@ footer{
         </div>
         <a class="card-link" href="https://www.huk.de" target="_blank">huk.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
@@ -355,14 +363,13 @@ footer{
           <span class="tag">Dynamisch</span>
           <span class="tag">Smart Home</span>
         </div>
-        <a class="card-link" href="https://octopusenergy.de" target="_blank">octopusenergy.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://share.octopusenergy.de/crisp-lion-905" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
   <!-- SOFTWARE -->
-  <div class="section-label" data-cat="software">Software <span>05 Empfehlungen</span></div>
+  <div class="section-label" data-cat="software">Software <span>03 Empfehlungen</span></div>
 
   <div class="card" data-cat="software">
     <div class="card-inner">
@@ -381,7 +388,6 @@ footer{
         </div>
         <a class="card-link" href="https://proton.me/pass" target="_blank">proton.me/pass <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
@@ -398,63 +404,28 @@ footer{
         </div>
         <a class="card-link" href="https://www.infomaniak.com" target="_blank">infomaniak.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
   <div class="card" data-cat="software">
     <div class="card-inner">
       <div>
-        <div class="card-cat">KI-Chatbot · Alltag</div>
-        <div class="card-name">Google Gemini</div>
-        <div class="card-reason">Stark in die Google-Suche integriert, exzellente Multimodalität, schnelle Antworten für alltägliche Fragen und Recherchen.</div>
-        <div class="card-tags">
-          <span class="tag">Google-Integration</span>
-          <span class="tag">Multimodal</span>
-          <span class="tag">Kostenlos</span>
+        <div class="card-cat">KI-Tools</div>
+        <div class="card-name">Mein KI-Stack</div>
+        <div class="card-reason">Je nach Aufgabe nutze ich verschiedene Tools — kein einzelnes deckt alles optimal ab.</div>
+        <div class="ki-grid">
+          <a class="ki-chip primary" href="https://www.perplexity.ai" target="_blank">Perplexity</a>
+          <a class="ki-chip primary" href="https://claude.ai" target="_blank">Claude</a>
+          <a class="ki-chip" href="https://gemini.google.com" target="_blank">Gemini</a>
+          <a class="ki-chip" href="https://notebooklm.google.com" target="_blank">NotebookLM</a>
+          <a class="ki-chip" href="https://grok.com" target="_blank">Grok</a>
         </div>
-        <a class="card-link" href="https://gemini.google.com" target="_blank">gemini.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
-  <div class="card" data-cat="software">
-    <div class="card-inner">
-      <div>
-        <div class="card-cat">KI-Chatbot · Coding</div>
-        <div class="card-name">Claude</div>
-        <div class="card-reason">Überlegenes Reasoning und Codeverständnis für komplexe Entwicklungsaufgaben. Beste Wahl für Architekturentscheidungen, Debugging und lange Code-Kontexte.</div>
-        <div class="card-tags">
-          <span class="tag">Anthropic</span>
-          <span class="tag">Coding</span>
-          <span class="tag">Long Context</span>
-        </div>
-        <a class="card-link" href="https://claude.ai" target="_blank">claude.ai <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-      <div class="card-badge">Mein Tipp</div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="software">
-    <div class="card-inner">
-      <div>
-        <div class="card-cat">Audio-Zusammenfassungen</div>
-        <div class="card-name">NotebookLM</div>
-        <div class="card-reason">PDFs, Webseiten oder eigene Notizen hochladen — NotebookLM generiert daraus Audio-Podcasts und präzise Zusammenfassungen. Ideal zum Aufbereiten langer Dokumente.</div>
-        <div class="card-tags">
-          <span class="tag">Google</span>
-          <span class="tag">Audio-Podcast</span>
-          <span class="tag">Kostenlos</span>
-        </div>
-        <a class="card-link" href="https://notebooklm.google.com" target="_blank">notebooklm.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-      <div class="card-badge">Mein Tipp</div>
-    </div>
-  </div>
-
-  <!-- HARDWARE -->
-  <div class="section-label" data-cat="hardware">Hardware <span>04 Empfehlungen</span></div>
+  <!-- EDV-HARDWARE -->
+  <div class="section-label" data-cat="hardware">EDV-Hardware <span>03 Empfehlungen</span></div>
 
   <div class="card" data-cat="hardware">
     <div class="card-inner">
@@ -473,7 +444,6 @@ footer{
         </div>
         <a class="card-link" href="https://www.apple.com/de/iphone/" target="_blank">apple.com/de/iphone <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
@@ -494,7 +464,6 @@ footer{
         </div>
         <a class="card-link" href="https://www.apple.com/de/macbook-air/" target="_blank">apple.com/de/macbook-air <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
@@ -515,11 +484,13 @@ footer{
         </div>
         <a class="card-link" href="https://www.apple.com/de/ipad-pro/" target="_blank">apple.com/de/ipad-pro <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
-  <div class="card" data-cat="hardware">
+  <!-- SONSTIGES -->
+  <div class="section-label" data-cat="sonstiges">Sonstiges <span>02 Empfehlungen</span></div>
+
+  <div class="card" data-cat="sonstiges">
     <div class="card-inner">
       <div>
         <div class="card-cat">Balkonkraftwerk</div>
@@ -536,61 +507,22 @@ footer{
         </div>
         <a class="card-link" href="https://www.zendure.com/de" target="_blank">zendure.com/de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
-  <!-- STREAMING -->
-  <div class="section-label" data-cat="streaming">Streaming <span>03 Empfehlungen</span></div>
-
-  <div class="card" data-cat="streaming">
+  <div class="card" data-cat="sonstiges">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Musik-Streaming</div>
-        <div class="card-name">Spotify</div>
-        <div class="card-reason">Beste Musikentdeckung dank Algorithmus, riesige Podcast-Bibliothek, plattformübergreifend überall verfügbar. Seit Jahren meine erste Wahl.</div>
+        <div class="card-cat">Auto</div>
+        <div class="card-name">Tesla Model 3 Performance</div>
+        <div class="card-reason">Schnellstes Alltagsauto in seiner Klasse, niedrige Betriebskosten, exzellentes Supercharger-Netz. Der Performance macht einfach Spaß — und das Laden kostet wenig.</div>
         <div class="card-tags">
-          <span class="tag">Musik</span>
-          <span class="tag">Podcasts</span>
-          <span class="tag">Offline</span>
+          <span class="tag">Elektro</span>
+          <span class="tag">Supercharger</span>
+          <span class="tag">Performance</span>
         </div>
-        <a class="card-link" href="https://www.spotify.com/de" target="_blank">spotify.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://ts.la/vanessa47370" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
-      <div class="card-badge">Mein Tipp</div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="streaming">
-    <div class="card-inner">
-      <div>
-        <div class="card-cat">Video-Streaming</div>
-        <div class="card-name">Netflix</div>
-        <div class="card-reason">Stärkstes Original-Content-Portfolio, ausgereifter Player, auf allen Geräten verfügbar. Pflichtabo für Serienfans.</div>
-        <div class="card-tags">
-          <span class="tag">Serien</span>
-          <span class="tag">Originals</span>
-          <span class="tag">4K HDR</span>
-        </div>
-        <a class="card-link" href="https://www.netflix.com" target="_blank">netflix.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-      <div class="card-badge">Mein Tipp</div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="streaming">
-    <div class="card-inner">
-      <div>
-        <div class="card-cat">Video-Streaming</div>
-        <div class="card-name">Max (HBO)</div>
-        <div class="card-reason">HBO-Qualitätsserien, starke DC-Inhalte und Discovery-Dokumentationen in einem Abo. Für anspruchsvollere Inhalte die erste Wahl nach Netflix.</div>
-        <div class="card-tags">
-          <span class="tag">HBO</span>
-          <span class="tag">Serien</span>
-          <span class="tag">Dokumentationen</span>
-        </div>
-        <a class="card-link" href="https://www.max.com" target="_blank">max.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-      <div class="card-badge">Mein Tipp</div>
     </div>
   </div>
 
