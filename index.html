@@ -166,12 +166,14 @@ h1 span{color:var(--accent);}
 }
 
 .card-link{
-  display:inline-flex;align-items:center;gap:5px;margin-top:10px;
-  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1px;
-  color:var(--accent);text-decoration:none;transition:color .2s;
-  text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:6px;margin-top:14px;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:1.5px;
+  color:var(--accent);text-decoration:none;text-transform:uppercase;
+  border:1px solid var(--accent);padding:7px 14px;
+  background:var(--accent-dim);
+  transition:background .2s,color .2s;
 }
-.card-link:hover{color:var(--accent-lt);}
+.card-link:hover{background:var(--accent);color:var(--bg);}
 .card-link svg{width:11px;height:11px;fill:none;stroke:currentColor;stroke-width:2;}
 
 /* two links in one row */
@@ -228,14 +230,14 @@ footer{
   </div>
 
   <!-- FINANZEN -->
-  <div class="section-label" data-cat="finanzen">Finanzen <span>06 Empfehlungen</span></div>
+  <div class="section-label" data-cat="finanzen">Finanzen <span>07 Empfehlungen</span></div>
 
   <div class="card" data-cat="finanzen">
     <div class="card-inner">
       <div>
         <div class="card-cat">Girokonto</div>
         <div class="card-name">C24 Bank</div>
-        <div class="card-reason">Kostenloses Girokonto mit starker App, automatischer Ausgabenkategorisierung und attraktivem Tagesgeld. Mein Hauptkonto für den Alltag.</div>
+        <div class="card-reason">Kostenloses Girokonto mit starker App, automatischer Ausgabenkategorisierung und attraktivem Zinssatz. Mein Hauptkonto für den Alltag.</div>
         <div class="card-alt">
           <span class="alt-label">Ohne Schufa →</span>
           <span class="alt-value">Revolut</span>
@@ -243,9 +245,24 @@ footer{
         <div class="card-tags">
           <span class="tag">Kostenlos</span>
           <span class="tag">App-first</span>
-          <span class="tag">Tagesgeld</span>
         </div>
         <a class="card-link" href="https://s.c24.de/Ua09r2JqkU" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="finanzen">
+    <div class="card-inner">
+      <div>
+        <div class="card-cat">Tagesgeldkonto</div>
+        <div class="card-name">Scalable Capital</div>
+        <div class="card-reason">Attraktiver Zinssatz auf das Verrechnungskonto, täglich verfügbar, direkt mit dem Depot verknüpft. Ideale Kombination für Geldparken und Investieren aus einer Hand.</div>
+        <div class="card-tags">
+          <span class="tag">Tagesgeld</span>
+          <span class="tag">Flexibel</span>
+          <span class="tag">Depot-Kombi</span>
+        </div>
+        <a class="card-link" href="https://de.scalable.capital/einladung/b6mf3v" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
