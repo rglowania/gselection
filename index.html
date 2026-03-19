@@ -115,6 +115,25 @@ h1 span{color:var(--accent);}
 .card-inner{
   display:block;
 }
+.card-header{
+  display:flex;align-items:center;gap:12px;margin-bottom:10px;
+}
+.card-logo{
+  width:32px;height:32px;border-radius:6px;
+  background:var(--surface2);border:1px solid var(--border);
+  object-fit:contain;flex-shrink:0;
+  padding:4px;
+}
+.card-logo-placeholder{
+  width:32px;height:32px;border-radius:6px;
+  background:var(--surface2);border:1px solid var(--border);
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--accent);font-weight:500;
+}
+.card-header-text{}
+.card-header .card-cat{margin-bottom:2px;}
+.card-header .card-name{margin-bottom:0;}
+
 
 .card-cat{
   font-family:'IBM Plex Mono',monospace;font-size:9px;
@@ -187,6 +206,37 @@ h1 span{color:var(--accent);}
   background:var(--accent-dim);
 }
 
+/* Search */
+.search-wrap{
+  position:relative;margin-bottom:16px;
+}
+.search-input{
+  width:100%;background:var(--surface);border:1px solid var(--border);
+  color:var(--text);font-family:'IBM Plex Mono',monospace;
+  font-size:12px;padding:10px 40px 10px 14px;outline:none;
+  transition:border-color .2s,background .25s;
+  letter-spacing:0.5px;
+}
+.search-input::placeholder{color:var(--text-muted);}
+.search-input:focus{border-color:var(--accent);}
+.search-icon{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  color:var(--text-muted);pointer-events:none;
+}
+.search-icon svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;}
+.search-clear{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  background:none;border:none;cursor:pointer;color:var(--text-muted);
+  display:none;padding:0;transition:color .2s;
+}
+.search-clear:hover{color:var(--accent);}
+.search-clear svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;}
+.no-results{
+  text-align:center;padding:40px 0;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  color:var(--text-muted);letter-spacing:1px;display:none;
+}
+
 footer{
   text-align:center;padding:32px 0 24px;
   font-family:'IBM Plex Mono',monospace;font-size:10px;
@@ -220,28 +270,35 @@ footer{
     <p class="subtitle">Persönliche Empfehlungen &middot; Stand März 2025</p>
   </header>
 
+  <div class="search-wrap">
+    <input class="search-input" id="searchInput" type="text" placeholder="Suchen … z.B. Business, ETF, Aktien, Krypto, Apple …" oninput="onSearch(this.value)">
+    <span class="search-icon" id="searchIcon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+    <button class="search-clear" id="searchClear" onclick="clearSearch()" title="Suche leeren"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+
   <div class="filter-bar">
     <button class="filter-btn active" onclick="filter('all',this)">Alle</button>
     <button class="filter-btn" onclick="filter('finanzen',this)">Finanzen</button>
-    <button class="filter-btn" onclick="filter('versorger',this)">Versorger</button>
+    <button class="filter-btn" onclick="filter('versorger',this)">Versicherungen / Versorger</button>
     <button class="filter-btn" onclick="filter('software',this)">Software</button>
     <button class="filter-btn" onclick="filter('hardware',this)">EDV-Hardware</button>
     <button class="filter-btn" onclick="filter('sonstiges',this)">Sonstiges</button>
   </div>
 
   <!-- FINANZEN -->
-  <div class="section-label" data-cat="finanzen">Finanzen <span>07 Empfehlungen</span></div>
+  <div class="section-label" data-cat="finanzen">Finanzen <span>11 Empfehlungen</span></div>
 
   <div class="card" data-cat="finanzen">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Girokonto</div>
-        <div class="card-name">C24 Bank</div>
-        <div class="card-reason">Kostenloses Girokonto mit starker App, automatischer Ausgabenkategorisierung und attraktivem Zinssatz. Mein Hauptkonto für den Alltag.</div>
-        <div class="card-alt">
-          <span class="alt-label">Ohne Schufa →</span>
-          <span class="alt-value">Revolut</span>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=c24.de&sz=64" alt="C24 Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Girokonto</div>
+          <div class="card-name">C24</div>
         </div>
+      </div>
+        <div class="card-reason">Kostenloses Girokonto mit starker App, automatischer Ausgabenkategorisierung und attraktivem Zinssatz. Mein Hauptkonto für den Alltag.</div>
         <div class="card-tags">
           <span class="tag">Kostenlos</span>
           <span class="tag">App-first</span>
@@ -254,8 +311,76 @@ footer{
   <div class="card" data-cat="finanzen">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Tagesgeldkonto</div>
-        <div class="card-name">Scalable Capital</div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=revolut.com&sz=64" alt="Revolut Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Girokonto ohne Schufa</div>
+          <div class="card-name">Revolut</div>
+        </div>
+      </div>
+        <div class="card-reason">Vollständig ohne Schufa-Abfrage eröffenbar — ideal für alle, die kein klassisches Girokonto bekommen. Starke App, gute Wechselkurse und weltweites Abheben inklusive.</div>
+        <div class="card-tags">
+          <span class="tag">Keine Schufa</span>
+          <span class="tag">Weltweit</span>
+          <span class="tag">App-first</span>
+        </div>
+        <a class="card-link" href="https://revolut.com/referral/?referral-code=r_glowania!FEB1-26-VR-DE-AE&geo-redirect" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="finanzen">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=finom.co&sz=64" alt="Finom Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Business-Konto</div>
+          <div class="card-name">Finom</div>
+        </div>
+      </div>
+        <div class="card-reason">Modernes Business-Konto für Selbstständige und kleine Unternehmen — integrierte Rechnungsstellung, Ausgabenkategorisierung und solide App. Unkomplizierte Eröffnung ohne Filiale.</div>
+        <div class="card-tags">
+          <span class="tag">Business</span>
+          <span class="tag">Selbstständige</span>
+          <span class="tag">Rechnungsstellung</span>
+        </div>
+        <a class="card-link" href="https://app.finom.co/r/x3Kp9xUG" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="finanzen">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=tide.co&sz=64" alt="Tide Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Business-Konto</div>
+          <div class="card-name">Tide</div>
+        </div>
+      </div>
+        <div class="card-reason">Schnelle Kontoeröffnung, klare Gebührenstruktur und praktische Team-Features. <strong style="color:var(--accent-lt);">200 € Bonus bei 400 € Umsatz mit Code 6AEE2L.</strong></div>
+        <div class="card-tags">
+          <span class="tag">Business</span>
+          <span class="tag">Team-Features</span>
+          <span class="tag">200 € Bonus</span>
+        </div>
+        <a class="card-link" href="https://www.tide.co/de/" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="finanzen" data-id="tagesgeld">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=scalable.capital&sz=64" alt="Scalable Capital Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Tagesgeldkonto</div>
+          <div class="card-name">Scalable Capital</div>
+        </div>
+      </div>
         <div class="card-reason">Attraktiver Zinssatz auf das Verrechnungskonto, täglich verfügbar, direkt mit dem Depot verknüpft. Ideale Kombination für Geldparken und Investieren aus einer Hand.</div>
         <div class="card-tags">
           <span class="tag">Tagesgeld</span>
@@ -270,13 +395,14 @@ footer{
   <div class="card" data-cat="finanzen">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Kreditkarte</div>
-        <div class="card-name">American Express Platinum</div>
-        <div class="card-reason">Premium-Karte mit starken Reiseleistungen, Lounge-Zugang und attraktivem Membership-Rewards-Programm. Für Vielreisende rechnet sich die Jahresgebühr schnell.</div>
-        <div class="card-alt">
-          <span class="alt-label">Meilensammler →</span>
-          <span class="alt-value">Miles &amp; More Gold</span>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=americanexpress.com&sz=64" alt="American Express Platinum Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Kreditkarte</div>
+          <div class="card-name">American Express Platinum</div>
         </div>
+      </div>
+        <div class="card-reason">Premium-Karte mit starken Reiseleistungen, Lounge-Zugang und attraktivem Membership-Rewards-Programm. Für Vielreisende rechnet sich die Jahresgebühr schnell.</div>
         <div class="card-tags">
           <span class="tag">Premium</span>
           <span class="tag">Lounge-Zugang</span>
@@ -287,41 +413,44 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen">
+  <div class="card" data-cat="finanzen" data-id="depot-sparplan">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Wertpapierdepot</div>
-        <div class="card-name">Scalable Capital &amp; IBKR</div>
-        <div class="card-reason">Scalable für Sparpläne und ETF-Aufbau — breites Angebot, flache Kosten. Interactive Brokers für aktives Trading mit professionellen Ordertypen und günstigsten Konditionen weltweit.</div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=scalable.capital&sz=64" alt="Scalable Capital Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Depot · Sparpläne</div>
+          <div class="card-name">Scalable Capital</div>
+        </div>
+      </div>
+        <div class="card-reason">Flat-Fee-Modell für ETF-Sparpläne und regelmäßige Orders — breites Angebot, übersichtliche App, günstige Konditionen für langfristige Anleger.</div>
         <div class="card-tags">
           <span class="tag">Sparplan</span>
           <span class="tag">ETF</span>
-          <span class="tag">Trading</span>
-          <span class="tag">Profi</span>
+          <span class="tag">Flat Fee</span>
         </div>
-        <div class="card-links">
-          <a class="card-link" href="https://de.scalable.capital/einladung/b6mf3v" target="_blank">Scalable <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a class="card-link" href="https://ibkr.com/referral/robin601" target="_blank">IBKR <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        </div>
+        <a class="card-link" href="https://de.scalable.capital/einladung/b6mf3v" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen">
+  <div class="card" data-cat="finanzen" data-id="depot-trading">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Steuersoftware</div>
-        <div class="card-name">WISO Steuer</div>
-        <div class="card-reason">Beste Benutzerführung für die private Steuererklärung — intuitive Oberfläche, gute Plausibilitätsprüfung, direkter ELSTER-Upload.</div>
-        <div class="card-alt">
-          <span class="alt-label">Nur UStVA →</span>
-          <span class="alt-value">Elster (kostenlos)</span>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=interactivebrokers.com&sz=64" alt="Interactive Brokers Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Depot · Trading</div>
+          <div class="card-name">Interactive Brokers</div>
         </div>
+      </div>
+        <div class="card-reason">Professionelle Ordertypen, günstigste Handelskonditionen weltweit, direkter Marktzugang. Für aktive Trader und alle, die mehr als ETF-Sparpläne wollen.</div>
         <div class="card-tags">
-          <span class="tag">Steuererklärung</span>
-          <span class="tag">ELSTER-Upload</span>
+          <span class="tag">Profi-Trading</span>
+          <span class="tag">Weltweit</span>
+          <span class="tag">Günstig</span>
         </div>
-        <a class="card-link" href="https://www.wiso-steuer.de" target="_blank">wiso-steuer.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://ibkr.com/referral/robin601" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -329,19 +458,20 @@ footer{
   <div class="card" data-cat="finanzen">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Buchhaltung</div>
-        <div class="card-name">Lexware</div>
-        <div class="card-reason">Etablierte Desktop-Software für Buchhaltung und Lohn. Solide DATEV-Kompatibilität, regelmäßige Updates, bewährt im Kanzleialltag.</div>
-        <div class="card-alt">
-          <span class="alt-label">Alternative →</span>
-          <span class="alt-value">Taxpool</span>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=bitvavo.com&sz=64" alt="Bitvavo Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Krypto-Broker</div>
+          <div class="card-name">Bitvavo</div>
         </div>
+      </div>
+        <div class="card-reason">Niedrigste Handelsgebühren in Europa, breite Coin-Auswahl, übersichtliche Oberfläche. Meine erste Wahl für den Krypto-Einstieg und regelmäßige Käufe.</div>
         <div class="card-tags">
-          <span class="tag">DATEV-kompatibel</span>
-          <span class="tag">Desktop</span>
-          <span class="tag">FIBU</span>
+          <span class="tag">Krypto</span>
+          <span class="tag">Günstig</span>
+          <span class="tag">Europa</span>
         </div>
-        <a class="card-link" href="https://www.lexware.de" target="_blank">lexware.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://bitvavo.com/de" target="_blank">bitvavo.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -349,8 +479,38 @@ footer{
   <div class="card" data-cat="finanzen">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Kfz-Versicherung</div>
-        <div class="card-name">HUK-COBURG</div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=robinhood.com&sz=64" alt="Robinhood Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Krypto-Broker</div>
+          <div class="card-name">Robinhood</div>
+        </div>
+      </div>
+        <div class="card-reason">Kommissionsfreier Handel, einfache Oberfläche und inzwischen auch in Europa verfügbar. Gut geeignet für den unkomplizierten Einstieg in Krypto und US-Aktien.</div>
+        <div class="card-tags">
+          <span class="tag">Krypto</span>
+          <span class="tag">Kommissionsfrei</span>
+          <span class="tag">US-Aktien</span>
+        </div>
+        <a class="card-link" href="https://robinhood.com" target="_blank">robinhood.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- VERSORGER -->
+  <div class="section-label" data-cat="versorger">Versicherungen / Versorger <span>02 Empfehlungen</span></div>
+
+  <div class="card" data-cat="versorger" data-id="huk">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=huk.de&sz=64" alt="HUK-COBURG Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Kfz-Versicherung</div>
+          <div class="card-name">HUK-COBURG</div>
+        </div>
+      </div>
         <div class="card-reason">Günstigste Vollkasko-Prämien bei solider Schadenregulierung. Direktversicherer ohne teure Vertriebsstruktur — mein Dauerfavorit beim Vergleich.</div>
         <div class="card-tags">
           <span class="tag">Günstig</span>
@@ -361,20 +521,17 @@ footer{
       </div>
     </div>
   </div>
-
-  <!-- VERSORGER -->
-  <div class="section-label" data-cat="versorger">Versorger <span>01 Empfehlung</span></div>
-
   <div class="card" data-cat="versorger">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Stromanbieter</div>
-        <div class="card-name">Octopus Energy</div>
-        <div class="card-reason">Transparente Preisstruktur, dynamische Tarifoptionen und exzellenter Kundenservice. Für alle, die mehr Kontrolle über ihren Stromverbrauch wollen.</div>
-        <div class="card-alt">
-          <span class="alt-label">Alternative →</span>
-          <span class="alt-value">Tibber</span>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=octopusenergy.de&sz=64" alt="Octopus Energy Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Stromanbieter</div>
+          <div class="card-name">Octopus Energy</div>
         </div>
+      </div>
+        <div class="card-reason">Transparente Preisstruktur, dynamische Tarifoptionen und exzellenter Kundenservice. Für alle, die mehr Kontrolle über ihren Stromverbrauch wollen.</div>
         <div class="card-tags">
           <span class="tag">Ökostrom</span>
           <span class="tag">Dynamisch</span>
@@ -386,18 +543,19 @@ footer{
   </div>
 
   <!-- SOFTWARE -->
-  <div class="section-label" data-cat="software">Software <span>03 Empfehlungen</span></div>
+  <div class="section-label" data-cat="software">Software <span>06 Empfehlungen</span></div>
 
   <div class="card" data-cat="software">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Passwort-Manager</div>
-        <div class="card-name">Proton Pass</div>
-        <div class="card-reason">End-to-end-verschlüsselt, Open Source, aus der Schweiz. Nahtlose Integration ins Proton-Ökosystem. Datenschutz ohne Kompromisse.</div>
-        <div class="card-alt">
-          <span class="alt-label">Alternative →</span>
-          <span class="alt-value">Bitwarden</span>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=proton.me&sz=64" alt="Proton Pass Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Passwort-Manager</div>
+          <div class="card-name">Proton Pass</div>
         </div>
+      </div>
+        <div class="card-reason">End-to-end-verschlüsselt, Open Source, aus der Schweiz. Nahtlose Integration ins Proton-Ökosystem. Datenschutz ohne Kompromisse.</div>
         <div class="card-tags">
           <span class="tag">E2E-verschlüsselt</span>
           <span class="tag">Open Source</span>
@@ -411,12 +569,16 @@ footer{
   <div class="card" data-cat="software">
     <div class="card-inner">
       <div>
-        <div class="card-cat">E-Mail</div>
-        <div class="card-name">Infomaniak</div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=infomaniak.com&sz=64" alt="Infomaniak Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">E-Mail</div>
+          <div class="card-name">Infomaniak</div>
+        </div>
+      </div>
         <div class="card-reason">Schweizer Hoster mit fairen Preisen, eigener Domain-Mail, DSGVO-konform und klimaneutral. Solide Alternative zu Google Workspace ohne Datenschutzbedenken.</div>
         <div class="card-tags">
           <span class="tag">Schweiz</span>
-          <span class="tag">DSGVO</span>
           <span class="tag">Custom Domain</span>
         </div>
         <a class="card-link" href="https://www.infomaniak.com" target="_blank">infomaniak.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -427,15 +589,80 @@ footer{
   <div class="card" data-cat="software">
     <div class="card-inner">
       <div>
-        <div class="card-cat">KI-Tools</div>
-        <div class="card-name">Mein KI-Stack</div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=wiso-steuer.de&sz=64" alt="WISO Steuer Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Steuersoftware</div>
+          <div class="card-name">WISO Steuer</div>
+        </div>
+      </div>
+        <div class="card-reason">Beste Benutzerführung für die private Steuererklärung — intuitive Oberfläche, gute Plausibilitätsprüfung, direkter ELSTER-Upload.</div>
+        <div class="card-tags">
+          <span class="tag">Steuererklärung</span>
+          <span class="tag">ELSTER-Upload</span>
+        </div>
+        <a class="card-link" href="https://www.wiso-steuer.de" target="_blank">wiso-steuer.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="software">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=lexware.de&sz=64" alt="Lexware Office Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Buchhaltung · Browser-basiert</div>
+          <div class="card-name">Lexware Office</div>
+        </div>
+      </div>
+        <div class="card-reason">Modernes, browserbasiertes Buchhaltungstool — einfacher Einstieg, klare Oberfläche, gut geeignet für Selbstständige und kleine Unternehmen ohne komplexe Anforderungen.</div>
+        <div class="card-tags">
+          <span class="tag">Browser-basiert</span>
+          <span class="tag">DATEV-kompatibel</span>
+          <span class="tag">FIBU</span>
+        </div>
+        <a class="card-link" href="https://www.lexware.de" target="_blank">lexware.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="software">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=taxpool.de&sz=64" alt="Taxpool Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Buchhaltung · Lokal</div>
+          <div class="card-name">Taxpool</div>
+        </div>
+      </div>
+        <div class="card-reason">Lokale Desktop-Software für komplexere buchhalterische Anforderungen — tiefe DATEV-Kompatibilität, bewährt im Steuerberatungsumfeld und für anspruchsvollere Mandanten.</div>
+        <div class="card-tags">
+          <span class="tag">Desktop</span>
+          <span class="tag">DATEV-kompatibel</span>
+          <span class="tag">Komplex</span>
+        </div>
+        <a class="card-link" href="https://www.taxpool.de" target="_blank">taxpool.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="software">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder">M</div>
+        <div class="card-header-text">
+          <div class="card-cat">KI-Tools</div>
+          <div class="card-name">Mein KI-Stack</div>
+        </div>
+      </div>
         <div class="card-reason">Je nach Aufgabe nutze ich verschiedene Tools — kein einzelnes deckt alles optimal ab.</div>
         <div class="ki-grid">
-          <a class="ki-chip primary" href="https://www.perplexity.ai" target="_blank">Perplexity</a>
+          <a class="ki-chip primary" href="https://gemini.google.com" target="_blank">Gemini</a>
+          <a class="ki-chip primary" href="https://notebooklm.google.com" target="_blank">NotebookLM</a>
           <a class="ki-chip primary" href="https://claude.ai" target="_blank">Claude</a>
-          <a class="ki-chip" href="https://gemini.google.com" target="_blank">Gemini</a>
-          <a class="ki-chip" href="https://notebooklm.google.com" target="_blank">NotebookLM</a>
-          <a class="ki-chip" href="https://grok.com" target="_blank">Grok</a>
         </div>
       </div>
     </div>
@@ -447,13 +674,14 @@ footer{
   <div class="card" data-cat="hardware">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Smartphone</div>
-        <div class="card-name">iPhone Air</div>
-        <div class="card-reason">Das dünnste und leichteste iPhone — ideale Balance aus Performance und Tragbarkeit für den Alltag. Wer es täglich in der Hand hat, merkt den Unterschied sofort.</div>
-        <div class="card-alt">
-          <span class="alt-label">Beste Kamera →</span>
-          <span class="alt-value">iPhone Pro</span>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=apple.com&sz=64" alt="iPhones Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Smartphone</div>
+          <div class="card-name">iPhones</div>
         </div>
+      </div>
+        <div class="card-reason">Meine klare Empfehlung für ein Smartphone im Alltag. Starke Performance, lange Softwarepflege und nahtlose Integration ins Apple-Ökosystem.</div>
         <div class="card-tags">
           <span class="tag">Leicht</span>
           <span class="tag">Apple Intelligence</span>
@@ -467,13 +695,14 @@ footer{
   <div class="card" data-cat="hardware">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Notebook</div>
-        <div class="card-name">MacBook Air</div>
-        <div class="card-reason">Lautloser Betrieb, unschlagbare Akkulaufzeit, schnelle Apple-Silicon-Performance. Mein klarer Allround-Favorit für Büro, Reise und alles dazwischen.</div>
-        <div class="card-alt">
-          <span class="alt-label">Low-Budget →</span>
-          <span class="alt-value">MacBook Neo</span>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=apple.com&sz=64" alt="MacBooks Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Notebook</div>
+          <div class="card-name">MacBooks</div>
         </div>
+      </div>
+        <div class="card-reason">Apple Silicon, lautloser Betrieb und exzellente Akkulaufzeit — MacBooks sind meine erste Wahl für produktives Arbeiten, egal ob im Büro oder unterwegs.</div>
         <div class="card-tags">
           <span class="tag">Lautlos</span>
           <span class="tag">Akkulaufzeit</span>
@@ -487,13 +716,14 @@ footer{
   <div class="card" data-cat="hardware">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Tablet</div>
-        <div class="card-name">iPad Pro 11"</div>
-        <div class="card-reason">M4-Chip, OLED-Display, Apple Pencil Pro — das leistungsfähigste Tablet auf dem Markt. Für kreative Arbeit, Annotieren und als Laptop-Ergänzung unterwegs.</div>
-        <div class="card-alt">
-          <span class="alt-label">Low-Budget →</span>
-          <span class="alt-value">iPad Air</span>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=apple.com&sz=64" alt="iPads Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Tablet</div>
+          <div class="card-name">iPads</div>
         </div>
+      </div>
+        <div class="card-reason">iPads verbinden starke Performance mit vielseitiger Nutzung — ideal zum Annotieren, für kreative Arbeit und als kompakte Ergänzung zum Notebook.</div>
         <div class="card-tags">
           <span class="tag">OLED</span>
           <span class="tag">Apple Pencil</span>
@@ -510,13 +740,14 @@ footer{
   <div class="card" data-cat="sonstiges">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Balkonkraftwerk</div>
-        <div class="card-name">Zendure Solarflow 800 Pro</div>
-        <div class="card-reason">Plug-&-Play-Balkonkraftwerk mit integriertem Akku — tagsüber Sonnenenergie speichern, abends verbrauchen. Einfache App-Steuerung, solide Verarbeitung.</div>
-        <div class="card-alt">
-          <span class="alt-label">Als PV-Anlage →</span>
-          <span class="alt-value">Zendure Solarflow 2400 Pro</span>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=zendure.com&sz=64" alt="Zendure Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Balkonkraftwerk</div>
+          <div class="card-name">Zendure</div>
         </div>
+      </div>
+        <div class="card-reason">Zendure bietet Balkonkraftwerke mit integriertem Akku — Sonnenenergie tagsüber speichern und flexibel verbrauchen. Einfache App-Steuerung, solide Verarbeitung.</div>
         <div class="card-tags">
           <span class="tag">Plug &amp; Play</span>
           <span class="tag">800 W</span>
@@ -527,12 +758,17 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="sonstiges">
+  <div class="card" data-cat="sonstiges" data-id="tesla">
     <div class="card-inner">
       <div>
-        <div class="card-cat">Auto</div>
-        <div class="card-name">Tesla Model 3 Performance</div>
-        <div class="card-reason">Schnellstes Alltagsauto in seiner Klasse, niedrige Betriebskosten, exzellentes Supercharger-Netz. Der Performance macht einfach Spaß — und das Laden kostet wenig.</div>
+        <div class="card-header">
+        <img class="card-logo" src="https://www.google.com/s2/favicons?domain=tesla.com&sz=64" alt="Tesla Logo" onerror="this.style.display='none'">
+        <div class="card-header-text">
+          <div class="card-cat">Auto</div>
+          <div class="card-name">Tesla</div>
+        </div>
+      </div>
+        <div class="card-reason">Niedrige Betriebskosten, exzellentes Supercharger-Netz und Over-the-Air-Updates. Tesla macht Elektromobilität alltagstauglich — ohne Abstriche beim Fahrspaß.</div>
         <div class="card-tags">
           <span class="tag">Elektro</span>
           <span class="tag">Supercharger</span>
@@ -542,6 +778,8 @@ footer{
       </div>
     </div>
   </div>
+
+  <div class="no-results" id="noResults">Keine Treffer gefunden.</div>
 
 </div>
 
@@ -574,6 +812,173 @@ function filter(cat, btn) {
   document.querySelectorAll('.section-label').forEach(function(s){
     s.style.display = (cat === 'all' || s.dataset.cat === cat) ? '' : 'none';
   });
+}// ── Search ─────────────────────────────────────────────────────
+var synonyms = {
+  // Girokonto / Banking
+  'girokonto':    ['c24','revolut'],
+  'konto':        ['c24','revolut','finom','tide','scalable'],
+  'bank':         ['c24','revolut','finom','tide'],
+  'schufa':       ['revolut'],
+  'ohne schufa':  ['revolut'],
+  // Business
+  'business':     ['finom','tide','lexware','taxpool','iphones','macbooks','ipads'],
+  'selbstständig':['finom','tide','lexware','taxpool'],
+  'freiberufler': ['finom','tide','lexware','taxpool'],
+  'firma':        ['finom','tide','lexware','taxpool'],
+  'unternehmen':  ['finom','tide','lexware','taxpool'],
+  'buchhaltung':  ['lexware','taxpool'],
+  'fibu':         ['lexware','taxpool'],
+  'datev':        ['lexware','taxpool'],
+  'steuer':       ['wiso','lexware','taxpool'],
+  // Depot / Investieren
+  'depot':        ['depot-sparplan','depot-trading'],
+  'broker':       ['depot-sparplan','depot-trading','bitvavo','robinhood'],
+  'investieren':  ['depot-sparplan','depot-trading','bitvavo','robinhood'],
+  'aktien':       ['depot-sparplan','depot-trading','robinhood'],
+  'etf':          ['depot-sparplan','depot-trading'],
+  'sparplan':     ['depot-sparplan'],
+  'trading':      ['depot-sparplan','depot-trading','bitvavo','robinhood'],
+  'wertpapier':   ['depot-sparplan','depot-trading'],
+  'tagesgeld':    ['tagesgeld'],
+  'zinsen':       ['tagesgeld'],
+  // Krypto
+  'krypto':       ['bitvavo','robinhood'],
+  'crypto':       ['bitvavo','robinhood'],
+  'bitcoin':      ['bitvavo','robinhood'],
+  'coin':         ['bitvavo','robinhood'],
+  // Kreditkarte
+  'kreditkarte':  ['american express','amex'],
+  'amex':         ['american express'],
+  'lounge':       ['american express'],
+  'meilen':       ['american express'],
+  'reise':        ['american express'],
+  // Versicherung
+  'versicherung': ['huk'],
+  'kfz':          ['huk'],
+  'auto':         ['tesla','huk'],
+  'haftpflicht':  ['huk'],
+  // Strom / Energie
+  'strom':        ['octopus'],
+  'energie':      ['octopus'],
+  'solar':        ['zendure'],
+  'balkon':       ['zendure'],
+  'pv':           ['zendure'],
+  // Software
+  'passwort':     ['proton'],
+  'password':     ['proton'],
+  'mail':         ['infomaniak'],
+  'email':        ['infomaniak'],
+  'e-mail':       ['infomaniak'],
+  'ki':           ['gemini','notebooklm','claude'],
+  'ai':           ['gemini','notebooklm','claude'],
+  'chatbot':      ['gemini','notebooklm','claude'],
+  'zusammenfassung':['notebooklm'],
+  'podcast':      ['notebooklm'],
+  // Hardware
+  'iphone':       ['iphones'],
+  'smartphone':   ['iphones'],
+  'handy':        ['iphones'],
+  'macbook':      ['macbooks'],
+  'laptop':       ['macbooks'],
+  'notebook':     ['macbooks'],
+  'ipad':         ['ipads'],
+  'tablet':       ['ipads'],
+  'apple':        ['iphones','macbooks','ipads'],
+  // Tesla / Elektro
+  'tesla':        ['tesla'],
+  'elektro':      ['tesla'],
+  'laden':        ['tesla','zendure','octopus'],
+  'ev':           ['tesla'],
+  // Streaming
+  'musik':        ['spotify'],
+  'podcast':      ['spotify'],
+  'serie':        ['netflix','max','hbo'],
+  'film':         ['netflix','max','hbo'],
+  'streaming':    ['spotify','netflix','max'],
+  'hbo':          ['max'],
+  'netflix':      ['netflix'],
+  'spotify':      ['spotify'],
+};
+
+function getSearchTerms(query) {
+  var q = query.toLowerCase().trim();
+  var textTerms = [q];   // match against full card text
+  var idTerms   = [];    // match only against data-id / data-cat
+
+  Object.keys(synonyms).forEach(function(key) {
+    if (q.includes(key)) {
+      synonyms[key].forEach(function(t){ idTerms.push(t); });
+    }
+  });
+  return { textTerms: textTerms, idTerms: idTerms };
+}
+
+function cardMatchesTerms(card, terms) {
+  var text = card.textContent.toLowerCase();
+  var cat  = (card.dataset.cat || '').toLowerCase();
+  var id   = (card.dataset.id  || '').toLowerCase();
+
+  // If synonym expansion produced idTerms, only match those strictly
+  // (prevents e.g. Scalable Tagesgeld matching ETF search via full text)
+  if (terms.idTerms.length) {
+    var idMatch = terms.idTerms.some(function(t) {
+      return t && (id.includes(t) || text.includes(t));
+    });
+    // Also allow plain text match for the raw query word
+    var textMatch = terms.textTerms.some(function(t) {
+      return t && (text.includes(t));
+    });
+    return idMatch || textMatch;
+  }
+
+  // No synonyms: plain full-text search
+  return terms.textTerms.some(function(t) {
+    return t && (text.includes(t) || cat.includes(t) || id.includes(t));
+  });
+}
+
+function onSearch(val) {
+  var q = val.trim();
+  document.getElementById('searchClear').style.display = q ? 'block' : 'none';
+  document.getElementById('searchIcon').style.display  = q ? 'none'  : 'block';
+
+  if (!q) {
+    clearSearch();
+    return;
+  }
+
+  // Deactivate category filter while searching
+  document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+
+  var terms = getSearchTerms(q);  var anyVisible = false;
+
+  document.querySelectorAll('.card').forEach(function(card) {
+    var show = cardMatchesTerms(card, terms);
+    card.style.display = show ? '' : 'none';
+    if (show) anyVisible = true;
+  });
+
+  // Show/hide section labels depending on whether their cat has visible cards
+  document.querySelectorAll('.section-label').forEach(function(label) {
+    var cat = label.dataset.cat;
+    var hasVisible = false;
+    document.querySelectorAll('.card[data-cat="' + cat + '"]').forEach(function(card) {
+      if (card.style.display !== 'none') hasVisible = true;
+    });
+    label.style.display = hasVisible ? '' : 'none';
+  });
+
+  document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
+}
+
+function clearSearch() {
+  var input = document.getElementById('searchInput');
+  input.value = '';
+  document.getElementById('searchClear').style.display = 'none';
+  document.getElementById('searchIcon').style.display  = 'block';
+  document.getElementById('noResults').style.display   = 'none';
+  // Restore "Alle" filter
+  filter('all', document.querySelector('.filter-btn'));
 }
 </script>
 </body>
