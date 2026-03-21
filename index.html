@@ -129,7 +129,14 @@ h1 span{color:var(--accent);}
   background:var(--surface2);border:1px solid var(--border);
   flex-shrink:0;display:flex;align-items:center;justify-content:center;
   font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);font-weight:500;
-  align-self:center;
+  align-self:center;overflow:hidden;padding:0;position:relative;
+}
+.card-logo-placeholder img{
+  width:100%;height:100%;object-fit:contain;padding:5px;
+  position:absolute;inset:0;background:var(--surface2);
+}
+.card-logo-placeholder span{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--accent);font-weight:500;
 }
 .card-header-text{}
 .card-header .card-cat{margin-bottom:2px;}
@@ -268,11 +275,11 @@ footer{
 
   <header>
     <h1>g<span>Selection</span></h1>
-    <p class="subtitle">Persönliche Empfehlungen &middot; Stand März 2025</p>
+    
   </header>
 
   <div class="search-wrap">
-    <input class="search-input" id="searchInput" type="text" placeholder="Suchen … z.B. Business, ETF, Aktien, Krypto, Apple …" oninput="onSearch(this.value)">
+    <input class="search-input" id="searchInput" type="text" placeholder="z. B. Konto, Kreditkarte, Business" oninput="onSearch(this.value)">
     <span class="search-icon" id="searchIcon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
     <button class="search-clear" id="searchClear" onclick="clearSearch()" title="Suche leeren"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
   </div>
@@ -293,7 +300,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/c24.de" alt="C24 Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>C</div>'">
+        <div class="card-logo-placeholder" data-domain="c24.de" data-initial="C"><span>C</span></div>
         <div class="card-header-text">
           <div class="card-cat">Girokonto</div>
           <div class="card-name">C24</div>
@@ -313,7 +320,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/revolut.com" alt="Revolut Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>R</div>'">
+        <div class="card-logo-placeholder" data-domain="revolut.com" data-initial="R"><span>R</span></div>
         <div class="card-header-text">
           <div class="card-cat">Girokonto ohne Schufa</div>
           <div class="card-name">Revolut</div>
@@ -334,7 +341,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/finom.co" alt="Finom Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>F</div>'">
+        <div class="card-logo-placeholder" data-domain="finom.co" data-initial="F"><span>F</span></div>
         <div class="card-header-text">
           <div class="card-cat">Business-Konto</div>
           <div class="card-name">Finom</div>
@@ -355,7 +362,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/tide.co" alt="Tide Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>T</div>'">
+        <div class="card-logo-placeholder" data-domain="tide.co" data-initial="T"><span>T</span></div>
         <div class="card-header-text">
           <div class="card-cat">Business-Konto</div>
           <div class="card-name">Tide</div>
@@ -376,7 +383,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/scalable.capital" alt="Scalable Capital Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>S</div>'">
+        <div class="card-logo-placeholder" data-domain="scalable.capital" data-initial="S"><span>S</span></div>
         <div class="card-header-text">
           <div class="card-cat">Tagesgeldkonto</div>
           <div class="card-name">Scalable Capital</div>
@@ -397,7 +404,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/americanexpress.com" alt="American Express Platinum Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>A</div>'">
+        <div class="card-logo-placeholder" data-domain="americanexpress.com" data-initial="A"><span>A</span></div>
         <div class="card-header-text">
           <div class="card-cat">Kreditkarte</div>
           <div class="card-name">American Express Platinum</div>
@@ -418,7 +425,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/scalable.capital" alt="Scalable Capital Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>S</div>'">
+        <div class="card-logo-placeholder" data-domain="scalable.capital" data-initial="S"><span>S</span></div>
         <div class="card-header-text">
           <div class="card-cat">Depot · Sparpläne</div>
           <div class="card-name">Scalable Capital</div>
@@ -439,7 +446,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/interactivebrokers.com" alt="Interactive Brokers Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>I</div>'">
+        <div class="card-logo-placeholder" data-domain="interactivebrokers.com" data-initial="I"><span>I</span></div>
         <div class="card-header-text">
           <div class="card-cat">Depot · Trading</div>
           <div class="card-name">Interactive Brokers</div>
@@ -460,7 +467,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/bitvavo.com" alt="Bitvavo Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>B</div>'">
+        <div class="card-logo-placeholder" data-domain="bitvavo.com" data-initial="B"><span>B</span></div>
         <div class="card-header-text">
           <div class="card-cat">Krypto-Broker</div>
           <div class="card-name">Bitvavo</div>
@@ -481,7 +488,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/robinhood.com" alt="Robinhood Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>R</div>'">
+        <div class="card-logo-placeholder" data-domain="robinhood.com" data-initial="R"><span>R</span></div>
         <div class="card-header-text">
           <div class="card-cat">Krypto-Broker</div>
           <div class="card-name">Robinhood</div>
@@ -506,7 +513,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/huk.de" alt="HUK-COBURG Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>H</div>'">
+        <div class="card-logo-placeholder" data-domain="huk.de" data-initial="H"><span>H</span></div>
         <div class="card-header-text">
           <div class="card-cat">Kfz-Versicherung</div>
           <div class="card-name">HUK-COBURG</div>
@@ -526,7 +533,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/octopusenergy.de" alt="Octopus Energy Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>O</div>'">
+        <div class="card-logo-placeholder" data-domain="octopusenergy.de" data-initial="O"><span>O</span></div>
         <div class="card-header-text">
           <div class="card-cat">Stromanbieter</div>
           <div class="card-name">Octopus Energy</div>
@@ -550,7 +557,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/proton.me" alt="Proton Pass Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>P</div>'">
+        <div class="card-logo-placeholder" data-domain="proton.me" data-initial="P"><span>P</span></div>
         <div class="card-header-text">
           <div class="card-cat">Passwort-Manager</div>
           <div class="card-name">Proton Pass</div>
@@ -571,7 +578,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/infomaniak.com" alt="Infomaniak Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>I</div>'">
+        <div class="card-logo-placeholder" data-domain="infomaniak.com" data-initial="I"><span>I</span></div>
         <div class="card-header-text">
           <div class="card-cat">E-Mail</div>
           <div class="card-name">Infomaniak</div>
@@ -591,7 +598,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/wiso-steuer.de" alt="WISO Steuer Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>W</div>'">
+        <div class="card-logo-placeholder" data-domain="wiso-steuer.de" data-initial="W"><span>W</span></div>
         <div class="card-header-text">
           <div class="card-cat">Steuersoftware</div>
           <div class="card-name">WISO Steuer</div>
@@ -611,7 +618,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/lexware.de" alt="Lexware Office Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>L</div>'">
+        <div class="card-logo-placeholder" data-domain="lexware.de" data-initial="L"><span>L</span></div>
         <div class="card-header-text">
           <div class="card-cat">Buchhaltung · Browser-basiert</div>
           <div class="card-name">Lexware Office</div>
@@ -632,7 +639,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/taxpool.de" alt="Taxpool Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>T</div>'">
+        <div class="card-logo-placeholder" data-domain="taxpool.de" data-initial="T"><span>T</span></div>
         <div class="card-header-text">
           <div class="card-cat">Buchhaltung · Lokal</div>
           <div class="card-name">Taxpool</div>
@@ -676,7 +683,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/apple.com" alt="Apple Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>A</div>'">
+        <div class="card-logo-placeholder" data-domain="apple.com" data-initial="A"><span>A</span></div>
         <div class="card-header-text">
           <div class="card-cat">Smartphone · Notebook · Tablet</div>
           <div class="card-name">Apple</div>
@@ -705,7 +712,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/zendure.com" alt="Zendure Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>Z</div>'">
+        <div class="card-logo-placeholder" data-domain="zendure.com" data-initial="Z"><span>Z</span></div>
         <div class="card-header-text">
           <div class="card-cat">Balkonkraftwerk</div>
           <div class="card-name">Zendure</div>
@@ -726,7 +733,7 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <img class="card-logo" src="https://logo.clearbit.com/tesla.com" alt="Tesla Logo" onerror="this.outerHTML='<div class=&quot;card-logo-placeholder&quot;>T</div>'">
+        <div class="card-logo-placeholder" data-domain="tesla.com" data-initial="T"><span>T</span></div>
         <div class="card-header-text">
           <div class="card-cat">Auto</div>
           <div class="card-name">Tesla</div>
@@ -944,6 +951,41 @@ function clearSearch() {
   // Restore "Alle" filter
   filter('all', document.querySelector('.filter-btn'));
 }
+
+// ── Logo Loader ────────────────────────────────────────────────
+(function() {
+  var services = [
+    function(d){ return 'https://icons.duckduckgo.com/ip3/' + d + '.ico'; },
+    function(d){ return 'https://www.google.com/s2/favicons?domain=' + d + '&sz=64'; },
+    function(d){ return 'https://logo.clearbit.com/' + d; },
+    function(d){ return 'https://favicon.io/favicon/' + d; },
+  ];
+
+  document.querySelectorAll('.card-logo-placeholder[data-domain]').forEach(function(el) {
+    var domain = el.dataset.domain;
+    if (!domain) return;
+    var initial = el.dataset.initial || domain[0].toUpperCase();
+    var span = el.querySelector('span');
+    var idx = 0;
+
+    function tryNext() {
+      if (idx >= services.length) return; // all failed, keep initial
+      var img = new Image();
+      img.onload = function() {
+        if (this.naturalWidth > 1) { // valid image
+          if (span) span.style.display = 'none';
+          el.appendChild(img);
+        } else {
+          idx++; tryNext();
+        }
+      };
+      img.onerror = function() { idx++; tryNext(); };
+      img.src = services[idx](domain);
+      idx++;
+    }
+    tryNext();
+  });
+})();
 </script>
 </body>
 </html>
