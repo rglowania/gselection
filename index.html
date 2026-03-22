@@ -169,7 +169,9 @@ h1 span{color:var(--text);}
   border:none;
 }
 
-.card{
+[data-filter-mode]:not([data-filter-mode="all"]) .section-label{cursor:default;pointer-events:none;}
+[data-filter-mode]:not([data-filter-mode="all"]) .section-label .chevron{display:none;}
+
   background:var(--surface);border:1px solid var(--border);
   padding:20px 24px;margin-bottom:8px;
   position:relative;transition:background .25s,border-color .25s;
@@ -369,7 +371,6 @@ footer{
 
   <!-- FINANZEN -->
   <div class="section-label" data-cat="banken"><span class="sl-emoji">🏦</span><span class="sl-title">Banken</span><span class="sl-count">08 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-  <div class="section-preview hidden" id="preview-banken"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/c24.de.ico" data-domain="c24.de" data-initial="C" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">C</span>C24</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/revolut.com.ico" data-domain="revolut.com" data-initial="R" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">R</span>Revolut</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/yuh.com.ico" data-domain="yuh.com" data-initial="Y" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">Y</span>Yuh</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/finom.co.ico" data-domain="finom.co" data-initial="F" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">F</span>Finom</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/tide.co.ico" data-domain="tide.co" data-initial="T" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">T</span>Tide</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/scalable.capital.ico" data-domain="scalable.capital" data-initial="S" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">S</span>Scalable Capital</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/americanexpress.com.ico" data-domain="americanexpress.com" data-initial="A" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">A</span>American Express</span></div>
 
   <div class="card" data-cat="banken">
     <div class="card-inner">
@@ -519,7 +520,6 @@ footer{
 
   <!-- BROKER -->
   <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">05 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-  <div class="section-preview hidden" id="preview-broker"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/scalable.capital.ico" data-domain="scalable.capital" data-initial="S" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">S</span>Scalable Capital</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/ing.de.ico" data-domain="ing.de" data-initial="I" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">I</span>ING</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/interactivebrokers.com.ico" data-domain="interactivebrokers.com" data-initial="I" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">I</span>Interactive Brokers</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/ginmon.de.ico" data-domain="ginmon.de" data-initial="G" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">G</span>Ginmon</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/bitvavo.com.ico" data-domain="bitvavo.com" data-initial="B" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">B</span>Bitvavo</span></div>
 
   <div class="card" data-cat="broker" data-id="depot-sparplan">
     <div class="card-inner">
@@ -629,7 +629,6 @@ footer{
 
   <!-- VERSORGER -->
   <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Versorger</span><span class="sl-count">04 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-  <div class="section-preview hidden" id="preview-versorger"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/octopusenergy.de.ico" data-domain="octopusenergy.de" data-initial="O" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">O</span>Octopus Energy</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/sim24.de.ico" data-domain="sim24.de" data-initial="S" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">S</span>sim24</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/telekom.de.ico" data-domain="telekom.de" data-initial="T" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">T</span>Telekom</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/huk.de.ico" data-domain="huk.de" data-initial="H" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">H</span>HUK-COBURG</span></div>
 
 
   <div class="card" data-cat="versorger">
@@ -720,7 +719,6 @@ footer{
 
   <!-- SOFTWARE -->
   <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Software</span><span class="sl-count">07 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-  <div class="section-preview hidden" id="preview-software"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/microsoft.com.ico" data-domain="microsoft.com" data-initial="M" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">M</span>Microsoft 365</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/wiso-steuer.de.ico" data-domain="wiso-steuer.de" data-initial="W" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">W</span>WISO Steuer</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/infomaniak.com.ico" data-domain="infomaniak.com" data-initial="I" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">I</span>Infomaniak</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/proton.me.ico" data-domain="proton.me" data-initial="P" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">P</span>Proton Pass</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/lexware.de.ico" data-domain="lexware.de" data-initial="L" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">L</span>Lexware Office</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/taxpool.de.ico" data-domain="taxpool.de" data-initial="T" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">T</span>Taxpool</span></div>
 
   <div class="card" data-cat="software">
     <div class="card-inner">
@@ -850,7 +848,6 @@ footer{
 
   <!-- KI -->
   <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">KI-Tools</span><span class="sl-count">03 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-  <div class="section-preview hidden" id="preview-ki"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/gemini.google.com.ico" data-domain="gemini.google.com" data-initial="G" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">G</span>Gemini</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/notebooklm.google.ico" data-domain="notebooklm.google" data-initial="N" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">N</span>NotebookLM</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/claude.ai.ico" data-domain="claude.ai" data-initial="C" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">C</span>Claude</span></div>
 
   <div class="card" data-cat="ki">
     <div class="card-inner">
@@ -918,7 +915,6 @@ footer{
 
   <!-- HARDWARE -->
   <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">03 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-  <div class="section-preview hidden" id="preview-hardware"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/apple.com.ico" data-domain="apple.com" data-initial="A" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">A</span>Apple</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/zendure.com.ico" data-domain="zendure.com" data-initial="Z" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">Z</span>Zendure</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/tesla.com.ico" data-domain="tesla.com" data-initial="T" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">T</span>Tesla</span></div>
 
   <div class="card" data-cat="hardware">
     <div class="card-inner">
@@ -1040,56 +1036,123 @@ function collapseSection(label, collapsed) {
 }
 
 function toggleSection(label) {
+  if (currentFilter !== 'all') return;
   var isCollapsed = label.classList.contains('collapsed');
   collapseSection(label, !isCollapsed);
 }
 
+var currentFilter = 'all';
+
 function filter(cat, btn) {
+  currentFilter = cat;
   document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
   var isAll = cat === 'all';
 
   document.querySelectorAll('.section-label').forEach(function(s){
     var show = isAll || s.dataset.cat === cat;
-    s.style.display = show ? '' : 'none';
+    // In filter mode: hide the header bar entirely, only show in Alle
+    s.style.display = (show && isAll) ? '' : (show && !isAll) ? 'none' : 'none';
     var preview = document.getElementById('preview-' + s.dataset.cat);
-    var body = s.nextElementSibling;
-    if (body && body.id && body.id.startsWith('preview-')) body = body.nextElementSibling;
-    if (body && body.classList.contains('section-body')) {
+    var body = null;
+    var el = s.nextElementSibling;
+    while (el) { if (el.classList.contains('section-body')) { body = el; break; } el = el.nextElementSibling; }
+
+    if (body) {
       body.style.display = show ? '' : 'none';
-      if (show && !isAll) { collapseSection(s, false); }
-      if (show && isAll)  { collapseSection(s, true); }
+      if (show && !isAll) {
+        body.classList.remove('collapsed');
+        s.classList.remove('collapsed');
+        if (preview) { preview.style.display = 'none'; }
+      }
+      if (show && isAll) {
+        body.classList.add('collapsed');
+        s.classList.add('collapsed');
+        if (preview) { preview.style.display = ''; }
+      }
     }
-    // Hide preview when in filter mode
-    if (preview) preview.style.display = (!isAll && show) ? 'none' : '';
+    if (!show && preview) preview.style.display = 'none';
   });
 
   if (!isAll) {
     document.querySelectorAll('.card').forEach(function(c){ c.style.display = ''; });
+    // Disable click handlers in filter mode by tracking state
+    document.querySelector('.container').dataset.filterMode = cat;
+  } else {
+    document.querySelector('.container').dataset.filterMode = 'all';
   }
 }
 
-// Init: wrap cards in section-body, collapse, add handlers
+// Init: wrap cards in section-body, build previews, collapse, add handlers
 (function(){
+  var previewData = {
+    'banken':    [{d:'c24.de',i:'C',n:'C24'},{d:'revolut.com',i:'R',n:'Revolut'},{d:'yuh.com',i:'Y',n:'Yuh'},{d:'finom.co',i:'F',n:'Finom'},{d:'tide.co',i:'T',n:'Tide'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'americanexpress.com',i:'A',n:'American Express'}],
+    'broker':    [{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'bitvavo.com',i:'B',n:'Bitvavo'}],
+    'versorger': [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'sim24.de',i:'S',n:'sim24'},{d:'telekom.de',i:'T',n:'Telekom'},{d:'huk.de',i:'H',n:'HUK-COBURG'}],
+    'software':  [{d:'microsoft.com',i:'M',n:'Microsoft 365'},{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'},{d:'infomaniak.com',i:'I',n:'Infomaniak'},{d:'proton.me',i:'P',n:'Proton Pass'},{d:'lexware.de',i:'L',n:'Lexware Office'},{d:'taxpool.de',i:'T',n:'Taxpool'}],
+    'ki':        [{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'claude.ai',i:'C',n:'Claude'}],
+    'hardware':  [{d:'apple.com',i:'A',n:'Apple'},{d:'zendure.com',i:'Z',n:'Zendure'},{d:'tesla.com',i:'T',n:'Tesla'}],
+  };
+
+  function buildPreview(cat) {
+    var chips = (previewData[cat] || []).map(function(item) {
+      var img = document.createElement('img');
+      img.className = 'chip-logo';
+      img.src = 'https://icons.duckduckgo.com/ip3/' + item.d + '.ico';
+      img.alt = '';
+      var fallback = document.createElement('span');
+      fallback.className = 'chip-initial';
+      fallback.textContent = item.i;
+      fallback.style.display = 'none';
+      img.onerror = function(){ this.style.display='none'; fallback.style.display='inline-flex'; };
+
+      var chip = document.createElement('span');
+      chip.className = 'section-preview-chip';
+      chip.appendChild(img);
+      chip.appendChild(fallback);
+      chip.appendChild(document.createTextNode(item.n));
+      return chip;
+    });
+
+    var div = document.createElement('div');
+    div.className = 'section-preview';
+    div.id = 'preview-' + cat;
+    chips.forEach(function(ch){ div.appendChild(ch); });
+    return div;
+  }
+
   document.querySelectorAll('.section-label').forEach(function(label){
     var cat = label.dataset.cat;
+
+    // 1. Collect all direct card siblings
     var siblings = [];
     var el = label.nextElementSibling;
     while (el && !el.classList.contains('section-label')) {
       if (el.classList.contains('card')) siblings.push(el);
       el = el.nextElementSibling;
     }
+
+    // 2. Wrap cards in section-body
+    var body = document.createElement('div');
+    body.className = 'section-body collapsed';
     if (siblings.length) {
-      var body = document.createElement('div');
-      body.className = 'section-body collapsed';
       label.parentNode.insertBefore(body, siblings[0]);
       siblings.forEach(function(s){ body.appendChild(s); });
+    } else {
+      label.parentNode.insertBefore(body, label.nextElementSibling);
     }
+
+    // 3. Insert preview div between label and body
+    var preview = buildPreview(cat);
+    label.parentNode.insertBefore(preview, body);
+
+    // 4. Collapse by default
     label.classList.add('collapsed');
-    var preview = document.getElementById('preview-' + cat);
-    if (preview) { preview.classList.remove('hidden'); preview.style.display = ''; }
+
+    // 5. Click handler
     label.addEventListener('click', function(){ toggleSection(label); });
   });
+  document.querySelector('.container').dataset.filterMode = 'all';
 })();
 // ── Search ─────────────────────────────────────────────────────
 var synonyms = {
@@ -1270,6 +1333,7 @@ function onSearch(val) {
 }
 
 function clearSearch() {
+  currentFilter = 'all';
   var input = document.getElementById('searchInput');
   input.value = '';
   document.getElementById('searchClear').style.display = 'none';
