@@ -127,6 +127,31 @@ h1 span{color:var(--text);}
 .section-label .chevron svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .section-label.collapsed .chevron{transform:rotate(-90deg);}
 
+/* Section preview chips */
+.section-preview{
+  display:flex;flex-wrap:wrap;gap:4px;
+  padding:8px 14px 12px;
+  border:1px solid var(--border);border-top:none;
+  background:var(--surface);
+  border-left:3px solid var(--accent);
+}
+.section-preview.hidden{display:none;}
+.section-preview-chip{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.4px;
+  color:var(--text-muted);border:1px solid var(--border);
+  padding:3px 9px 3px 6px;background:var(--surface2);
+  display:inline-flex;align-items:center;gap:5px;
+}
+.chip-logo{
+  width:14px;height:14px;border-radius:3px;object-fit:contain;flex-shrink:0;
+}
+.chip-initial{
+  width:14px;height:14px;border-radius:3px;flex-shrink:0;
+  background:var(--accent-dim);border:1px solid var(--border);
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:8px;color:var(--accent);font-weight:600;
+}
+
 /* Animated section wrapper */
 .section-body{
   overflow:hidden;
@@ -344,6 +369,7 @@ footer{
 
   <!-- FINANZEN -->
   <div class="section-label" data-cat="banken"><span class="sl-emoji">🏦</span><span class="sl-title">Banken</span><span class="sl-count">08 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-preview" id="preview-banken"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/c24.de.ico" data-domain="c24.de" data-initial="C" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">C</span>C24</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/revolut.com.ico" data-domain="revolut.com" data-initial="R" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">R</span>Revolut</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/yuh.com.ico" data-domain="yuh.com" data-initial="Y" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">Y</span>Yuh</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/finom.co.ico" data-domain="finom.co" data-initial="F" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">F</span>Finom</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/tide.co.ico" data-domain="tide.co" data-initial="T" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">T</span>Tide</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/scalable.capital.ico" data-domain="scalable.capital" data-initial="S" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">S</span>Scalable Capital</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/americanexpress.com.ico" data-domain="americanexpress.com" data-initial="A" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">A</span>American Express</span></div>
 
   <div class="card" data-cat="banken">
     <div class="card-inner">
@@ -492,7 +518,8 @@ footer{
   </div>
 
   <!-- BROKER -->
-  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">04 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">05 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-preview" id="preview-broker"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/scalable.capital.ico" data-domain="scalable.capital" data-initial="S" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">S</span>Scalable Capital</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/ing.de.ico" data-domain="ing.de" data-initial="I" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">I</span>ING</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/interactivebrokers.com.ico" data-domain="interactivebrokers.com" data-initial="I" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">I</span>Interactive Brokers</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/ginmon.de.ico" data-domain="ginmon.de" data-initial="G" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">G</span>Ginmon</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/bitvavo.com.ico" data-domain="bitvavo.com" data-initial="B" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">B</span>Bitvavo</span></div>
 
   <div class="card" data-cat="broker" data-id="depot-sparplan">
     <div class="card-inner">
@@ -511,6 +538,28 @@ footer{
           <span class="tag">Flat Fee</span>
         </div>
         <a class="card-link" href="https://de.scalable.capital/einladung/b6mf3v" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card" data-cat="broker">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="ing.de" data-initial="I"><span>I</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Depot · Gemeinschafts-Depot</div>
+          <div class="card-name">ING</div>
+        </div>
+      </div>
+        <div class="card-reason">Solides Depot für gemeinsames Investieren — das Gemeinschafts-Depot der ING ermöglicht zwei Personen das gemeinsame Verwalten eines Wertpapierdepots. Günstige Konditionen und ein breites ETF-Angebot.</div>
+        <div class="card-tags">
+          <span class="tag">Gemeinschafts-Depot</span>
+          <span class="tag">ETF</span>
+          <span class="tag">Sparplan</span>
+        </div>
+        <a class="card-link" href="https://www.ing.de/depotkwk/aa/zbIkgZZm32K5GIUcuXDlo9o9erNgI0N1C05s2nPmaFky22-x-mV0zmd4Ccg97QkvgBLoa2-DleNijgBBh_6dQ-jZlsXD-3Tvg-DfGOcuOMQ=" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -580,6 +629,7 @@ footer{
 
   <!-- VERSORGER -->
   <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Versorger</span><span class="sl-count">04 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-preview" id="preview-versorger"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/octopusenergy.de.ico" data-domain="octopusenergy.de" data-initial="O" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">O</span>Octopus Energy</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/sim24.de.ico" data-domain="sim24.de" data-initial="S" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">S</span>sim24</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/telekom.de.ico" data-domain="telekom.de" data-initial="T" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">T</span>Telekom</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/huk.de.ico" data-domain="huk.de" data-initial="H" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">H</span>HUK-COBURG</span></div>
 
 
   <div class="card" data-cat="versorger">
@@ -631,7 +681,7 @@ footer{
         <div class="card-logo-placeholder" data-domain="telekom.de" data-initial="T"><span>T</span></div>
         <div class="card-header-text">
           <div class="card-cat">Mobilfunk · Prepaid</div>
-          <div class="card-name">Telekom Prepaid</div>
+          <div class="card-name">Telekom</div>
         </div>
       </div>
         <div class="card-reason">Prepaid im besten deutschen Mobilfunknetz — keine Vertragsbindung, faire Jahrestarife mit 5G-Zugang. Ideal als Zweitkarte oder wenn man flexibel bleiben möchte.</div>
@@ -670,6 +720,7 @@ footer{
 
   <!-- SOFTWARE -->
   <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Software</span><span class="sl-count">07 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-preview" id="preview-software"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/microsoft.com.ico" data-domain="microsoft.com" data-initial="M" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">M</span>Microsoft 365</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/wiso-steuer.de.ico" data-domain="wiso-steuer.de" data-initial="W" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">W</span>WISO Steuer</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/infomaniak.com.ico" data-domain="infomaniak.com" data-initial="I" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">I</span>Infomaniak</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/proton.me.ico" data-domain="proton.me" data-initial="P" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">P</span>Proton Pass</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/lexware.de.ico" data-domain="lexware.de" data-initial="L" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">L</span>Lexware Office</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/taxpool.de.ico" data-domain="taxpool.de" data-initial="T" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">T</span>Taxpool</span></div>
 
   <div class="card" data-cat="software">
     <div class="card-inner">
@@ -799,6 +850,7 @@ footer{
 
   <!-- KI -->
   <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">KI-Tools</span><span class="sl-count">03 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-preview" id="preview-ki"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/gemini.google.com.ico" data-domain="gemini.google.com" data-initial="G" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">G</span>Gemini</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/notebooklm.google.ico" data-domain="notebooklm.google" data-initial="N" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">N</span>NotebookLM</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/claude.ai.ico" data-domain="claude.ai" data-initial="C" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">C</span>Claude</span></div>
 
   <div class="card" data-cat="ki">
     <div class="card-inner">
@@ -866,6 +918,7 @@ footer{
 
   <!-- HARDWARE -->
   <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">03 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-preview" id="preview-hardware"><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/apple.com.ico" data-domain="apple.com" data-initial="A" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">A</span>Apple</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/zendure.com.ico" data-domain="zendure.com" data-initial="Z" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">Z</span>Zendure</span><span class="section-preview-chip"><img class="chip-logo" src="https://icons.duckduckgo.com/ip3/tesla.com.ico" data-domain="tesla.com" data-initial="T" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="chip-initial" style="display:none">T</span>Tesla</span></div>
 
   <div class="card" data-cat="hardware">
     <div class="card-inner">
@@ -966,14 +1019,19 @@ function getSectionCards(label) {
 }
 
 function collapseSection(label, collapsed) {
+  var cat = label.dataset.cat;
+  var preview = document.getElementById('preview-' + cat);
   var body = label.nextElementSibling;
-  if (!body || !body.classList.contains('section-body')) return;
+  // Skip the preview div to find the section-body
+  if (body && body.id && body.id.startsWith('preview-')) body = body.nextElementSibling;
   if (collapsed) {
-    body.classList.add('collapsed');
+    if (body && body.classList.contains('section-body')) { body.classList.add('collapsed'); }
     label.classList.add('collapsed');
+    if (preview) preview.classList.remove('hidden');
   } else {
-    body.classList.remove('collapsed');
+    if (body && body.classList.contains('section-body')) { body.classList.remove('collapsed'); }
     label.classList.remove('collapsed');
+    if (preview) preview.classList.add('hidden');
   }
 }
 
@@ -990,32 +1048,35 @@ function filter(cat, btn) {
   document.querySelectorAll('.section-label').forEach(function(s){
     var show = isAll || s.dataset.cat === cat;
     s.style.display = show ? '' : 'none';
+    var preview = document.getElementById('preview-' + s.dataset.cat);
     var body = s.nextElementSibling;
+    if (body && body.id && body.id.startsWith('preview-')) body = body.nextElementSibling;
     if (body && body.classList.contains('section-body')) {
       body.style.display = show ? '' : 'none';
-      if (show && !isAll) collapseSection(s, false);
-      if (show && isAll)  collapseSection(s, true);
+      if (show && !isAll) { collapseSection(s, false); }
+      if (show && isAll)  { collapseSection(s, true); }
     }
+    // Hide preview when in filter mode
+    if (preview) preview.style.display = (!isAll && show) ? 'none' : '';
   });
 
   if (!isAll) {
-    document.querySelectorAll('.card').forEach(function(c){
-      c.style.display = '';
-    });
+    document.querySelectorAll('.card').forEach(function(c){ c.style.display = ''; });
   }
 }
 
-// Init: wrap cards in section-body, then collapse, add handlers
+// Init: wrap cards in section-body, collapse, add handlers
 (function(){
   document.querySelectorAll('.section-label').forEach(function(label){
-    // Collect all siblings until next section-label or end
+    var cat = label.dataset.cat;
     var siblings = [];
     var el = label.nextElementSibling;
+    // Skip preview div
+    if (el && el.id && el.id.startsWith('preview-')) el = el.nextElementSibling;
     while (el && !el.classList.contains('section-label') && !el.id) {
       siblings.push(el);
       el = el.nextElementSibling;
     }
-    // Wrap in section-body
     if (siblings.length) {
       var body = document.createElement('div');
       body.className = 'section-body collapsed';
@@ -1023,6 +1084,9 @@ function filter(cat, btn) {
       siblings.forEach(function(s){ body.appendChild(s); });
     }
     label.classList.add('collapsed');
+    // Show preview by default (collapsed state)
+    var preview = document.getElementById('preview-' + cat);
+    if (preview) preview.classList.remove('hidden');
     label.addEventListener('click', function(){ toggleSection(label); });
   });
 })();
@@ -1171,28 +1235,24 @@ function onSearch(val) {
   document.getElementById('searchClear').style.display = q ? 'block' : 'none';
   document.getElementById('searchIcon').style.display  = q ? 'none'  : 'block';
 
-  if (!q) {
-    clearSearch();
-    return;
-  }
+  if (!q) { clearSearch(); return; }
 
-  // Deactivate category filter while searching
   document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
 
   var terms = getSearchTerms(q);
   var anyVisible = false;
 
-  // Force all cards visible first so matching works, then hide non-matches
   document.querySelectorAll('.card').forEach(function(card) {
     var show = cardMatchesTerms(card, terms);
     card.style.display = show ? '' : 'none';
     if (show) anyVisible = true;
   });
 
-  // Show/hide section labels — temporarily expand them so results are visible
   document.querySelectorAll('.section-label').forEach(function(label) {
     var cat = label.dataset.cat;
+    var preview = document.getElementById('preview-' + cat);
     var body = label.nextElementSibling;
+    if (body && body.id && body.id.startsWith('preview-')) body = body.nextElementSibling;
     var hasVisible = false;
     if (body && body.classList.contains('section-body')) {
       body.querySelectorAll('.card').forEach(function(card) {
@@ -1200,11 +1260,9 @@ function onSearch(val) {
       });
       label.style.display = hasVisible ? '' : 'none';
       body.style.display  = hasVisible ? '' : 'none';
-      if (hasVisible) {
-        body.classList.remove('collapsed');
-        label.classList.remove('collapsed');
-      }
+      if (hasVisible) { body.classList.remove('collapsed'); label.classList.remove('collapsed'); }
     }
+    if (preview) preview.style.display = 'none';
   });
 
   document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
@@ -1216,17 +1274,20 @@ function clearSearch() {
   document.getElementById('searchClear').style.display = 'none';
   document.getElementById('searchIcon').style.display  = 'block';
   document.getElementById('noResults').style.display   = 'none';
-  // Restore "Alle" filter with sections collapsed
   document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
   document.querySelector('.filter-btn').classList.add('active');
   document.querySelectorAll('.section-label').forEach(function(s){
+    var cat = s.dataset.cat;
+    var preview = document.getElementById('preview-' + cat);
     s.style.display = '';
     var body = s.nextElementSibling;
+    if (body && body.id && body.id.startsWith('preview-')) body = body.nextElementSibling;
     if (body && body.classList.contains('section-body')) {
       body.style.display = '';
       body.classList.add('collapsed');
       s.classList.add('collapsed');
     }
+    if (preview) { preview.style.display = ''; preview.classList.remove('hidden'); }
   });
 }
 
