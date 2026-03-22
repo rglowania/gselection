@@ -92,10 +92,56 @@ h1 span{color:var(--text);}
 .section-label{
   font-family:'IBM Plex Mono',monospace;font-size:10px;
   letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);
-  margin:28px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
+  margin:28px 0 0;padding:12px 14px;
+  border:1px solid var(--border);
+  background:var(--surface);
+  display:flex;align-items:center;gap:10px;
+  cursor:pointer;user-select:none;
+  transition:color .2s, border-color .2s, background .2s;
+  position:relative;
 }
-.section-label span{color:var(--accent);font-size:9px;}
+.section-label::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:3px;background:var(--accent);opacity:0.5;
+  transition:opacity .2s;
+}
+.section-label:hover{color:var(--accent);border-color:var(--accent);background:var(--surface2);}
+.section-label:hover::before{opacity:1;}
+.section-label.collapsed{margin-bottom:0;}
+.section-label:not(.collapsed){margin-bottom:0;border-bottom:none;}
+.section-label .sl-emoji{font-size:15px;margin-right:2px;} .sl-icon{
+  flex-shrink:0;width:28px;height:28px;
+  border:1px solid var(--border);border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--surface2);
+  transition:background .2s,border-color .2s;
+}
+.section-label:hover .sl-emoji{font-size:15px;margin-right:2px;} .sl-icon{background:var(--accent-dim);border-color:var(--accent);}
+.section-label .sl-icon svg{width:14px;height:14px;fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.section-label .sl-title{flex:1;}
+.section-label .sl-count{color:var(--accent);font-size:9px;margin-right:4px;}
+.section-label .chevron{
+  flex-shrink:0;color:var(--text-muted);transition:transform .3s cubic-bezier(.4,0,.2,1);
+}
+.section-label .chevron svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.section-label.collapsed .chevron{transform:rotate(-90deg);}
+
+/* Animated section wrapper */
+.section-body{
+  overflow:hidden;
+  transition:max-height .35s cubic-bezier(.4,0,.2,1), opacity .3s ease;
+  max-height:4000px;
+  opacity:1;
+  border:1px solid var(--border);
+  border-top:none;
+  padding:8px 0 0;
+}
+.section-body.collapsed{
+  max-height:0;
+  opacity:0;
+  padding:0;
+  border:none;
+}
 
 .card{
   background:var(--surface);border:1px solid var(--border);
@@ -287,17 +333,18 @@ footer{
 
   <div class="filter-bar">
     <button class="filter-btn active" onclick="filter('all',this)">Alle</button>
-    <button class="filter-btn" onclick="filter('finanzen',this)">Finanzen</button>
-    <button class="filter-btn" onclick="filter('versorger',this)">Versicherungen / Versorger</button>
+    <button class="filter-btn" onclick="filter('banken',this)">Banken</button>
+    <button class="filter-btn" onclick="filter('broker',this)">Broker</button>
+    <button class="filter-btn" onclick="filter('versorger',this)">Versorger</button>
     <button class="filter-btn" onclick="filter('software',this)">Software</button>
-    <button class="filter-btn" onclick="filter('hardware',this)">EDV-Hardware</button>
-    <button class="filter-btn" onclick="filter('sonstiges',this)">Sonstiges</button>
+    <button class="filter-btn" onclick="filter('ki',this)">KI-Tools</button>
+    <button class="filter-btn" onclick="filter('hardware',this)">Hardware</button>
   </div>
 
   <!-- FINANZEN -->
-  <div class="section-label" data-cat="finanzen">Finanzen <span>12 Empfehlungen</span></div>
+  <div class="section-label" data-cat="banken"><span class="sl-emoji">🏦</span><span class="sl-title">Banken</span><span class="sl-count">08 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
-  <div class="card" data-cat="finanzen">
+  <div class="card" data-cat="banken">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -312,12 +359,12 @@ footer{
           <span class="tag">Kostenlos</span>
           <span class="tag">App-first</span>
         </div>
-        <a class="card-link" href="https://s.c24.de/Ua09r2JqkU" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://www.c24n.de/uL31GLv" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen">
+  <div class="card" data-cat="banken">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -338,7 +385,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen">
+  <div class="card" data-cat="banken">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -359,7 +406,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen">
+  <div class="card" data-cat="banken">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -380,7 +427,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen">
+  <div class="card" data-cat="banken">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -401,7 +448,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen" data-id="tagesgeld">
+  <div class="card" data-cat="banken" data-id="tagesgeld">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -422,7 +469,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen">
+  <div class="card" data-cat="banken">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -443,7 +490,10 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen" data-id="depot-sparplan">
+  <!-- BROKER -->
+  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">04 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="broker" data-id="depot-sparplan">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -464,7 +514,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen" data-id="depot-trading">
+  <div class="card" data-cat="broker" data-id="depot-trading">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -485,7 +535,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen" data-id="depot-vl">
+  <div class="card" data-cat="broker" data-id="depot-vl">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -506,7 +556,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="finanzen">
+  <div class="card" data-cat="broker">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -528,28 +578,8 @@ footer{
   </div>
 
   <!-- VERSORGER -->
-  <div class="section-label" data-cat="versorger">Versicherungen / Versorger <span>04 Empfehlungen</span></div>
+  <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Versorger</span><span class="sl-count">04 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
-  <div class="card" data-cat="versorger" data-id="huk">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="huk.de" data-initial="H"><span>H</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Kfz-Versicherung</div>
-          <div class="card-name">HUK-COBURG</div>
-        </div>
-      </div>
-        <div class="card-reason">Günstigste Vollkasko-Prämien bei solider Schadenregulierung. Direktversicherer ohne teure Vertriebsstruktur — mein Dauerfavorit beim Vergleich.</div>
-        <div class="card-tags">
-          <span class="tag">Günstig</span>
-          <span class="tag">Direktversicherer</span>
-          <span class="tag">Vollkasko</span>
-        </div>
-        <a class="card-link" href="https://www.huk.de" target="_blank">huk.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
 
   <div class="card" data-cat="versorger">
     <div class="card-inner">
@@ -615,46 +645,48 @@ footer{
     </div>
   </div>
 
-  <!-- SOFTWARE -->
-  <div class="section-label" data-cat="software">Software <span>06 Empfehlungen</span></div>
 
-  <div class="card" data-cat="software">
+  <div class="card" data-cat="versorger" data-id="huk">
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="proton.me" data-initial="P"><span>P</span></div>
+        <div class="card-logo-placeholder" data-domain="huk.de" data-initial="H"><span>H</span></div>
         <div class="card-header-text">
-          <div class="card-cat">Passwort-Manager</div>
-          <div class="card-name">Proton Pass</div>
+          <div class="card-cat">Kfz-Versicherung</div>
+          <div class="card-name">HUK-COBURG</div>
         </div>
       </div>
-        <div class="card-reason">End-to-end-verschlüsselt, Open Source, aus der Schweiz. Nahtlose Integration ins Proton-Ökosystem. Datenschutz ohne Kompromisse.</div>
+        <div class="card-reason">Günstigste Vollkasko-Prämien bei solider Schadenregulierung. Direktversicherer ohne teure Vertriebsstruktur — mein Dauerfavorit beim Vergleich.</div>
         <div class="card-tags">
-          <span class="tag">E2E-verschlüsselt</span>
-          <span class="tag">Open Source</span>
-          <span class="tag">Schweiz</span>
+          <span class="tag">Günstig</span>
+          <span class="tag">Direktversicherer</span>
+          <span class="tag">Vollkasko</span>
         </div>
-        <a class="card-link" href="https://proton.me/pass" target="_blank">proton.me/pass <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://www.huk.de" target="_blank">huk.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
 
+  <!-- SOFTWARE -->
+  <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Software</span><span class="sl-count">07 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
   <div class="card" data-cat="software">
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="infomaniak.com" data-initial="I"><span>I</span></div>
+        <div class="card-logo-placeholder" data-domain="microsoft.com" data-initial="M"><span>M</span></div>
         <div class="card-header-text">
-          <div class="card-cat">E-Mail</div>
-          <div class="card-name">Infomaniak</div>
+          <div class="card-cat">Office-Tools</div>
+          <div class="card-name">Microsoft 365</div>
         </div>
       </div>
-        <div class="card-reason">Schweizer Hoster mit fairen Preisen, eigener Domain-Mail und klimaneutral. Solide Alternative zu Google Workspace ohne Datenschutzbedenken.</div>
+        <div class="card-reason">Word, Excel, PowerPoint, Outlook und OneDrive in einem Abo — plattformübergreifend und stets aktuell. Für professionelle Dokumente und Zusammenarbeit nach wie vor der Standard.</div>
         <div class="card-tags">
-          <span class="tag">Schweiz</span>
-          <span class="tag">Custom Domain</span>
+          <span class="tag">Office</span>
+          <span class="tag">Cloud</span>
+          <span class="tag">Abo</span>
         </div>
-        <a class="card-link" href="https://www.infomaniak.com/de/ksuite/service-mail" target="_blank">infomaniak.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://amzn.to/4dxc34g" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -683,6 +715,49 @@ footer{
     <div class="card-inner">
       <div>
         <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="infomaniak.com" data-initial="I"><span>I</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Mail · Cloud · Produktivität</div>
+          <div class="card-name">Infomaniak</div>
+        </div>
+      </div>
+        <div class="card-reason">Schweizer Anbieter mit starkem Ökosystem: kostenlose E-Mail-Adresse, kDrive (Cloud-Speicher mit Office-Funktionen), kChat und mehr — alles DSGVO-konform, klimaneutral und ohne Tracking. Solide Alternative zu Google Workspace.</div>
+        <div class="card-tags">
+          <span class="tag">Schweiz</span>
+          <span class="tag">kDrive</span>
+          <span class="tag">Custom Domain</span>
+          <span class="tag">DSGVO</span>
+        </div>
+        <a class="card-link" href="https://www.infomaniak.com/de/gratis-email" target="_blank">infomaniak.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="software">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="proton.me" data-initial="P"><span>P</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Passwort-Manager</div>
+          <div class="card-name">Proton Pass</div>
+        </div>
+      </div>
+        <div class="card-reason">End-to-end-verschlüsselt, Open Source, aus der Schweiz. Nahtlose Integration ins Proton-Ökosystem. Datenschutz ohne Kompromisse.</div>
+        <div class="card-tags">
+          <span class="tag">E2E-verschlüsselt</span>
+          <span class="tag">Open Source</span>
+          <span class="tag">Schweiz</span>
+        </div>
+        <a class="card-link" href="https://proton.me/pass" target="_blank">proton.me/pass <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="software">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
         <div class="card-logo-placeholder" data-domain="lexware.de" data-initial="L"><span>L</span></div>
         <div class="card-header-text">
           <div class="card-cat">Buchhaltung · Browser-basiert</div>
@@ -695,7 +770,7 @@ footer{
           <span class="tag">DATEV-kompatibel</span>
           <span class="tag">FIBU</span>
         </div>
-        <a class="card-link" href="https://www.lexware.de/gruenderedition/" target="_blank">lexware.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://www.lexware.de/preise?pid=nDwdEle1ot&pdata=ggGe7XKLsH&cid=1777&utm_medium=affiliate&utm_source=recommend-nDwdEle1ot&utm_campaign=kunden-werben-kunden&couponCode=LXOK4YWK" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -721,28 +796,75 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="software">
+  <!-- KI -->
+  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">KI-Tools</span><span class="sl-count">03 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="ki">
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <div class="card-logo-placeholder" data-initial="K"><span>K</span></div>
+        <div class="card-logo-placeholder" data-domain="gemini.google.com" data-initial="G"><span>G</span></div>
         <div class="card-header-text">
-          <div class="card-cat">KI-Tools</div>
-          <div class="card-name">Mein KI-Stack</div>
+          <div class="card-cat">KI · Alltag &amp; Recherche</div>
+          <div class="card-name">Gemini</div>
         </div>
       </div>
-        <div class="card-reason">Je nach Aufgabe nutze ich verschiedene Tools — kein einzelnes deckt alles optimal ab.</div>
-        <div class="ki-grid">
-          <a class="ki-chip primary" href="https://gemini.google.com" target="_blank">Gemini</a>
-          <a class="ki-chip primary" href="https://notebooklm.google.com" target="_blank">NotebookLM</a>
-          <a class="ki-chip primary" href="https://claude.ai" target="_blank">Claude</a>
+        <div class="card-reason">Stark in die Google-Suche integriert, exzellente Multimodalität, schnelle Antworten für alltägliche Fragen und Recherchen.</div>
+        <div class="card-tags">
+          <span class="tag">Google</span>
+          <span class="tag">Multimodal</span>
+          <span class="tag">Kostenlos</span>
         </div>
+        <a class="card-link" href="https://gemini.google.com" target="_blank">gemini.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
 
-  <!-- EDV-HARDWARE -->
-  <div class="section-label" data-cat="hardware">EDV-Hardware <span>01 Empfehlung</span></div>
+  <div class="card" data-cat="ki">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="notebooklm.google" data-initial="N"><span>N</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">KI · Audio-Zusammenfassungen</div>
+          <div class="card-name">NotebookLM</div>
+        </div>
+      </div>
+        <div class="card-reason">PDFs, Webseiten oder eigene Notizen hochladen — NotebookLM generiert daraus Audio-Podcasts und präzise Zusammenfassungen. Ideal zum Aufbereiten langer Dokumente.</div>
+        <div class="card-tags">
+          <span class="tag">Google</span>
+          <span class="tag">Audio-Podcast</span>
+          <span class="tag">Kostenlos</span>
+        </div>
+        <a class="card-link" href="https://notebooklm.google.com" target="_blank">notebooklm.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ki">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="claude.ai" data-initial="C"><span>C</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">KI · Coding &amp; komplexe Aufgaben</div>
+          <div class="card-name">Claude</div>
+        </div>
+      </div>
+        <div class="card-reason">Überlegenes Reasoning und Codeverständnis für komplexe Entwicklungsaufgaben. Beste Wahl für Architekturentscheidungen, Debugging und lange Code-Kontexte.</div>
+        <div class="card-tags">
+          <span class="tag">Anthropic</span>
+          <span class="tag">Coding</span>
+          <span class="tag">Long Context</span>
+        </div>
+        <a class="card-link" href="https://claude.ai" target="_blank">claude.ai <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- HARDWARE -->
+  <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">03 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="hardware">
     <div class="card-inner">
@@ -754,7 +876,7 @@ footer{
           <div class="card-name">Apple</div>
         </div>
       </div>
-        <div class="card-reason">Meine klare Empfehlung für alle drei Geräteklassen: iPhones für den Alltag, MacBooks für produktives Arbeiten mit lautlosem Betrieb und exzellenter Akkulaufzeit, iPads als vielseitige Ergänzung zum Annotieren und für kreative Arbeit. Das Apple-Ökosystem macht die Kombination besonders stark.</div>
+        <div class="card-reason">Meine klare Empfehlung für alle drei Geräteklassen: iPhones, MacBooks und iPads bilden ein starkes Ökosystem für Alltag, Arbeit und kreative Aufgaben.</div>
         <div class="card-tags">
           <span class="tag">iPhone</span>
           <span class="tag">MacBook</span>
@@ -770,10 +892,7 @@ footer{
     </div>
   </div>
 
-  <!-- SONSTIGES -->
-  <div class="section-label" data-cat="sonstiges">Sonstiges <span>02 Empfehlungen</span></div>
-
-  <div class="card" data-cat="sonstiges">
+  <div class="card" data-cat="hardware">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -786,7 +905,6 @@ footer{
         <div class="card-reason">Zendure bietet Balkonkraftwerke mit integriertem Akku — Sonnenenergie tagsüber speichern und flexibel verbrauchen. Einfache App-Steuerung, solide Verarbeitung.</div>
         <div class="card-tags">
           <span class="tag">Plug &amp; Play</span>
-          <span class="tag">800 W</span>
           <span class="tag">Akku</span>
         </div>
         <a class="card-link" href="https://amzn.to/3Pnan3u" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -794,7 +912,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="sonstiges" data-id="tesla">
+  <div class="card" data-cat="hardware" data-id="tesla">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -839,16 +957,75 @@ function setTheme(t) {
   setTheme(saved);
 })();
 
+function getSectionCards(label) {
+  // Cards are now inside .section-body sibling
+  var body = label.nextElementSibling;
+  if (!body || !body.classList.contains('section-body')) return [];
+  return Array.from(body.querySelectorAll('.card'));
+}
+
+function collapseSection(label, collapsed) {
+  var body = label.nextElementSibling;
+  if (!body || !body.classList.contains('section-body')) return;
+  if (collapsed) {
+    body.classList.add('collapsed');
+    label.classList.add('collapsed');
+  } else {
+    body.classList.remove('collapsed');
+    label.classList.remove('collapsed');
+  }
+}
+
+function toggleSection(label) {
+  var isCollapsed = label.classList.contains('collapsed');
+  collapseSection(label, !isCollapsed);
+}
+
 function filter(cat, btn) {
   document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
   btn.classList.add('active');
-  document.querySelectorAll('.card').forEach(function(c){
-    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? '' : 'none';
-  });
+  var isAll = cat === 'all';
+
   document.querySelectorAll('.section-label').forEach(function(s){
-    s.style.display = (cat === 'all' || s.dataset.cat === cat) ? '' : 'none';
+    var show = isAll || s.dataset.cat === cat;
+    s.style.display = show ? '' : 'none';
+    var body = s.nextElementSibling;
+    if (body && body.classList.contains('section-body')) {
+      body.style.display = show ? '' : 'none';
+      if (show && !isAll) collapseSection(s, false);
+      if (show && isAll)  collapseSection(s, true);
+    }
   });
-}// ── Search ─────────────────────────────────────────────────────
+
+  if (!isAll) {
+    document.querySelectorAll('.card').forEach(function(c){
+      c.style.display = '';
+    });
+  }
+}
+
+// Init: wrap cards in section-body, then collapse, add handlers
+(function(){
+  document.querySelectorAll('.section-label').forEach(function(label){
+    // Collect all siblings until next section-label or end
+    var siblings = [];
+    var el = label.nextElementSibling;
+    while (el && !el.classList.contains('section-label') && !el.id) {
+      siblings.push(el);
+      el = el.nextElementSibling;
+    }
+    // Wrap in section-body
+    if (siblings.length) {
+      var body = document.createElement('div');
+      body.className = 'section-body collapsed';
+      label.parentNode.insertBefore(body, siblings[0]);
+      siblings.forEach(function(s){ body.appendChild(s); });
+    }
+    label.classList.add('collapsed');
+    label.addEventListener('click', function(){ toggleSection(label); });
+  });
+})();
+// ── Search ─────────────────────────────────────────────────────
 var synonyms = {
   // Girokonto / Banking
   'girokonto':    ['c24','revolut'],
@@ -915,7 +1092,12 @@ var synonyms = {
   'mail':         ['infomaniak'],
   'email':        ['infomaniak'],
   'e-mail':       ['infomaniak'],
+  'office':       ['microsoft','m365'],
+  'microsoft':    ['microsoft','m365'],
+  'word':         ['microsoft'],
+  'excel':        ['microsoft'],
   'ki':           ['gemini','notebooklm','claude'],
+  'm365':         ['microsoft'],
   'ai':           ['gemini','notebooklm','claude'],
   'chatbot':      ['gemini','notebooklm','claude'],
   'zusammenfassung':['notebooklm'],
@@ -996,22 +1178,32 @@ function onSearch(val) {
   // Deactivate category filter while searching
   document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
 
-  var terms = getSearchTerms(q);  var anyVisible = false;
+  var terms = getSearchTerms(q);
+  var anyVisible = false;
 
+  // Force all cards visible first so matching works, then hide non-matches
   document.querySelectorAll('.card').forEach(function(card) {
     var show = cardMatchesTerms(card, terms);
     card.style.display = show ? '' : 'none';
     if (show) anyVisible = true;
   });
 
-  // Show/hide section labels depending on whether their cat has visible cards
+  // Show/hide section labels — temporarily expand them so results are visible
   document.querySelectorAll('.section-label').forEach(function(label) {
     var cat = label.dataset.cat;
+    var body = label.nextElementSibling;
     var hasVisible = false;
-    document.querySelectorAll('.card[data-cat="' + cat + '"]').forEach(function(card) {
-      if (card.style.display !== 'none') hasVisible = true;
-    });
-    label.style.display = hasVisible ? '' : 'none';
+    if (body && body.classList.contains('section-body')) {
+      body.querySelectorAll('.card').forEach(function(card) {
+        if (card.style.display !== 'none') hasVisible = true;
+      });
+      label.style.display = hasVisible ? '' : 'none';
+      body.style.display  = hasVisible ? '' : 'none';
+      if (hasVisible) {
+        body.classList.remove('collapsed');
+        label.classList.remove('collapsed');
+      }
+    }
   });
 
   document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
@@ -1023,9 +1215,26 @@ function clearSearch() {
   document.getElementById('searchClear').style.display = 'none';
   document.getElementById('searchIcon').style.display  = 'block';
   document.getElementById('noResults').style.display   = 'none';
-  // Restore "Alle" filter
-  filter('all', document.querySelector('.filter-btn'));
+  // Restore "Alle" filter with sections collapsed
+  document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.querySelector('.filter-btn').classList.add('active');
+  document.querySelectorAll('.section-label').forEach(function(s){
+    s.style.display = '';
+    var body = s.nextElementSibling;
+    if (body && body.classList.contains('section-body')) {
+      body.style.display = '';
+      body.classList.add('collapsed');
+      s.classList.add('collapsed');
+    }
+  });
 }
+
+// ── Dynamic search placeholder ─────────────────────────────────
+(function(){
+  var total = document.querySelectorAll('.card').length;
+  var input = document.getElementById('searchInput');
+  if (input) input.placeholder = 'Durchsuche ' + total + ' Empfehlungen…';
+})();
 
 // ── Logo Loader ────────────────────────────────────────────────
 (function() {
