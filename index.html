@@ -172,10 +172,11 @@ h1 span{color:var(--text);}
 [data-filter-mode]:not([data-filter-mode="all"]) .section-label{cursor:default;pointer-events:none;}
 [data-filter-mode]:not([data-filter-mode="all"]) .section-label .chevron{display:none;}
 
+.card{
   background:var(--surface);border:1px solid var(--border);
   padding:20px 24px;margin-bottom:8px;
   position:relative;transition:background .25s,border-color .25s;
-  cursor:default;
+  cursor:default;isolation:isolate;
 }
 .card::before{
   content:'';position:absolute;top:0;left:0;
