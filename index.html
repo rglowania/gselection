@@ -142,6 +142,12 @@ h1 span{color:var(--text);}
   padding:3px 9px 3px 6px;background:var(--surface2);
   display:inline-flex;align-items:center;gap:5px;
 }
+.section-preview-more{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.4px;
+  color:var(--accent);border:1px solid var(--accent-dim);
+  padding:3px 9px;background:var(--accent-dim);
+  display:inline-flex;align-items:center;
+}
 .chip-logo{
   width:14px;height:14px;border-radius:3px;object-fit:contain;flex-shrink:0;
 }
@@ -1096,7 +1102,11 @@ function filter(cat, btn) {
   };
 
   function buildPreview(cat) {
-    var chips = (previewData[cat] || []).map(function(item) {
+    var all = previewData[cat] || [];
+    var visible = all.slice(0, 3);
+    var rest = all.length - 3;
+
+    var chips = visible.map(function(item) {
       var img = document.createElement('img');
       img.className = 'chip-logo';
       img.src = 'https://icons.duckduckgo.com/ip3/' + item.d + '.ico';
@@ -1119,6 +1129,14 @@ function filter(cat, btn) {
     div.className = 'section-preview';
     div.id = 'preview-' + cat;
     chips.forEach(function(ch){ div.appendChild(ch); });
+
+    if (rest > 0) {
+      var more = document.createElement('span');
+      more.className = 'section-preview-more';
+      more.textContent = '+ ' + rest + ' weitere';
+      div.appendChild(more);
+    }
+
     return div;
   }
 
