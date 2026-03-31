@@ -553,7 +553,7 @@ footer{
         <div class="card-logo-placeholder" data-domain="ing.de" data-initial="I"><span>I</span></div>
         <div class="card-header-text">
           <div class="card-cat">Rahmenkredit</div>
-          <div class="card-name">ING Rahmenkredit</div>
+          <div class="card-name">ING (Rahmenkredit)</div>
         </div>
       </div>
         <div class="card-reason">Flexibler Kreditrahmen der ING — Geld bei Bedarf abrufen, nur für den tatsächlich genutzten Betrag Zinsen zahlen. Keine Bereitstellungsgebühr, jederzeit kostenlos zurückzahlen.</div>
@@ -569,7 +569,7 @@ footer{
 
 
   <!-- BROKER -->
-  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">05 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">06 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="broker" data-id="depot-sparplan">
     <div class="card-inner">
@@ -673,6 +673,27 @@ footer{
           <span class="tag">Europa</span>
         </div>
         <a class="card-link" href="https://bitvavo.com/de" target="_blank">bitvavo.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="broker">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="okx.com" data-initial="O"><span>O</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Krypto-Broker</div>
+          <div class="card-name">OKX</div>
+        </div>
+      </div>
+        <div class="card-reason">Eine der größten Krypto-Börsen weltweit — breites Coin-Angebot, niedrige Gebühren, eigenes Web3-Wallet und DeFi-Integration. <strong style="color:var(--accent-lt)">200 € Willkommensprämie</strong> für Neukunden über den Einladungslink.</div>
+        <div class="card-tags">
+          <span class="tag">Krypto</span>
+          <span class="tag">DeFi</span>
+          <span class="tag">200 € Bonus</span>
+        </div>
+        <a class="card-link" href="https://my.okx.com/de/join/69592430" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -1136,8 +1157,8 @@ function filter(cat, btn) {
 // Init: wrap cards in section-body, build previews, collapse, add handlers
 (function(){
   var previewData = {
-    'banken':    [{d:'c24.de',i:'C',n:'C24'},{d:'revolut.com',i:'R',n:'Revolut'},{d:'finom.co',i:'F',n:'Finom'},{d:'tide.co',i:'T',n:'Tide'},{d:'sumup.com',i:'S',n:'SumUp'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'americanexpress.com',i:'A',n:'American Express'},{d:'yuh.com',i:'Y',n:'Yuh'},{d:'ing.de',i:'I',n:'ING Rahmenkredit'}],
-    'broker':    [{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'bitvavo.com',i:'B',n:'Bitvavo'}],
+    'banken':    [{d:'c24.de',i:'C',n:'C24'},{d:'revolut.com',i:'R',n:'Revolut'},{d:'finom.co',i:'F',n:'Finom'},{d:'tide.co',i:'T',n:'Tide'},{d:'sumup.com',i:'S',n:'SumUp'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'americanexpress.com',i:'A',n:'American Express'},{d:'yuh.com',i:'Y',n:'Yuh'},{d:'ing.de',i:'I',n:'ING (Rahmenkredit)'}],
+    'broker':    [{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'bitvavo.com',i:'B',n:'Bitvavo'},{d:'okx.com',i:'O',n:'OKX'}],
     'versorger': [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'sim24.de',i:'S',n:'sim24'},{d:'telekom.de',i:'T',n:'Telekom'},{d:'huk.de',i:'H',n:'HUK-COBURG'}],
     'software':  [{d:'microsoft.com',i:'M',n:'Microsoft 365'},{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'},{d:'infomaniak.com',i:'I',n:'Infomaniak'},{d:'proton.me',i:'P',n:'Proton Pass'},{d:'lexware.de',i:'L',n:'Lexware Office'},{d:'taxpool.de',i:'T',n:'Taxpool'}],
     'ki':        [{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'claude.ai',i:'C',n:'Claude'}],
