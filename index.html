@@ -348,7 +348,7 @@ footer{
 <div class="container">
 
   <header>
-    <h1><a href="https://rglowania.github.io/gtools/" target="_blank" style="text-decoration:none;color:inherit;"><span style="color:var(--accent)">g</span></a>Selection</h1>
+    <h1><a href="https://rglowania.github.io/gtools/" style="text-decoration:none;color:inherit;"><span style="color:var(--accent)">g</span></a>Selection</h1>
     <p class="subtitle">Products and Services used by Robin Glowania</p>
   </header>
 
@@ -360,17 +360,19 @@ footer{
 
   <div class="filter-bar">
     <button class="filter-btn active" onclick="filter('all',this)">Alle</button>
-    <button class="filter-btn" onclick="filter('banken-privat',this)">Banken / Privat</button>
-    <button class="filter-btn" onclick="filter('banken-business',this)">Banken / Business</button>
+    <button class="filter-btn" onclick="filter('banken-privat',this)">Banken/Privat</button>
+    <button class="filter-btn" onclick="filter('banken-business',this)">Banken/Business</button>
+    <button class="filter-btn" onclick="filter('kreditkarten',this)">Kreditkarten</button>
     <button class="filter-btn" onclick="filter('broker',this)">Broker</button>
     <button class="filter-btn" onclick="filter('versorger',this)">Versorger</button>
-    <button class="filter-btn" onclick="filter('software',this)">Software</button>
-    <button class="filter-btn" onclick="filter('ki',this)">KI-Tools</button>
+    <button class="filter-btn" onclick="filter('software',this)">Tools/Allgemein</button>
+    <button class="filter-btn" onclick="filter('ki',this)">Tools/KI</button>
+    <button class="filter-btn" onclick="filter('steuern',this)">Tools/Steuern</button>
     <button class="filter-btn" onclick="filter('hardware',this)">Hardware</button>
   </div>
 
   <!-- FINANZEN -->
-  <div class="section-label" data-cat="banken-privat"><span class="sl-emoji">🏦</span><span class="sl-title">Banken / Privat</span><span class="sl-count">6 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="banken-privat"><span class="sl-emoji">🏦</span><span class="sl-title">Banken/Privat</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="banken-privat">
     <div class="card-inner">
@@ -413,68 +415,8 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="banken-privat">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="americanexpress.com" data-initial="A"><span>A</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Kreditkarte</div>
-          <div class="card-name">American Express</div>
-        </div>
-      </div>
-        <div class="card-reason">Premium-Karte mit starken Reiseleistungen, Lounge-Zugang und attraktivem Membership-Rewards-Programm. <strong style="color:var(--accent-lt)">Bis zu 200.000 Membership Rewards Punkte</strong> über den Empfehlungslink. Für Vielreisende rechnet sich die Jahresgebühr schnell.</div>
-        <div class="card-tags">
-          <span class="tag">Premium</span>
-          <span class="tag">Lounge-Zugang</span>
-          <span class="tag">Reiseschutz</span>
-        </div>
-        <a class="card-link" href="https://americanexpress.com/de-de/referral/business-platinum?ref=vANESSwWeH&XL=MIMNS" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
 
-  <div class="card" data-cat="banken-privat" data-id="tagesgeld">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="scalable.capital" data-initial="S"><span>S</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Tagesgeldkonto</div>
-          <div class="card-name">Scalable Capital</div>
-        </div>
-      </div>
-        <div class="card-reason">Attraktiver Zinssatz auf das Verrechnungskonto — aktuell <strong style="color:var(--accent-lt)">2,5 % p.a.</strong>, täglich verfügbar, direkt mit dem Depot verknüpft. Ideale Kombination für Geldparken und Investieren aus einer Hand.</div>
-        <div class="card-tags">
-          <span class="tag">Tagesgeld</span>
-          <span class="tag">Flexibel</span>
-          <span class="tag">Depot-Kombi</span>
-        </div>
-        <a class="card-link" href="https://de.scalable.capital/einladung/b6mf3v" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
 
-  <div class="card" data-cat="banken-privat">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="ing.de" data-initial="I"><span>I</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Rahmenkredit</div>
-          <div class="card-name">ING</div>
-        </div>
-      </div>
-        <div class="card-reason">Flexibler Kreditrahmen der ING — Geld bei Bedarf abrufen, nur für den tatsächlich genutzten Betrag Zinsen zahlen. Keine Bereitstellungsgebühr, jederzeit kostenlos zurückzahlen.</div>
-        <div class="card-tags">
-          <span class="tag">Rahmenkredit</span>
-          <span class="tag">Flexibel</span>
-          <span class="tag">Keine Bereitstellungsgebühr</span>
-        </div>
-        <a class="card-link" href="https://www.ing.de/kredite/rahmenkredit/" target="_blank">ing.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
 
   <div class="card" data-cat="banken-privat">
     <div class="card-inner">
@@ -503,8 +445,10 @@ footer{
 
 
 
+
+
   <!-- BANKEN BUSINESS -->
-  <div class="section-label" data-cat="banken-business"><span class="sl-emoji">🏢</span><span class="sl-title">Banken / Business</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="banken-business"><span class="sl-emoji">🏢</span><span class="sl-title">Banken/Business</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="banken-business">
     <div class="card-inner">
@@ -566,8 +510,52 @@ footer{
       </div>
     </div>
   </div>
+<!-- KREDITKARTEN -->
+  <div class="section-label" data-cat="kreditkarten"><span class="sl-emoji">💳</span><span class="sl-title">Kreditkarten</span><span class="sl-count">2 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="kreditkarten">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="americanexpress.com" data-initial="A"><span>A</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Kreditkarte</div>
+          <div class="card-name">American Express</div>
+        </div>
+      </div>
+        <div class="card-reason">Premium-Karte mit starken Reiseleistungen, Lounge-Zugang und attraktivem Membership-Rewards-Programm. <strong style="color:var(--accent-lt)">Bis zu 200.000 Membership Rewards Punkte</strong> über den Empfehlungslink. Für Vielreisende rechnet sich die Jahresgebühr schnell.</div>
+        <div class="card-tags">
+          <span class="tag">Premium</span>
+          <span class="tag">Lounge-Zugang</span>
+          <span class="tag">Reiseschutz</span>
+        </div>
+        <a class="card-link" href="https://americanexpress.com/de-de/referral/business-platinum?ref=vANESSwWeH&XL=MIMNS" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="card" data-cat="kreditkarten">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="banknorwegian.de" data-initial="B"><span>B</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Kreditkarte · Kostenlos</div>
+          <div class="card-name">Bank Norwegian</div>
+        </div>
+      </div>
+        <div class="card-reason">Dauerhaft kostenlose Kreditkarte ohne Jahresgebühr, kein Fremdwährungsaufschlag und weltweite Akzeptanz. Ideal für Reisen und Online-Shopping im Ausland.</div>
+        <div class="card-tags">
+          <span class="tag">Kostenlos</span>
+          <span class="tag">Kein FX-Aufschlag</span>
+          <span class="tag">Weltweit</span>
+        </div>
+        <a class="card-link" href="https://www.banknorwegian.de" target="_blank">banknorwegian.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
   <!-- BROKER -->
-  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">6 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">5 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="broker" data-id="depot-sparplan">
     <div class="card-inner">
@@ -675,26 +663,6 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="broker">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="okx.com" data-initial="O"><span>O</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Krypto-Broker</div>
-          <div class="card-name">OKX</div>
-        </div>
-      </div>
-        <div class="card-reason">Eine der größten Krypto-Börsen weltweit — breites Coin-Angebot, niedrige Gebühren, eigenes Web3-Wallet und DeFi-Integration. <strong style="color:var(--accent-lt)">200 € Willkommensprämie</strong> für Neukunden über den Einladungslink.</div>
-        <div class="card-tags">
-          <span class="tag">Krypto</span>
-          <span class="tag">DeFi</span>
-          <span class="tag">200 € Bonus</span>
-        </div>
-        <a class="card-link" href="https://my.okx.com/de/join/69592430" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
 
   <!-- VERSORGER -->
   <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Versorger</span><span class="sl-count">4 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -787,7 +755,7 @@ footer{
   </div>
 
   <!-- SOFTWARE -->
-  <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Software</span><span class="sl-count">5 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Tools/Allgemein</span><span class="sl-count">5 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="software">
     <div class="card-inner">
@@ -810,6 +778,75 @@ footer{
       </div>
     </div>
   </div>
+
+
+
+
+
+
+  <div class="card" data-cat="software">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="vivaldi.com" data-initial="V"><span>V</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Browser</div>
+          <div class="card-name">Vivaldi</div>
+        </div>
+      </div>
+        <div class="card-reason">Hochgradig anpassbarer Browser mit eingebautem Werbeblocker, Tab-Stacking und zahlreichen Produktivitätsfeatures. Ideal für alle, die mehr Kontrolle über ihren Browser wollen.</div>
+        <div class="card-tags">
+          <span class="tag">Browser</span>
+          <span class="tag">Datenschutz</span>
+          <span class="tag">Anpassbar</span>
+        </div>
+        <a class="card-link" href="https://vivaldi.com" target="_blank">vivaldi.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="software">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="ublockorigin.com" data-initial="U"><span>U</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Werbeblocker</div>
+          <div class="card-name">uBlock Origin</div>
+        </div>
+      </div>
+        <div class="card-reason">Der effektivste und ressourcenschonendste Werbeblocker — Open Source, kostenlos und ohne Hintergedanken. Blockiert Werbung, Tracker und Malware-Domains zuverlässig.</div>
+        <div class="card-tags">
+          <span class="tag">Open Source</span>
+          <span class="tag">Kostenlos</span>
+          <span class="tag">Datenschutz</span>
+        </div>
+        <a class="card-link" href="https://ublockorigin.com/de" target="_blank">ublockorigin.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="software">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="startpage.com" data-initial="S"><span>S</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Suchmaschine</div>
+          <div class="card-name">Startpage</div>
+        </div>
+      </div>
+        <div class="card-reason">Datenschutzfreundliche Suchmaschine, die Google-Ergebnisse ohne Tracking liefert. Keine Profilerstellung, keine Weitergabe von Daten — Google-Qualität ohne den Datenhunger.</div>
+        <div class="card-tags">
+          <span class="tag">Datenschutz</span>
+          <span class="tag">Google-Qualität</span>
+          <span class="tag">Kein Tracking</span>
+        </div>
+        <a class="card-link" href="https://www.startpage.com" target="_blank">startpage.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
   <div class="card" data-cat="software">
     <div class="card-inner">
       <div>
@@ -831,71 +868,8 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="software">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="wiso-steuer.de" data-initial="W"><span>W</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Steuersoftware</div>
-          <div class="card-name">WISO Steuer</div>
-        </div>
-      </div>
-        <div class="card-reason">Beste Benutzerführung für die private Steuererklärung — intuitive Oberfläche, gute Plausibilitätsprüfung, direkter ELSTER-Upload.</div>
-        <div class="card-tags">
-          <span class="tag">Steuererklärung</span>
-          <span class="tag">ELSTER-Upload</span>
-        </div>
-        <a class="card-link" href="https://amzn.to/41jPwR6" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="software">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="lexware.de" data-initial="L"><span>L</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Buchhaltung · Browser-basiert</div>
-          <div class="card-name">Lexware</div>
-        </div>
-      </div>
-        <div class="card-reason">Modernes, browserbasiertes Buchhaltungstool — einfacher Einstieg, klare Oberfläche, gut geeignet für Selbstständige und kleine Unternehmen. <strong style="color:var(--accent-lt)">6 Monate gratis</strong> über den Empfehlungslink.</div>
-        <div class="card-tags">
-          <span class="tag">Browser-basiert</span>
-          <span class="tag">DATEV-kompatibel</span>
-          <span class="tag">FIBU</span>
-        </div>
-        <a class="card-link" href="https://www.lexware.de/preise?pid=nDwdEle1ot&pdata=ggGe7XKLsH&cid=1777&utm_medium=affiliate&utm_source=recommend-nDwdEle1ot&utm_campaign=kunden-werben-kunden&couponCode=LXOK4YWK" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="card" data-cat="software">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="taxpool.de" data-initial="T"><span>T</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Buchhaltung · Lokal</div>
-          <div class="card-name">Taxpool</div>
-        </div>
-      </div>
-        <div class="card-reason">Lokale Desktop-Software für komplexere buchhalterische Anforderungen — tiefe DATEV-Kompatibilität, bewährt im Steuerberatungsumfeld und für anspruchsvollere Mandanten.</div>
-        <div class="card-tags">
-          <span class="tag">Desktop</span>
-          <span class="tag">DATEV-kompatibel</span>
-          <span class="tag">Komplex</span>
-        </div>
-        <a class="card-link" href="https://www.taxpool.de" target="_blank">taxpool.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
   <!-- KI -->
-  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">KI-Tools</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">Tools/KI</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="ki">
     <div class="card-inner">
@@ -960,6 +934,69 @@ footer{
     </div>
   </div>
 
+
+<!-- STEUERN -->
+  <div class="section-label" data-cat="steuern"><span class="sl-emoji">🧾</span><span class="sl-title">Tools/Steuern</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="steuern">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="wiso-steuer.de" data-initial="W"><span>W</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Steuersoftware</div>
+          <div class="card-name">WISO Steuer</div>
+        </div>
+      </div>
+        <div class="card-reason">Beste Benutzerführung für die private Steuererklärung — intuitive Oberfläche, gute Plausibilitätsprüfung, direkter ELSTER-Upload.</div>
+        <div class="card-tags">
+          <span class="tag">Steuererklärung</span>
+          <span class="tag">ELSTER-Upload</span>
+        </div>
+        <a class="card-link" href="https://amzn.to/41jPwR6" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="card" data-cat="steuern">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="lexware.de" data-initial="L"><span>L</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Buchhaltung · Browser-basiert</div>
+          <div class="card-name">Lexware</div>
+        </div>
+      </div>
+        <div class="card-reason">Modernes, browserbasiertes Buchhaltungstool — einfacher Einstieg, klare Oberfläche, gut geeignet für Selbstständige und kleine Unternehmen. <strong style="color:var(--accent-lt)">6 Monate gratis</strong> über den Empfehlungslink.</div>
+        <div class="card-tags">
+          <span class="tag">Browser-basiert</span>
+          <span class="tag">DATEV-kompatibel</span>
+          <span class="tag">FIBU</span>
+        </div>
+        <a class="card-link" href="https://www.lexware.de/preise?pid=nDwdEle1ot&pdata=ggGe7XKLsH&cid=1777&utm_medium=affiliate&utm_source=recommend-nDwdEle1ot&utm_campaign=kunden-werben-kunden&couponCode=LXOK4YWK" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="card" data-cat="steuern">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="taxpool.de" data-initial="T"><span>T</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Buchhaltung · Lokal</div>
+          <div class="card-name">Taxpool</div>
+        </div>
+      </div>
+        <div class="card-reason">Lokale Desktop-Software für komplexere buchhalterische Anforderungen — tiefe DATEV-Kompatibilität, bewährt im Steuerberatungsumfeld und für anspruchsvollere Mandanten.</div>
+        <div class="card-tags">
+          <span class="tag">Desktop</span>
+          <span class="tag">DATEV-kompatibel</span>
+          <span class="tag">Komplex</span>
+        </div>
+        <a class="card-link" href="https://www.taxpool.de" target="_blank">taxpool.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
 
   <!-- HARDWARE -->
   <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -1035,7 +1072,7 @@ footer{
 
 </div>
 
-<footer>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 03.04.2026<br><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span></footer>
+<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 04.04.2026</footer>
 
 <script>
 function setTheme(t) {
@@ -1134,11 +1171,13 @@ function filter(cat, btn) {
 // Init: wrap cards in section-body, build previews, collapse, add handlers
 (function(){
   var previewData = {
-    'banken-privat':   [{d:'c24.de',i:'C',n:'C24'},{d:'revolut.com',i:'R',n:'Revolut'},{d:'americanexpress.com',i:'A',n:'American Express'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'ca-nextbank.ch',i:'C',n:'CA next bank 🇨🇭'}],
+    'kreditkarten':   [{d:'americanexpress.com',i:'A',n:'American Express'},{d:'banknorwegian.de',i:'B',n:'Bank Norwegian'}],
+    'banken-privat':   [{d:'c24.de',i:'C',n:'C24'},{d:'revolut.com',i:'R',n:'Revolut'},{d:'ca-nextbank.ch',i:'C',n:'CA next bank 🇨🇭'}],
     'banken-business': [{d:'finom.co',i:'F',n:'Finom'},{d:'tide.co',i:'T',n:'Tide'},{d:'sumup.com',i:'S',n:'SumUp'}],
-    'broker':    [{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'bitvavo.com',i:'B',n:'Bitvavo'},{d:'okx.com',i:'O',n:'OKX'}],
+    'broker':    [{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'bitvavo.com',i:'B',n:'Bitvavo'}],
     'versorger': [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'sim24.de',i:'S',n:'sim24'},{d:'telekom.de',i:'T',n:'Telekom'},{d:'huk.de',i:'H',n:'HUK-COBURG'}],
-    'software':  [{d:'proton.me',i:'P',n:'Proton'},{d:'microsoft.com',i:'M',n:'Microsoft 365'},{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'},{d:'lexware.de',i:'L',n:'Lexware'},{d:'taxpool.de',i:'T',n:'Taxpool'}],
+    'software':  [{d:'proton.me',i:'P',n:'Proton'},{d:'microsoft.com',i:'M',n:'Microsoft 365'},{d:'vivaldi.com',i:'V',n:'Vivaldi'},{d:'ublockorigin.com',i:'U',n:'uBlock Origin'},{d:'startpage.com',i:'S',n:'Startpage'}],
+    'steuern':   [{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'},{d:'lexware.de',i:'L',n:'Lexware'},{d:'taxpool.de',i:'T',n:'Taxpool'}],
     'ki':        [{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'claude.ai',i:'C',n:'Claude'}],
     'hardware':  [{d:'apple.com',i:'A',n:'Apple'},{d:'zendure.com',i:'Z',n:'Zendure'},{d:'tesla.com',i:'T',n:'Tesla'}],
   };
