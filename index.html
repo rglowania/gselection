@@ -324,6 +324,18 @@ footer{
   .card-inner{grid-template-columns:1fr;}
   .card-badge{display:inline-block;width:fit-content;}
 }
+
+/* Impressum Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:2000;align-items:center;justify-content:center;padding:20px;}
+.modal-overlay.open{display:flex;}
+.modal-box{background:var(--surface);border:1px solid var(--border);max-width:480px;width:100%;padding:32px;position:relative;max-height:90vh;overflow-y:auto;}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:20px;cursor:pointer;color:var(--text-muted);line-height:1;}
+.modal-close:hover{color:var(--text);}
+.modal-title{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.modal-section{margin-bottom:16px;}
+.modal-label{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;}
+.modal-value{font-size:13px;color:var(--text);line-height:1.6;}
+.modal-value a{color:var(--accent);text-decoration:none;}
 </style>
 </head>
 <body>
@@ -368,7 +380,7 @@ footer{
   </div>
 
   <!-- FINANZEN -->
-  <div class="section-label" data-cat="banken-privat"><span class="sl-emoji">🏦</span><span class="sl-title">Banken/Privat</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="banken-privat"><span class="sl-emoji">🏦</span><span class="sl-title">Banken/Privat</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="banken-privat">
     <div class="card-inner">
@@ -444,7 +456,7 @@ footer{
 
 
   <!-- BANKEN BUSINESS -->
-  <div class="section-label" data-cat="banken-business"><span class="sl-emoji">🏢</span><span class="sl-title">Banken/Business</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="banken-business"><span class="sl-emoji">🏢</span><span class="sl-title">Banken/Business</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="banken-business">
     <div class="card-inner">
@@ -463,6 +475,27 @@ footer{
           <span class="tag">Rechnungsstellung</span>
         </div>
         <a class="card-link" href="https://app.finom.co/r/x3Kp9xUG" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="banken-business">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="revolut.com" data-initial="R"><span>R</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Business-Konto</div>
+          <div class="card-name">Revolut Business</div>
+        </div>
+      </div>
+        <div class="card-reason">Modernes Business-Konto ohne Schufa-Abfrage — mehrere Währungskonten, Teamkarten, Ausgabenlimits und schnelle internationale Überweisungen. Ideal für ortsunabhängige Unternehmer und kleine Teams.</div>
+        <div class="card-tags">
+          <span class="tag">Business</span>
+          <span class="tag">Multi-Währung</span>
+          <span class="tag">Weltweit</span>
+        </div>
+        <a class="card-link" href="https://business.revolut.com/signup?promo=referabusiness&ext=6ead2e06-f33f-e24c-0140-1fca949f3004&context=B2B_REFERRAL" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -486,28 +519,8 @@ footer{
       </div>
     </div>
   </div>
-  <div class="card" data-cat="banken-business">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="sumup.com" data-initial="S"><span>S</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Kartenzahlung · Business</div>
-          <div class="card-name">SumUp</div>
-        </div>
-      </div>
-        <div class="card-reason">Kompaktes Kartenlesegerät für Selbstständige und kleine Betriebe — einfache Einrichtung, faire Transaktionsgebühren, keine Grundgebühr. <strong style="color:var(--accent-lt)">Bis zu 100 € Rabatt</strong> auf den ersten Einkauf über den Empfehlungslink.</div>
-        <div class="card-tags">
-          <span class="tag">Kartenzahlung</span>
-          <span class="tag">Business</span>
-          <span class="tag">Keine Grundgebühr</span>
-        </div>
-        <a class="card-link" href="https://join.sumup.com/J9QrlnMa?share_id=tce94kMj9qrlnma" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
 <!-- KREDITKARTEN -->
-  <div class="section-label" data-cat="kreditkarten"><span class="sl-emoji">💳</span><span class="sl-title">Kreditkarten</span><span class="sl-count">2 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="kreditkarten"><span class="sl-emoji">💳</span><span class="sl-title">Kreditkarten</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="kreditkarten">
     <div class="card-inner">
@@ -551,7 +564,7 @@ footer{
   </div>
 
   <!-- BROKER -->
-  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">5 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="broker" data-id="depot-sparplan">
     <div class="card-inner">
@@ -661,7 +674,7 @@ footer{
 
 
   <!-- VERSORGER -->
-  <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Versorger</span><span class="sl-count">4 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Versorger</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
 
   <div class="card" data-cat="versorger">
@@ -751,8 +764,9 @@ footer{
   </div>
 
 
+
   <!-- MEDIEN -->
-  <div class="section-label" data-cat="medien"><span class="sl-emoji">🎧</span><span class="sl-title">Medien</span><span class="sl-count">1 Empfehlung</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="medien"><span class="sl-emoji">🎧</span><span class="sl-title">Medien</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="medien">
     <div class="card-inner">
@@ -776,7 +790,7 @@ footer{
   </div>
 
 <!-- HARDWARE -->
-  <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="hardware">
     <div class="card-inner">
@@ -788,16 +802,16 @@ footer{
           <div class="card-name">Apple</div>
         </div>
       </div>
-        <div class="card-reason">Meine klare Empfehlung für alle drei Geräteklassen: iPhones, MacBooks und iPads bilden ein starkes Ökosystem für Alltag, Arbeit und kreative Aufgaben.</div>
+        <div class="card-reason">Meine klare Empfehlung für alle drei Geräteklassen: iPhones, Macs und iPads bilden ein starkes Ökosystem für Alltag, Arbeit und kreative Aufgaben.</div>
         <div class="card-tags">
           <span class="tag">iPhone</span>
-          <span class="tag">MacBook</span>
+          <span class="tag">Mac</span>
           <span class="tag">iPad</span>
           <span class="tag">Apple Silicon</span>
         </div>
         <div class="card-links">
           <a class="card-link" href="https://www.apple.com/de/shop/buy-iphone" target="_blank">iPhone  <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-          <a class="card-link" href="https://www.apple.com/de/shop/buy-mac/macbook" target="_blank">MacBook  <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a class="card-link" href="https://www.apple.com/de/mac/" target="_blank">Mac  <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <a class="card-link" href="https://www.apple.com/de/shop/buy-ipad" target="_blank">iPad  <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
         </div>
       </div>
@@ -845,10 +859,31 @@ footer{
     </div>
   </div>
 
+  <div class="card" data-cat="hardware">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="sumup.com" data-initial="S"><span>S</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Kartenzahlung · Business</div>
+          <div class="card-name">SumUp</div>
+        </div>
+      </div>
+        <div class="card-reason">Kompaktes Kartenlesegerät für Selbstständige und kleine Betriebe — einfache Einrichtung, faire Transaktionsgebühren, keine Grundgebühr. <strong style="color:var(--accent-lt)">Bis zu 100 € Rabatt</strong> auf den ersten Einkauf über den Empfehlungslink.</div>
+        <div class="card-tags">
+          <span class="tag">Kartenzahlung</span>
+          <span class="tag">Business</span>
+          <span class="tag">Keine Grundgebühr</span>
+        </div>
+        <a class="card-link" href="https://join.sumup.com/J9QrlnMa?share_id=tce94kMj9qrlnma" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
   <div class="no-results" id="noResults">Keine Treffer gefunden.</div>
 
   <!-- SOFTWARE -->
-  <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Tools/Allgemein</span><span class="sl-count">7 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Tools/Allgemein</span><span class="sl-count">7</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="software">
     <div class="card-inner">
@@ -1003,7 +1038,7 @@ footer{
   </div>
 
   <!-- KI -->
-  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">Tools/KI</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">Tools/KI</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="ki">
     <div class="card-inner">
@@ -1070,7 +1105,7 @@ footer{
 
 
 <!-- STEUERN -->
-  <div class="section-label" data-cat="steuern"><span class="sl-emoji">🧾</span><span class="sl-title">Tools/Steuern</span><span class="sl-count">3 Empfehlungen</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="steuern"><span class="sl-emoji">🧾</span><span class="sl-title">Tools/Steuern</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="steuern">
     <div class="card-inner">
@@ -1136,7 +1171,7 @@ footer{
 
 </div>
 
-<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 09.04.2026</footer>
+<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 11.04.2026 &nbsp;·&nbsp; <a href="https://rglowania.github.io/gselection/impressum" style="color:var(--text-muted);text-decoration:none;">Impressum</a></footer>
 
 <script>
 function setTheme(t) {
@@ -1237,14 +1272,14 @@ function filter(cat, btn) {
   var previewData = {
     'kreditkarten':   [{d:'americanexpress.com',i:'A',n:'American Express'},{d:'banknorwegian.de',i:'B',n:'Bank Norwegian'}],
     'banken-privat':   [{d:'c24.de',i:'C',n:'C24'},{d:'revolut.com',i:'R',n:'Revolut'},{d:'ca-nextbank.ch',i:'C',n:'CA next bank 🇨🇭'}],
-    'banken-business': [{d:'finom.co',i:'F',n:'Finom'},{d:'tide.co',i:'T',n:'Tide'},{d:'sumup.com',i:'S',n:'SumUp'}],
+    'banken-business': [{d:'finom.co',i:'F',n:'Finom'},{d:'revolut.com',i:'R',n:'Revolut Business'},{d:'tide.co',i:'T',n:'Tide'}],
     'broker':    [{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'bitvavo.com',i:'B',n:'Bitvavo'}],
     'versorger': [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'sim24.de',i:'S',n:'sim24'},{d:'telekom.de',i:'T',n:'Telekom'},{d:'huk.de',i:'H',n:'HUK-COBURG'}],
-    'software':  [{d:'proton.me',i:'P',n:'Proton Pass'},{d:'brave.com',i:'B',n:'Brave'},{d:'ublockorigin.com',i:'U',n:'uBlock Origin'},{d:'ecosia.org',i:'E',n:'Ecosia'},{d:'kagi.com',i:'K',n:'Kagi Translate'}],
+    'software':  [{d:'tuta.com',i:'T',n:'Tuta'},{d:'proton.me',i:'P',n:'Proton Pass'},{d:'brave.com',i:'B',n:'Brave'},{d:'ublockorigin.com',i:'U',n:'uBlock Origin'},{d:'ecosia.org',i:'E',n:'Ecosia'},{d:'kagi.com',i:'K',n:'Kagi Translate'}],
     'steuern':   [{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'},{d:'lexware.de',i:'L',n:'Lexware'},{d:'taxpool.de',i:'T',n:'Taxpool'}],
     'ki':        [{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'claude.ai',i:'C',n:'Claude'}],
     'medien':    [{d:'thalia.de',i:'T',n:'Thalia Hörbuch-Abo'}],
-    'hardware':  [{d:'apple.com',i:'A',n:'Apple'},{d:'zendure.com',i:'Z',n:'Zendure'},{d:'tesla.com',i:'T',n:'Tesla'}],
+    'hardware':  [{d:'apple.com',i:'A',n:'Apple'},{d:'zendure.com',i:'Z',n:'Zendure'},{d:'tesla.com',i:'T',n:'Tesla'},{d:'sumup.com',i:'S',n:'SumUp'}],
   };
 
   function buildPreview(cat) {
@@ -1562,7 +1597,33 @@ function clearSearch() {
     tryNext();
   });
 })();
+
+function openImpressum(){document.getElementById('impressumModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeImpressum(){document.getElementById('impressumModal').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeImpressum();});
 </script>
+
+<div class="modal-overlay" id="impressumModal" onclick="if(event.target===this)closeImpressum()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeImpressum()">×</button>
+    <div class="modal-title">Impressum</div>
+    <div class="modal-section">
+      <div class="modal-label">Angaben gemäß § 5 TMG</div>
+      <div class="modal-value">Robin Glowania<br>Hauptstraße 190<br>79576 Weil am Rhein</div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-label">Kontakt</div>
+      <div class="modal-value">
+        <a href="tel:+4915164632732">0151 64632732</a><br>
+        <a href="mailto:robin.glowania@posteo.de">robin.glowania@posteo.de</a>
+      </div>
+    </div>
+    <div class="modal-section">
+      <div class="modal-label">Haftungsausschluss</div>
+      <div class="modal-value">Die Inhalte dieser Seite wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte wird keine Gewähr übernommen.</div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
 
