@@ -370,13 +370,14 @@ footer{
     <button class="filter-btn active" onclick="filter('all',this)">Alle</button>
     <button class="filter-btn" onclick="filter('banken',this)">Banken</button>
     <button class="filter-btn" onclick="filter('kreditkarten',this)">Kreditkarten</button>
-    <button class="filter-btn" onclick="filter('broker',this)">Broker</button>
-    <button class="filter-btn" onclick="filter('krypto',this)">Krypto</button>
+    <button class="filter-btn" onclick="filter('broker',this)">Broker &amp; Krypto</button>
     <button class="filter-btn" onclick="filter('versorger',this)">Versorger</button>
     <button class="filter-btn" onclick="filter('hardware',this)">Hardware</button>
     <button class="filter-btn" onclick="filter('software',this)">Tools/Allgemein</button>
     <button class="filter-btn" onclick="filter('ki',this)">Tools/KI</button>
     <button class="filter-btn" onclick="filter('steuern',this)">Tools/Steuern</button>
+    <button class="filter-btn" onclick="filter('ios',this)">Tools/iOS</button>
+    <button class="filter-btn" onclick="filter('macos',this)">Tools/macOS</button>
   </div>
 
   <!-- FINANZEN -->
@@ -521,7 +522,7 @@ footer{
   </div>
 
   <!-- BROKER -->
-  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker &amp; Krypto</span><span class="sl-count">6</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="broker" data-id="depot-trading">
     <div class="card-inner">
@@ -612,11 +613,7 @@ footer{
     </div>
   </div>
 
-
-  <!-- KRYPTO -->
-  <div class="section-label" data-cat="krypto"><span class="sl-emoji">₿</span><span class="sl-title">Krypto</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="krypto">
+  <div class="card" data-cat="broker">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -636,7 +633,7 @@ footer{
       </div>
     </div>
   </div>
-  <div class="card" data-cat="krypto">
+  <div class="card" data-cat="broker">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -657,7 +654,7 @@ footer{
     </div>
   </div>
   <!-- VERSORGER -->
-  <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Versorger</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Versorger</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="versorger">
     <div class="card-inner">
@@ -680,6 +677,28 @@ footer{
     </div>
   </div>
 
+
+  <div class="card" data-cat="versorger">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="sim.de" data-initial="S"><span>S</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">DSL · Günstig</div>
+          <div class="card-name">sim.de DSL</div>
+        </div>
+      </div>
+        <div class="card-reason">Günstiger DSL-Anbieter mit solider Leistung — bestes Preis-Leistungs-Verhältnis für alle, die keinen Kundenservice vor Ort benötigen.</div>
+        <div class="card-tags">
+          <span class="tag">DSL</span>
+          <span class="tag">Günstig</span>
+          <span class="tag">Telekom-Netz</span>
+        </div>
+        <a class="card-link" href="https://www.sim.de/dsl/" target="_blank">sim.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
   <div class="card" data-cat="versorger">
     <div class="card-inner">
       <div>
@@ -690,19 +709,40 @@ footer{
           <div class="card-name">Telekom</div>
         </div>
       </div>
-        <div class="card-reason">Meine Empfehlung für DSL und Mobilfunk aus einer Hand — zuverlässigstes Netz in Deutschland, starke Kombiangebote für Festnetz und Handy. Über den Empfehlungslink gibt es attraktive Wechselprämien.</div>
+        <div class="card-reason">Zuverlässigstes Netz in Deutschland mit flächendeckendem Filialnetz und persönlichem Kundenservice vor Ort — ideal wenn Servicequalität und direkte Ansprechpartner wichtiger sind als der günstigste Preis.</div>
         <div class="card-tags">
-          <span class="tag">DSL</span>
-          <span class="tag">Mobilfunk</span>
           <span class="tag">Bestes Netz</span>
+          <span class="tag">Filialen</span>
+          <span class="tag">Kundenservice</span>
         </div>
         <a class="card-link" href="https://www.telekom-empfehlen.de/PZBWYLVt" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
 
-  <!-- HARDWARE -->
-  <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="card" data-cat="versorger">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="starlink.com" data-initial="S"><span>S</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Internet · Satellit</div>
+          <div class="card-name">Starlink</div>
+        </div>
+      </div>
+        <div class="card-reason">Satelliteninternet für Standorte ohne VDSL-Versorgung — hohe Bandbreite auch in ländlichen Gebieten, schnelle Installation per Plug-and-Play. Sinnvolle Alternative zur Telekom wo kein Glasfaser oder VDSL verfügbar ist.</div>
+        <div class="card-tags">
+          <span class="tag">Satellit</span>
+          <span class="tag">Ländlich</span>
+          <span class="tag">Plug &amp; Play</span>
+        </div>
+        <a class="card-link" href="https://www.starlink.com/de" target="_blank">starlink.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="hardware">
     <div class="card-inner">
@@ -785,6 +825,28 @@ footer{
           <span class="tag">Keine Grundgebühr</span>
         </div>
         <a class="card-link" href="https://join.sumup.com/J9QrlnMa?share_id=tce94kMj9qrlnma" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card" data-cat="hardware">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="avm.de" data-initial="F"><span>F</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Router · Heimnetz</div>
+          <div class="card-name">FritzBox</div>
+        </div>
+      </div>
+        <div class="card-reason">Beste Consumer-Router für den deutschen Markt — zuverlässiges WLAN, tiefe DSL/Glasfaser-Integration, umfangreiche NAS- und VPN-Funktionen direkt ab Werk. Meine klare Empfehlung für Heimnetz und Homeoffice.</div>
+        <div class="card-tags">
+          <span class="tag">Router</span>
+          <span class="tag">WLAN</span>
+          <span class="tag">VPN</span>
+        </div>
+        <a class="card-link" href="https://avm.de/produkte/fritzbox/" target="_blank">avm.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -1100,6 +1162,180 @@ footer{
     </div>
   </div>
 
+
+  <!-- IOS -->
+  <div class="section-label" data-cat="ios"><span class="sl-emoji">📱</span><span class="sl-title">Tools/iOS</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="ios">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="getbring.com" data-initial="B"><span>B</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Einkaufsliste</div>
+          <div class="card-name">Bring</div>
+        </div>
+      </div>
+        <div class="card-reason">Geteilte Einkaufslisten für den Alltag — mehrere Personen können gleichzeitig Artikel hinzufügen und abhaken. Übersichtlich, schnell und mit Rezeptintegration.</div>
+        <div class="card-tags">
+          <span class="tag">Einkauf</span>
+          <span class="tag">Geteilt</span>
+          <span class="tag">Kostenlos</span>
+        </div>
+        <a class="card-link" href="https://www.getbring.com/de/" target="_blank">getbring.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ios">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="finanzguru.de" data-initial="F"><span>F</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Finanzübersicht</div>
+          <div class="card-name">Finanzguru</div>
+        </div>
+      </div>
+        <div class="card-reason">Verknüpft Bankkonten und analysiert automatisch Ausgaben, Abonnements und Einnahmen — verschafft einen klaren Überblick über die persönliche Finanzlage ohne manuelle Buchführung.</div>
+        <div class="card-tags">
+          <span class="tag">Finanzen</span>
+          <span class="tag">Kontoübersicht</span>
+          <span class="tag">Abos</span>
+        </div>
+        <a class="card-link" href="https://finanzguru.de" target="_blank">finanzguru.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="ios">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="tailorapp.co" data-initial="T"><span>T</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Screenshots zusammenfügen</div>
+          <div class="card-name">Tailor</div>
+        </div>
+      </div>
+        <div class="card-reason">Fügt mehrere Screenshots automatisch zu einem langen Bild zusammen — ideal für lange Chats, Webseiten oder Listen. Schnell, präzise und ohne manuelle Nacharbeit.</div>
+        <div class="card-tags">
+          <span class="tag">Screenshots</span>
+          <span class="tag">Zusammenfügen</span>
+          <span class="tag">Kostenlos</span>
+        </div>
+        <a class="card-link" href="https://tailorapp.co" target="_blank">tailorapp.co <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MACOS -->
+  <div class="section-label" data-cat="macos"><span class="sl-emoji">🖥️</span><span class="sl-title">Tools/macOS</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="macos">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="automute.app" data-initial="A"><span>A</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Audio-Tool</div>
+          <div class="card-name">AutoMute</div>
+        </div>
+      </div>
+        <div class="card-reason">Stummt das Mikrofon automatisch wenn Kopfhörer getrennt werden — verhindert ungewolltes Mithören in Meetings. Einfach, zuverlässig und im Hintergrund.</div>
+        <div class="card-tags">
+          <span class="tag">Mikrofon</span>
+          <span class="tag">Meetings</span>
+          <span class="tag">Automatisch</span>
+        </div>
+        <a class="card-link" href="https://apps.apple.com/de/app/automute/id1118136179" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="macos">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="bluestacks.com" data-initial="B"><span>B</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Android-Emulator</div>
+          <div class="card-name">BlueStacks</div>
+        </div>
+      </div>
+        <div class="card-reason">Android-Apps und -Spiele auf dem Mac ausführen — vollständiger Emulator mit guter Performance, ideal zum Testen von Apps oder für Android-exklusive Software.</div>
+        <div class="card-tags">
+          <span class="tag">Android</span>
+          <span class="tag">Emulator</span>
+          <span class="tag">Kostenlos</span>
+        </div>
+        <a class="card-link" href="https://www.bluestacks.com/de/index.html" target="_blank">bluestacks.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="macos">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="macpaw.com" data-initial="C"><span>C</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">System-Cleaner</div>
+          <div class="card-name">CleanMyMac</div>
+        </div>
+      </div>
+        <div class="card-reason">Entfernt Junk-Dateien, alte Caches und unnötige Sprachdateien — hält den Mac schlank und schnell. Übersichtliche Oberfläche, schnelle Scans, gut für regelmäßige Wartung.</div>
+        <div class="card-tags">
+          <span class="tag">System-Pflege</span>
+          <span class="tag">Speicher</span>
+          <span class="tag">Performance</span>
+        </div>
+        <a class="card-link" href="https://macpaw.com/cleanmymac" target="_blank">macpaw.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="macos">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="geekbench.com" data-initial="G"><span>G</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Benchmark</div>
+          <div class="card-name">Geekbench 6</div>
+        </div>
+      </div>
+        <div class="card-reason">Industriestandard für CPU- und GPU-Benchmarks — misst die Systemleistung reproduzierbar und vergleichbar. Ideal zum Einschätzen neuer Hardware oder zur Diagnose von Performance-Problemen.</div>
+        <div class="card-tags">
+          <span class="tag">Benchmark</span>
+          <span class="tag">CPU</span>
+          <span class="tag">GPU</span>
+        </div>
+        <a class="card-link" href="https://www.geekbench.com" target="_blank">geekbench.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="macos">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="magnet.crowdcafe.com" data-initial="M"><span>M</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Fensterverwaltung</div>
+          <div class="card-name">Magnet</div>
+        </div>
+      </div>
+        <div class="card-reason">Fenster per Tastenkürzel oder Drag-and-Drop an Bildschirmkanten einrasten — macht Multi-Window-Workflows deutlich effizienter. Unverzichtbar für produktives Arbeiten am Mac.</div>
+        <div class="card-tags">
+          <span class="tag">Fensterverwaltung</span>
+          <span class="tag">Produktivität</span>
+          <span class="tag">Tastenkürzel</span>
+        </div>
+        <a class="card-link" href="https://apps.apple.com/de/app/magnet/id441258766" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
   <div class="no-results" id="noResults">Keine Treffer gefunden.</div>
 </div>
 
@@ -1134,10 +1370,12 @@ var PD={
   'kreditkarten':    [{d:'americanexpress.com',i:'A',n:'American Express'},{d:'easybank.at',i:'E',n:'Easybank'}],
   'broker':          [{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'ing.de',i:'I',n:'ING'}],
   'krypto':          [{d:'bitvavo.com',i:'B',n:'Bitvavo'},{d:'robinhood.com',i:'R',n:'Robinhood Crypto'}],
-  'versorger':       [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'telekom.de',i:'T',n:'Telekom'}],
-  'hardware':        [{d:'apple.com',i:'A',n:'Apple'},{d:'zendure.com',i:'Z',n:'Zendure'},{d:'tesla.com',i:'T',n:'Tesla'},{d:'sumup.com',i:'S',n:'SumUp'}],
+  'versorger':       [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'sim.de',i:'S',n:'sim.de DSL'},{d:'telekom.de',i:'T',n:'Telekom'},{d:'starlink.com',i:'S',n:'Starlink'}],
+  'hardware':        [{d:'apple.com',i:'A',n:'Apple'},{d:'zendure.com',i:'Z',n:'Zendure'},{d:'tesla.com',i:'T',n:'Tesla'},{d:'sumup.com',i:'S',n:'SumUp'},{d:'avm.de',i:'F',n:'FritzBox'}],
   'software':        [{d:'tuta.com',i:'T',n:'Tuta'},{d:'proton.me',i:'P',n:'Proton'},{d:'brave.com',i:'B',n:'Brave'},{d:'thalia.de',i:'T',n:'Thalia Hörbücher'},{d:'ublockorigin.com',i:'U',n:'uBlock Origin'},{d:'ecosia.org',i:'E',n:'Ecosia'},{d:'geizhals.de',i:'G',n:'Geizhals'}],
-  'ki':              [{d:'claude.ai',i:'C',n:'Claude'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'kagi.com',i:'K',n:'Kagi'}],
+  'ios':             [{d:'getbring.com',i:'B',n:'Bring'},{d:'finanzguru.de',i:'F',n:'Finanzguru'},{d:'tailorapp.co',i:'T',n:'Tailor'}],
+    'macos':           [{d:'automute.app',i:'A',n:'AutoMute'},{d:'bluestacks.com',i:'B',n:'BlueStacks'},{d:'macpaw.com',i:'C',n:'CleanMyMac'},{d:'geekbench.com',i:'G',n:'Geekbench 6'},{d:'magnet.crowdcafe.com',i:'M',n:'Magnet'}],
+    'ki':              [{d:'claude.ai',i:'C',n:'Claude'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'kagi.com',i:'K',n:'Kagi'}],
   'steuern':         [{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'},{d:'lexware.de',i:'L',n:'Lexware'},{d:'taxpool.de',i:'T',n:'Taxpool'}],
 };
 
