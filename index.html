@@ -80,7 +80,7 @@ h1 span{color:var(--text);}
 }
 
 .filter-bar{
-  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px;justify-content:center;
+  display:flex;gap:8px;margin-bottom:28px;justify-content:center;align-items:center;
 }
 .filter-btn{
   background:transparent;border:1px solid var(--border);
@@ -90,6 +90,31 @@ h1 span{color:var(--text);}
 }
 .filter-btn:hover{border-color:var(--accent);color:var(--accent);}
 .filter-btn.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent);}
+
+.filter-dropdown{position:relative;}
+.filter-dropdown-btn{
+  background:transparent;border:1px solid var(--border);
+  color:var(--text-muted);font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:6px 14px;cursor:pointer;transition:all .2s;
+}
+.filter-dropdown-btn:hover,.filter-dropdown-btn.active{border-color:var(--accent);color:var(--accent);}
+.filter-dropdown-menu{
+  display:none;position:absolute;top:calc(100% + 6px);left:0;
+  background:var(--surface);border:1px solid var(--border);
+  min-width:200px;z-index:100;
+}
+.filter-dropdown-menu.open{display:block;}
+.filter-dropdown-menu button{
+  display:block;width:100%;text-align:left;
+  background:transparent;border:none;border-bottom:1px solid var(--border);
+  color:var(--text-muted);font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:10px 16px;cursor:pointer;transition:all .15s;
+}
+.filter-dropdown-menu button:last-child{border-bottom:none;}
+.filter-dropdown-menu button:hover{background:var(--accent-dim);color:var(--accent);}
+.filter-dropdown-menu button.active{background:var(--accent-dim);color:var(--accent);}
 
 .section-label{
   font-family:'IBM Plex Mono',monospace;font-size:10px;
@@ -368,16 +393,24 @@ footer{
 
   <div class="filter-bar">
     <button class="filter-btn active" onclick="filter('all',this)">Alle</button>
-    <button class="filter-btn" onclick="filter('banken',this)">Banken</button>
-    <button class="filter-btn" onclick="filter('kreditkarten',this)">Kreditkarten</button>
-    <button class="filter-btn" onclick="filter('broker',this)">Broker &amp; Krypto</button>
-    <button class="filter-btn" onclick="filter('versorger',this)">Versorger</button>
-    <button class="filter-btn" onclick="filter('hardware',this)">Hardware</button>
-    <button class="filter-btn" onclick="filter('software',this)">Tools/Allgemein</button>
-    <button class="filter-btn" onclick="filter('ki',this)">Tools/KI</button>
-    <button class="filter-btn" onclick="filter('steuern',this)">Tools/Steuern</button>
-    <button class="filter-btn" onclick="filter('ios',this)">Tools/iOS</button>
-    <button class="filter-btn" onclick="filter('macos',this)">Tools/macOS</button>
+    <div class="filter-dropdown">
+      <button class="filter-dropdown-btn" onclick="toggleDropdown()" id="dropdownBtn">Kategorie ▾</button>
+      <div class="filter-dropdown-menu" id="dropdownMenu">
+        <button onclick="filterFromDropdown('banken',this)">Banken</button>
+        <button onclick="filterFromDropdown('kreditkarten',this)">Kreditkarten</button>
+        <button onclick="filterFromDropdown('broker',this)">Broker &amp; Krypto</button>
+        <button onclick="filterFromDropdown('finanz',this)">Finanz-Dienstleister</button>
+        <button onclick="filterFromDropdown('versorger',this)">Versorger</button>
+        <button onclick="filterFromDropdown('versicherungen',this)">Versicherungen</button>
+        <button onclick="filterFromDropdown('hardware',this)">Hardware</button>
+        <button onclick="filterFromDropdown('software',this)">Tools/Allgemein</button>
+        <button onclick="filterFromDropdown('ki',this)">Tools/KI</button>
+        <button onclick="filterFromDropdown('sparen',this)">Tools/Sparen</button>
+        <button onclick="filterFromDropdown('steuern',this)">Tools/Steuern</button>
+        <button onclick="filterFromDropdown('ios',this)">Tools/iOS</button>
+        <button onclick="filterFromDropdown('macos',this)">Tools/macOS</button>
+      </div>
+    </div>
   </div>
 
   <!-- FINANZEN -->
@@ -477,7 +510,8 @@ footer{
       </div>
     </div>
   </div>
-<!-- KREDITKARTEN -->
+
+  <!-- KREDITKARTEN -->
   <div class="section-label" data-cat="kreditkarten"><span class="sl-emoji">💳</span><span class="sl-title">Kreditkarten</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="kreditkarten">
@@ -500,6 +534,7 @@ footer{
       </div>
     </div>
   </div>
+
   <div class="card" data-cat="kreditkarten">
     <div class="card-inner">
       <div>
@@ -522,7 +557,7 @@ footer{
   </div>
 
   <!-- BROKER -->
-  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker &amp; Krypto</span><span class="sl-count">6</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker &amp; Krypto</span><span class="sl-count">7</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="broker" data-id="depot-trading">
     <div class="card-inner">
@@ -555,21 +590,37 @@ footer{
           <div class="card-name">Scalable Capital</div>
         </div>
       </div>
-        <div class="card-reason">Flat-Fee-Modell für ETF-Sparpläne und regelmäßige Orders — breites Angebot, übersichtliche App, günstige Konditionen für langfristige Anleger. <strong style="color:var(--accent-lt)">25 € Bonus</strong> über den Empfehlungslink.</div>
+        <div class="card-reason">Meine Empfehlung für ETF-Sparpläne — große Auswahl, kostenlose Ausführung im Flatrate-Modell und attraktives Tagesgeld auf dem Verrechnungskonto. <strong style="color:var(--accent-lt)">25 € Prämie</strong> über den Einladungslink.</div>
         <div class="card-tags">
-          <span class="tag">Sparplan</span>
-          <span class="tag">ETF</span>
-          <span class="tag">Flat Fee</span>
+          <span class="tag">ETF-Sparpläne</span>
+          <span class="tag">Kostenlos</span>
+          <span class="tag">Tagesgeld</span>
         </div>
         <a class="card-link" href="https://de.scalable.capital/einladung/b6mf3v" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
 
-
-
-
-
+  <div class="card" data-cat="broker">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="ing.de" data-initial="I"><span>I</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Depot · Gemeinschafts-Depot</div>
+          <div class="card-name">ING</div>
+        </div>
+      </div>
+        <div class="card-reason">Solider Broker für Einsteiger mit kostenlosem Depot, breiter ETF-Auswahl und der Möglichkeit ein Gemeinschaftsdepot zu eröffnen — selten bei anderen Anbietern.</div>
+        <div class="card-tags">
+          <span class="tag">Gemeinschaftsdepot</span>
+          <span class="tag">Kostenlos</span>
+          <span class="tag">ETF</span>
+        </div>
+        <a class="card-link" href="https://www.ing.de/wertpapiere/depot/" target="_blank">ing.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
 
   <div class="card" data-cat="broker" data-id="depot-vl">
     <div class="card-inner">
@@ -585,7 +636,7 @@ footer{
         <div class="card-tags">
           <span class="tag">VL-Depot</span>
           <span class="tag">ETF</span>
-          <span class="tag">Sparplan</span>
+          <span class="tag">Automatisiert</span>
         </div>
         <a class="card-link" href="https://go.ginmon.de/ref/?r=ZMQX6DS0X3" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
@@ -593,25 +644,16 @@ footer{
   </div>
 
   <div class="card" data-cat="broker">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="ing.de" data-initial="I"><span>I</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Depot · Gemeinschafts-Depot</div>
-          <div class="card-name">ING</div>
-        </div>
-      </div>
-        <div class="card-reason">Solides Depot für gemeinsames Investieren — das Gemeinschafts-Depot der ING ermöglicht zwei Personen das gemeinsame Verwalten eines Wertpapierdepots. Günstige Konditionen und ein breites ETF-Angebot.</div>
-        <div class="card-tags">
-          <span class="tag">Gemeinschafts-Depot</span>
-          <span class="tag">ETF</span>
-          <span class="tag">Sparplan</span>
-        </div>
-        <a class="card-link" href="https://www.ing.de/depotkwk/aa/zbIkgZZm32K5GIUcuXDlo9o9erNgI0N1C05s2nPmaFky22-x-mV0zmd4Ccg97QkvgBLoa2-DleNijgBBh_6dQ-jZlsXD-3Tvg-DfGOcuOMQ=" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="quirion.de" data-initial="Q"><span>Q</span></div>
+      <div class="card-header-text"><div class="card-cat">Robo-Advisor</div><div class="card-name">Quirion</div></div></div>
+      <div class="card-reason">Automatisiertes ETF-Portfolio von der Quirin Privatbank — günstige Gebühren, BaFin-reguliert und ideal für langfristigen Vermögensaufbau ohne eigenen Aufwand.</div>
+      <div class="card-tags"><span class="tag">Robo-Advisor</span><span class="tag">ETF</span><span class="tag">BaFin</span></div>
+      <a class="card-link" href="https://www.quirion.de" target="_blank">quirion.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
+
 
   <div class="card" data-cat="broker">
     <div class="card-inner">
@@ -633,6 +675,7 @@ footer{
       </div>
     </div>
   </div>
+
   <div class="card" data-cat="broker">
     <div class="card-inner">
       <div>
@@ -653,6 +696,41 @@ footer{
       </div>
     </div>
   </div>
+
+
+  <!-- FINANZ -->
+  <div class="section-label" data-cat="finanz"><span class="sl-emoji">💶</span><span class="sl-title">Finanz-Dienstleister</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="finanz">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="wise.com" data-initial="W"><span>W</span></div>
+      <div class="card-header-text"><div class="card-cat">Auslandsüberweisung · Karte</div><div class="card-name">Wise</div></div></div>
+      <div class="card-reason">Günstigste Lösung für internationale Überweisungen und Fremdwährungen — echter Wechselkurs (Mid-Market Rate), keine versteckten Aufschläge. Ideal für Grenzgänger und alle mit regelmäßigen Auslandszahlungen.</div>
+      <div class="card-tags"><span class="tag">Überweisung</span><span class="tag">Kein FX-Aufschlag</span><span class="tag">Weltweit</span></div>
+      <a class="card-link" href="https://wise.com/de/" target="_blank">wise.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+  <div class="card" data-cat="finanz">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="sumup.com" data-initial="S"><span>S</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Kartenzahlung · Business</div>
+          <div class="card-name">SumUp</div>
+        </div>
+      </div>
+        <div class="card-reason">Kompaktes Kartenlesegerät für Selbstständige und kleine Betriebe — einfache Einrichtung, keine Grundgebühr. Transaktionsgebühr ab <strong style="color:var(--accent-lt)">0,79 % (Zahlungen Plus, 19 €/Monat)</strong> bzw. <strong style="color:var(--accent-lt)">1,39 % (kostenloser Tarif)</strong>. Bis zu 100 € Rabatt für dich auf den ersten Einkauf über den Empfehlungslink.</div>
+        <div class="card-tags">
+          <span class="tag">Kartenzahlung</span>
+          <span class="tag">Business</span>
+          <span class="tag">Keine Grundgebühr</span>
+        </div>
+        <a class="card-link" href="https://join.sumup.com/J9QrlnMa?share_id=tce94kMj9qrlnma" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
   <!-- VERSORGER -->
   <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Versorger</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
@@ -662,7 +740,7 @@ footer{
         <div class="card-header">
         <div class="card-logo-placeholder" data-domain="octopusenergy.de" data-initial="O"><span>O</span></div>
         <div class="card-header-text">
-          <div class="card-cat">Strom & Gas</div>
+          <div class="card-cat">Strom &amp; Gas</div>
           <div class="card-name">Octopus Energy</div>
         </div>
       </div>
@@ -677,26 +755,15 @@ footer{
     </div>
   </div>
 
-
   <div class="card" data-cat="versorger">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="sim.de" data-initial="S"><span>S</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">DSL · Günstig</div>
-          <div class="card-name">sim.de DSL</div>
-        </div>
-      </div>
-        <div class="card-reason">Günstiger DSL-Anbieter mit solider Leistung — bestes Preis-Leistungs-Verhältnis für alle, die keinen Kundenservice vor Ort benötigen.</div>
-        <div class="card-tags">
-          <span class="tag">DSL</span>
-          <span class="tag">Günstig</span>
-          <span class="tag">Telekom-Netz</span>
-        </div>
-        <a class="card-link" href="https://www.sim.de/dsl/" target="_blank">sim.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="sim.de" data-initial="S"><span>S</span></div>
+      <div class="card-header-text"><div class="card-cat">DSL · Festnetz</div><div class="card-name">sim.de</div></div></div>
+      <div class="card-reason">Günstiger DSL-Anbieter im Telekom-Netz — zuverlässige Verbindung zu fairen Konditionen ohne lange Vertragslaufzeiten. Gutes Preis-Leistungs-Verhältnis für Heiminternet.</div>
+      <div class="card-tags"><span class="tag">DSL</span><span class="tag">Günstig</span><span class="tag">Telekom-Netz</span></div>
+      <a class="card-link" href="https://www.sim.de" target="_blank">sim.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
   <div class="card" data-cat="versorger">
@@ -709,11 +776,11 @@ footer{
           <div class="card-name">Telekom</div>
         </div>
       </div>
-        <div class="card-reason">Zuverlässigstes Netz in Deutschland mit flächendeckendem Filialnetz und persönlichem Kundenservice vor Ort — ideal wenn Servicequalität und direkte Ansprechpartner wichtiger sind als der günstigste Preis.</div>
+        <div class="card-reason">Meine Empfehlung für DSL und Mobilfunk aus einer Hand — zuverlässigstes Netz in Deutschland, starke Kombiangebote für Festnetz und Handy. Über den Empfehlungslink gibt es attraktive Wechselprämien.</div>
         <div class="card-tags">
+          <span class="tag">DSL</span>
+          <span class="tag">Mobilfunk</span>
           <span class="tag">Bestes Netz</span>
-          <span class="tag">Filialen</span>
-          <span class="tag">Kundenservice</span>
         </div>
         <a class="card-link" href="https://www.telekom-empfehlen.de/PZBWYLVt" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
@@ -721,28 +788,57 @@ footer{
   </div>
 
   <div class="card" data-cat="versorger">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="starlink.com" data-initial="S"><span>S</span></div>
+      <div class="card-header-text"><div class="card-cat">Satelliteninternet</div><div class="card-name">Starlink</div></div></div>
+      <div class="card-reason">Satelliteninternet von SpaceX — überall verfügbar, auch in ländlichen Gebieten ohne Glasfaseranschluss. Hohe Geschwindigkeit, geringe Latenz und schnell eingerichtet.</div>
+      <div class="card-tags"><span class="tag">Satellit</span><span class="tag">Überall</span><span class="tag">Schnell</span></div>
+      <a class="card-link" href="https://www.starlink.com/de" target="_blank">starlink.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <!-- HARDWARE -->
+  <div class="section-label" data-cat="versicherungen"><span class="sl-emoji">🛡️</span><span class="sl-title">Versicherungen</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="versicherungen">
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="starlink.com" data-initial="S"><span>S</span></div>
+        <div class="card-logo-placeholder" data-domain="wgv.de" data-initial="W"><span>W</span></div>
         <div class="card-header-text">
-          <div class="card-cat">Internet · Satellit</div>
-          <div class="card-name">Starlink</div>
+          <div class="card-cat">Rechtsschutzversicherung</div>
+          <div class="card-name">WGV</div>
         </div>
       </div>
-        <div class="card-reason">Satelliteninternet für Standorte ohne VDSL-Versorgung — hohe Bandbreite auch in ländlichen Gebieten, schnelle Installation per Plug-and-Play. Sinnvolle Alternative zur Telekom wo kein Glasfaser oder VDSL verfügbar ist.</div>
-        <div class="card-tags">
-          <span class="tag">Satellit</span>
-          <span class="tag">Ländlich</span>
-          <span class="tag">Plug &amp; Play</span>
+        <div class="card-reason">Günstige Rechtsschutzversicherung aus dem Südwesten — solide Leistungen für Privat, Beruf und Verkehr zu fairen Prämien.</div>
+        <div class="card-tags"><span class="tag">Rechtsschutz</span><span class="tag">Günstig</span><span class="tag">Privat</span></div>
+        <a class="card-link" href="https://www.wgv.de" target="_blank">wgv.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="versicherungen">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="huk.de" data-initial="H"><span>H</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Kfz &amp; Sonstige Versicherungen</div>
+          <div class="card-name">HUK-COBURG</div>
         </div>
-        <a class="card-link" href="https://www.starlink.com/de" target="_blank">starlink.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+        <div class="card-reason">Günstigste Vollkasko-Prämien bei solider Schadenregulierung — Direktversicherer ohne teure Vertriebsstruktur. Neben Kfz auch Hausrat, Haftpflicht und weitere Versicherungen.</div>
+        <div class="card-tags"><span class="tag">Günstig</span><span class="tag">Direktversicherer</span><span class="tag">Kfz</span></div>
+        <a class="card-link" href="https://www.huk.de" target="_blank">huk.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
 
 
-  <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <!-- IOS -->
+
+  <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="hardware">
     <div class="card-inner">
@@ -808,51 +904,36 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="hardware">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="sumup.com" data-initial="S"><span>S</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Kartenzahlung · Business</div>
-          <div class="card-name">SumUp</div>
-        </div>
-      </div>
-        <div class="card-reason">Kompaktes Kartenlesegerät für Selbstständige und kleine Betriebe — einfache Einrichtung, keine Grundgebühr. Transaktionsgebühr ab <strong style="color:var(--accent-lt)">0,79 % (Zahlungen Plus, 19 €/Monat)</strong> bzw. <strong style="color:var(--accent-lt)">1,39 % (kostenloser Tarif)</strong>. Bis zu 100 € Rabatt für dich auf den ersten Einkauf über den Empfehlungslink.</div>
-        <div class="card-tags">
-          <span class="tag">Kartenzahlung</span>
-          <span class="tag">Business</span>
-          <span class="tag">Keine Grundgebühr</span>
-        </div>
-        <a class="card-link" href="https://join.sumup.com/J9QrlnMa?share_id=tce94kMj9qrlnma" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
 
 
   <div class="card" data-cat="hardware">
     <div class="card-inner">
       <div>
         <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="avm.de" data-initial="F"><span>F</span></div>
+        <div class="card-logo-placeholder" data-domain="fritz.com" data-initial="F"><span>F</span></div>
         <div class="card-header-text">
-          <div class="card-cat">Router · Heimnetz</div>
+          <div class="card-cat">Router · Smart Home</div>
           <div class="card-name">FritzBox</div>
         </div>
       </div>
-        <div class="card-reason">Beste Consumer-Router für den deutschen Markt — zuverlässiges WLAN, tiefe DSL/Glasfaser-Integration, umfangreiche NAS- und VPN-Funktionen direkt ab Werk. Meine klare Empfehlung für Heimnetz und Homeoffice.</div>
+        <div class="card-reason">Beste Router-Serie für den Heimgebrauch — zuverlässiges WLAN, integrierte Telefonanlage, umfangreiche Smart-Home-Funktionen und regelmäßige Firmware-Updates. Marktführer in Deutschland aus gutem Grund.</div>
         <div class="card-tags">
           <span class="tag">Router</span>
+          <span class="tag">Smart Home</span>
           <span class="tag">WLAN</span>
-          <span class="tag">VPN</span>
         </div>
-        <a class="card-link" href="https://avm.de/produkte/fritzbox/" target="_blank">avm.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://fritz.com/collections/fritz-box" target="_blank">fritz.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
 
   <!-- SOFTWARE -->
-  <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Tools/Allgemein</span><span class="sl-count">7</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+
+
+
+
+  <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Tools/Allgemein</span><span class="sl-count">0</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="software">
     <div class="card-inner">
@@ -961,26 +1042,7 @@ footer{
 
 
 
-  <div class="card" data-cat="software">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="geizhals.de" data-initial="G"><span>G</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Preisvergleich</div>
-          <div class="card-name">Geizhals</div>
-        </div>
-      </div>
-        <div class="card-reason">Umfangreicher Preisvergleich für Hardware, Elektronik und mehr — mit Preisverlauf, Produktbewertungen und Händlerübersicht. Unverzichtbar vor jedem größeren Kauf.</div>
-        <div class="card-tags">
-          <span class="tag">Preisvergleich</span>
-          <span class="tag">Hardware</span>
-          <span class="tag">Kostenlos</span>
-        </div>
-        <a class="card-link" href="https://geizhals.de" target="_blank">geizhals.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
+
 
   <div class="card" data-cat="software">
     <div class="card-inner">
@@ -1004,8 +1066,11 @@ footer{
   </div>
 
 
-  <!-- KI -->
-  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">Tools/KI</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+
+  <!-- SPAREN -->
+
+  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">Tools/KI</span><span class="sl-count">9</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
 
 
@@ -1097,7 +1162,100 @@ footer{
     </div>
   </div>
 
-  <!-- STEUERN -->
+
+
+  <!-- VERSICHERUNGEN -->
+
+  <div class="section-label" data-cat="sparen"><span class="sl-emoji">💰</span><span class="sl-title">Tools/Sparen</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="sparen">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="geizhals.de" data-initial="G"><span>G</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Preisvergleich</div>
+          <div class="card-name">Geizhals</div>
+        </div>
+      </div>
+        <div class="card-reason">Umfangreicher Preisvergleich für Hardware, Elektronik und mehr — mit Preisverlauf, Produktbewertungen und Händlerübersicht. Unverzichtbar vor jedem größeren Kauf.</div>
+        <div class="card-tags"><span class="tag">Preisvergleich</span><span class="tag">Hardware</span><span class="tag">Kostenlos</span></div>
+        <a class="card-link" href="https://geizhals.de" target="_blank">geizhals.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="sparen">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="mydealz.de" data-initial="M"><span>M</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Deal-Community</div>
+          <div class="card-name">MyDealz</div>
+        </div>
+      </div>
+        <div class="card-reason">Größte deutschsprachige Deal-Community — Nutzer teilen Rabattaktionen, Gutscheincodes und Schnäppchen in Echtzeit. Ideal um keinen guten Preis zu verpassen.</div>
+        <div class="card-tags"><span class="tag">Deals</span><span class="tag">Rabatte</span><span class="tag">Community</span></div>
+        <a class="card-link" href="https://www.mydealz.de" target="_blank">mydealz.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="sparen">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="payback.de" data-initial="P"><span>P</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Bonusprogramm</div>
+          <div class="card-name">Payback</div>
+        </div>
+      </div>
+        <div class="card-reason">Deutschlands größtes Bonusprogramm — Punkte sammeln bei über 700 Partnern (REWE, dm, Aral u.v.m.) und gegen Prämien, Gutscheine oder Meilen einlösen.</div>
+        <div class="card-tags"><span class="tag">Bonuspunkte</span><span class="tag">Cashback</span><span class="tag">Gutscheine</span></div>
+        <a class="card-link" href="https://www.payback.de" target="_blank">payback.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="sparen">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="spartanien.de" data-initial="S"><span>S</span></div>
+      <div class="card-header-text"><div class="card-cat">Schnäppchen &amp; Deals</div><div class="card-name">Spartanien</div></div></div>
+      <div class="card-reason">Kuratierte Sammlung der besten aktuellen Deals, Rabattcodes und Angebote — übersichtlich aufbereitet und täglich aktualisiert. Ideal um beim Online-Shopping systematisch zu sparen.</div>
+      <div class="card-tags"><span class="tag">Deals</span><span class="tag">Rabatte</span><span class="tag">Täglich</span></div>
+      <a class="card-link" href="https://spartanien.de" target="_blank">spartanien.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="sparen">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="topcashback.de" data-initial="T"><span>T</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Cashback-Portal</div>
+          <div class="card-name">TopCashback</div>
+        </div>
+      </div>
+        <div class="card-reason">Cashback beim Online-Shopping über tausende Partner — ein Teil des Kaufpreises wird direkt zurückerstattet. Einfach vor dem Kauf über TopCashback einloggen.</div>
+        <div class="card-tags"><span class="tag">Cashback</span><span class="tag">Online-Shopping</span><span class="tag">Kostenlos</span></div>
+        <a class="card-link" href="https://www.topcashback.de" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- KI -->
+
+
+
   <div class="section-label" data-cat="steuern"><span class="sl-emoji">🧾</span><span class="sl-title">Tools/Steuern</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="steuern">
@@ -1162,185 +1320,162 @@ footer{
     </div>
   </div>
 
-
-  <!-- IOS -->
-  <div class="section-label" data-cat="ios"><span class="sl-emoji">📱</span><span class="sl-title">Tools/iOS</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="ios"><span class="sl-emoji">📱</span><span class="sl-title">Tools/iOS</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="ios">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="getbring.com" data-initial="B"><span>B</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Einkaufsliste</div>
-          <div class="card-name">Bring</div>
-        </div>
-      </div>
-        <div class="card-reason">Geteilte Einkaufslisten für den Alltag — mehrere Personen können gleichzeitig Artikel hinzufügen und abhaken. Übersichtlich, schnell und mit Rezeptintegration.</div>
-        <div class="card-tags">
-          <span class="tag">Einkauf</span>
-          <span class="tag">Geteilt</span>
-          <span class="tag">Kostenlos</span>
-        </div>
-        <a class="card-link" href="https://www.getbring.com/de/" target="_blank">getbring.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="getbring.com" data-initial="B"><span>B</span></div>
+      <div class="card-header-text"><div class="card-cat">Einkaufsliste</div><div class="card-name">Bring</div></div></div>
+      <div class="card-reason">Geteilte Einkaufslisten für den Alltag — mehrere Personen können gleichzeitig Artikel hinzufügen und abhaken. Übersichtlich, schnell und mit Rezeptintegration.</div>
+      <div class="card-tags"><span class="tag">Einkauf</span><span class="tag">Geteilt</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://apps.apple.com/de/app/bring-einkaufsliste-rezepte/id580669177" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
   <div class="card" data-cat="ios">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="finanzguru.de" data-initial="F"><span>F</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Finanzübersicht</div>
-          <div class="card-name">Finanzguru</div>
-        </div>
-      </div>
-        <div class="card-reason">Verknüpft Bankkonten und analysiert automatisch Ausgaben, Abonnements und Einnahmen — verschafft einen klaren Überblick über die persönliche Finanzlage ohne manuelle Buchführung.</div>
-        <div class="card-tags">
-          <span class="tag">Finanzen</span>
-          <span class="tag">Kontoübersicht</span>
-          <span class="tag">Abos</span>
-        </div>
-        <a class="card-link" href="https://finanzguru.de" target="_blank">finanzguru.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="finanzguru.de" data-initial="F"><span>F</span></div>
+      <div class="card-header-text"><div class="card-cat">Finanzen · Überblick</div><div class="card-name">Finanzguru</div></div></div>
+      <div class="card-reason">Alle Konten, Ausgaben und Abonnements auf einen Blick — automatische Kategorisierung, Ausgabenanalyse und Budgetplanung. Datenschutzfreundlich und in Deutschland entwickelt.</div>
+      <div class="card-tags"><span class="tag">Finanzen</span><span class="tag">Budget</span><span class="tag">Deutschland</span></div>
+      <a class="card-link" href="https://finanzguru.de" target="_blank">finanzguru.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
   <div class="card" data-cat="ios">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="tailorapp.co" data-initial="T"><span>T</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Screenshots zusammenfügen</div>
-          <div class="card-name">Tailor</div>
-        </div>
-      </div>
-        <div class="card-reason">Fügt mehrere Screenshots automatisch zu einem langen Bild zusammen — ideal für lange Chats, Webseiten oder Listen. Schnell, präzise und ohne manuelle Nacharbeit.</div>
-        <div class="card-tags">
-          <span class="tag">Screenshots</span>
-          <span class="tag">Zusammenfügen</span>
-          <span class="tag">Kostenlos</span>
-        </div>
-        <a class="card-link" href="https://tailorapp.co" target="_blank">tailorapp.co <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="justwatch.com" data-initial="J"><span>J</span></div>
+      <div class="card-header-text"><div class="card-cat">Streaming-Suche</div><div class="card-name">JustWatch</div></div></div>
+      <div class="card-reason">Zeigt auf einen Blick, auf welchem Streaming-Dienst ein Film oder eine Serie verfügbar ist — spart endloses Suchen und hilft beim Verwalten der Watchlist.</div>
+      <div class="card-tags"><span class="tag">Streaming</span><span class="tag">Kostenlos</span><span class="tag">Watchlist</span></div>
+      <a class="card-link" href="https://www.justwatch.com" target="_blank">justwatch.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="ios">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="quickscan.app" data-initial="Q"><span>Q</span></div>
+      <div class="card-header-text"><div class="card-cat">Scanner</div><div class="card-name">QuickScan</div></div></div>
+      <div class="card-reason">Schneller und präziser Dokumentenscanner für iOS — automatische Kantenerkennung, PDF-Export und iCloud-Integration. Ideal für unterwegs schnell Dokumente digitalisieren.</div>
+      <div class="card-tags"><span class="tag">Scanner</span><span class="tag">PDF</span><span class="tag">iCloud</span></div>
+      <a class="card-link" href="https://apps.apple.com/de/app/ocr-scanner-quickscan/id1513790291" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="ios">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="thetailor.app" data-initial="T"><span>T</span></div>
+      <div class="card-header-text"><div class="card-cat">Screenshot-App</div><div class="card-name">Tailor</div></div></div>
+      <div class="card-reason">Fügt mehrere Screenshots automatisch zu einem langen Bild zusammen — praktisch für lange Chats, Webseiten oder Dokumente. Einfache Bedienung, saubere Ergebnisse.</div>
+      <div class="card-tags"><span class="tag">Screenshots</span><span class="tag">Zusammenfügen</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://apps.apple.com/de/app/tailor-screenshot-stitching/id926653095" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
   <!-- MACOS -->
-  <div class="section-label" data-cat="macos"><span class="sl-emoji">🖥️</span><span class="sl-title">Tools/macOS</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="section-label" data-cat="macos"><span class="sl-emoji">🖥️</span><span class="sl-title">Tools/macOS</span><span class="sl-count">8</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="macos">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="automute.app" data-initial="A"><span>A</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Audio-Tool</div>
-          <div class="card-name">AutoMute</div>
-        </div>
-      </div>
-        <div class="card-reason">Stummt das Mikrofon automatisch wenn Kopfhörer getrennt werden — verhindert ungewolltes Mithören in Meetings. Einfach, zuverlässig und im Hintergrund.</div>
-        <div class="card-tags">
-          <span class="tag">Mikrofon</span>
-          <span class="tag">Meetings</span>
-          <span class="tag">Automatisch</span>
-        </div>
-        <a class="card-link" href="https://apps.apple.com/de/app/automute/id1118136179" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="automute.app" data-initial="A"><span>A</span></div>
+      <div class="card-header-text"><div class="card-cat">Produktivität</div><div class="card-name">AutoMute</div></div></div>
+      <div class="card-reason">Schaltet das Mikrofon automatisch stumm, wenn man einem Meeting beitritt — verhindert ungewolltes Übertragen von Hintergrundgeräuschen. Einfach, effektiv, unverzichtbar.</div>
+      <div class="card-tags"><span class="tag">Meeting</span><span class="tag">Mikrofon</span><span class="tag">Automatisch</span></div>
+      <a class="card-link" href="https://apps.apple.com/de/app/automute-no-more-oopsies/id1118136179?mt=12" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
   <div class="card" data-cat="macos">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="bluestacks.com" data-initial="B"><span>B</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Android-Emulator</div>
-          <div class="card-name">BlueStacks</div>
-        </div>
-      </div>
-        <div class="card-reason">Android-Apps und -Spiele auf dem Mac ausführen — vollständiger Emulator mit guter Performance, ideal zum Testen von Apps oder für Android-exklusive Software.</div>
-        <div class="card-tags">
-          <span class="tag">Android</span>
-          <span class="tag">Emulator</span>
-          <span class="tag">Kostenlos</span>
-        </div>
-        <a class="card-link" href="https://www.bluestacks.com/de/index.html" target="_blank">bluestacks.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="bluestacks.com" data-initial="B"><span>B</span></div>
+      <div class="card-header-text"><div class="card-cat">Android-Emulator</div><div class="card-name">BlueStacks</div></div></div>
+      <div class="card-reason">Führt Android-Apps auf dem Mac aus — nützlich zum Testen von Apps oder zum Nutzen von Android-exklusiven Anwendungen. Kostenlos und einfach einzurichten.</div>
+      <div class="card-tags"><span class="tag">Android</span><span class="tag">Emulator</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://www.bluestacks.com/de/mac" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
   <div class="card" data-cat="macos">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="macpaw.com" data-initial="C"><span>C</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">System-Cleaner</div>
-          <div class="card-name">CleanMyMac</div>
-        </div>
-      </div>
-        <div class="card-reason">Entfernt Junk-Dateien, alte Caches und unnötige Sprachdateien — hält den Mac schlank und schnell. Übersichtliche Oberfläche, schnelle Scans, gut für regelmäßige Wartung.</div>
-        <div class="card-tags">
-          <span class="tag">System-Pflege</span>
-          <span class="tag">Speicher</span>
-          <span class="tag">Performance</span>
-        </div>
-        <a class="card-link" href="https://macpaw.com/cleanmymac" target="_blank">macpaw.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="macpaw.com" data-initial="C"><span>C</span></div>
+      <div class="card-header-text"><div class="card-cat">System-Cleaner</div><div class="card-name">CleanMyMac</div></div></div>
+      <div class="card-reason">Entfernt Junk-Dateien, alte Caches und unnötige Sprachdateien — hält den Mac schlank und schnell. Übersichtliche Oberfläche, schnelle Scans, gut für regelmäßige Wartung.</div>
+      <div class="card-tags"><span class="tag">Cleaner</span><span class="tag">Optimierung</span><span class="tag">Mac</span></div>
+      <a class="card-link" href="https://macpaw.com/cleanmymac" target="_blank">macpaw.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
   <div class="card" data-cat="macos">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="geekbench.com" data-initial="G"><span>G</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Benchmark</div>
-          <div class="card-name">Geekbench 6</div>
-        </div>
-      </div>
-        <div class="card-reason">Industriestandard für CPU- und GPU-Benchmarks — misst die Systemleistung reproduzierbar und vergleichbar. Ideal zum Einschätzen neuer Hardware oder zur Diagnose von Performance-Problemen.</div>
-        <div class="card-tags">
-          <span class="tag">Benchmark</span>
-          <span class="tag">CPU</span>
-          <span class="tag">GPU</span>
-        </div>
-        <a class="card-link" href="https://www.geekbench.com" target="_blank">geekbench.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="geekbench.com" data-initial="G"><span>G</span></div>
+      <div class="card-header-text"><div class="card-cat">Benchmark</div><div class="card-name">Geekbench 6</div></div></div>
+      <div class="card-reason">Industriestandard für CPU- und GPU-Benchmarks — misst die Systemleistung reproduzierbar und vergleichbar. Ideal zum Einschätzen neuer Hardware oder zur Diagnose von Performance-Problemen.</div>
+      <div class="card-tags"><span class="tag">Benchmark</span><span class="tag">CPU</span><span class="tag">GPU</span></div>
+      <a class="card-link" href="https://www.geekbench.com" target="_blank">geekbench.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
   <div class="card" data-cat="macos">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="magnet.crowdcafe.com" data-initial="M"><span>M</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Fensterverwaltung</div>
-          <div class="card-name">Magnet</div>
-        </div>
-      </div>
-        <div class="card-reason">Fenster per Tastenkürzel oder Drag-and-Drop an Bildschirmkanten einrasten — macht Multi-Window-Workflows deutlich effizienter. Unverzichtbar für produktives Arbeiten am Mac.</div>
-        <div class="card-tags">
-          <span class="tag">Fensterverwaltung</span>
-          <span class="tag">Produktivität</span>
-          <span class="tag">Tastenkürzel</span>
-        </div>
-        <a class="card-link" href="https://apps.apple.com/de/app/magnet/id441258766" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="magnet.crowdcafe.com" data-initial="M"><span>M</span></div>
+      <div class="card-header-text"><div class="card-cat">Fenstermanager</div><div class="card-name">Magnet</div></div></div>
+      <div class="card-reason">Fenster per Tastenkürzel oder Drag-and-Drop an Bildschirmkanten einrasten — macht Multi-Window-Workflows auf dem Mac deutlich effizienter.</div>
+      <div class="card-tags"><span class="tag">Fenstermanager</span><span class="tag">Produktivität</span><span class="tag">Shortcuts</span></div>
+      <a class="card-link" href="https://apps.apple.com/de/app/magnet/id441258766?mt=12" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
+
+  <div class="card" data-cat="macos">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="monkeymoney.app" data-initial="M"><span>M</span></div>
+      <div class="card-header-text"><div class="card-cat">Haushaltsbuch</div><div class="card-name">MoneyMoney</div></div></div>
+      <div class="card-reason">Übersichtliches Haushaltsbuch für macOS — Transaktionen importieren, Kategorien zuweisen und Ausgaben analysieren. Lokale Datenhaltung, kein Cloud-Zwang.</div>
+      <div class="card-tags"><span class="tag">Haushaltsbuch</span><span class="tag">Budget</span><span class="tag">Lokal</span></div>
+      <a class="card-link" href="https://moneymoney-app.com" target="_blank">moneymoney-app.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="macos">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="parallels.com" data-initial="P"><span>P</span></div>
+      <div class="card-header-text"><div class="card-cat">Virtualisierung</div><div class="card-name">Parallels</div></div></div>
+      <div class="card-reason">Führt Windows nativ auf dem Mac aus — ohne Neustart, mit voller Leistung und nahtloser Integration. Unverzichtbar für alle, die gelegentlich Windows-Software benötigen.</div>
+      <div class="card-tags"><span class="tag">Windows</span><span class="tag">Virtualisierung</span><span class="tag">Mac</span></div>
+      <a class="card-link" href="https://www.parallels.com/de/" target="_blank">parallels.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="macos">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="portfolio-performance.info" data-initial="P"><span>P</span></div>
+      <div class="card-header-text"><div class="card-cat">Depot-Verwaltung</div><div class="card-name">Portfolio Performance</div></div></div>
+      <div class="card-reason">Kostenlose Open-Source-Software zur Verwaltung und Analyse von Wertpapierdepots — Renditeberechnung, Dividenden-Tracking und detaillierte Auswertungen für mehrere Depots.</div>
+      <div class="card-tags"><span class="tag">Depot</span><span class="tag">Open Source</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://www.portfolio-performance.info" target="_blank">portfolio-performance.info <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+
+  <!-- STEUERN -->
+
   <div class="no-results" id="noResults">Keine Treffer gefunden.</div>
 </div>
 
-<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 12.04.2026 &nbsp;·&nbsp; <a href="https://rglowania.github.io/gselection/impressum" style="color:var(--text-muted);text-decoration:none;">Impressum</a></footer>
-
+<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 13.04.2026 &nbsp;·&nbsp; <a href="https://rglowania.github.io/gselection/impressum" style="color:var(--text-muted);text-decoration:none;">Impressum</a></footer>
 
 <div class="modal-overlay" id="impressumModal" onclick="if(event.target===this)closeImpressum()">
   <div class="modal-box">
@@ -1354,7 +1489,7 @@ footer{
       <div class="modal-label">Kontakt</div>
       <div class="modal-value">
         <a href="tel:+4915164632732">0151 64632732</a><br>
-        <a href="/cdn-cgi/l/email-protection#087a676a6166266f64677f696661694878677b7c6d67266c6d"><span class="__cf_email__" data-cfemail="41332e23282f6f262d2e36202f282001312e3235242e6f2524">[email&#160;protected]</span></a>
+        <a href="/cdn-cgi/l/email-protection#60120f02090e4e070c0f17010e090120100f1314050f4e0405"><span class="__cf_email__" data-cfemail="8af8e5e8e3e4a4ede6e5fdebe4e3ebcafae5f9feefe5a4eeef">[email&#160;protected]</span></a>
       </div>
     </div>
     <div class="modal-section">
@@ -1368,14 +1503,18 @@ footer{
 var PD={
   'banken':          [{d:'c24.de',i:'C',n:'C24'},{d:'revolut.com',i:'R',n:'Revolut'},{d:'finom.co',i:'F',n:'Finom'},{d:'tide.co',i:'T',n:'Tide'}],
   'kreditkarten':    [{d:'americanexpress.com',i:'A',n:'American Express'},{d:'easybank.at',i:'E',n:'Easybank'}],
-  'broker':          [{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'ing.de',i:'I',n:'ING'}],
-  'krypto':          [{d:'bitvavo.com',i:'B',n:'Bitvavo'},{d:'robinhood.com',i:'R',n:'Robinhood Crypto'}],
-  'versorger':       [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'sim.de',i:'S',n:'sim.de DSL'},{d:'telekom.de',i:'T',n:'Telekom'},{d:'starlink.com',i:'S',n:'Starlink'}],
-  'hardware':        [{d:'apple.com',i:'A',n:'Apple'},{d:'zendure.com',i:'Z',n:'Zendure'},{d:'tesla.com',i:'T',n:'Tesla'},{d:'sumup.com',i:'S',n:'SumUp'},{d:'avm.de',i:'F',n:'FritzBox'}],
+  'broker':          [{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'quirion.de',i:'Q',n:'Quirion'},{d:'bitvavo.com',i:'B',n:'Bitvavo'},{d:'robinhood.com',i:'R',n:'Robinhood Crypto'}],
+  'finanz':          [{d:'wise.com',i:'W',n:'Wise'},{d:'sumup.com',i:'S',n:'SumUp'}],
+  'versorger':       [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'sim.de',i:'S',n:'sim.de'},{d:'telekom.de',i:'T',n:'Telekom'},{d:'starlink.com',i:'S',n:'Starlink'}],
+  'hardware':        [{d:'apple.com',i:'A',n:'Apple'},{d:'zendure.com',i:'Z',n:'Zendure'},{d:'tesla.com',i:'T',n:'Tesla'},{d:'fritz.com',i:'F',n:'FritzBox'}],
   'software':        [{d:'tuta.com',i:'T',n:'Tuta'},{d:'proton.me',i:'P',n:'Proton'},{d:'brave.com',i:'B',n:'Brave'},{d:'thalia.de',i:'T',n:'Thalia Hörbücher'},{d:'ublockorigin.com',i:'U',n:'uBlock Origin'},{d:'ecosia.org',i:'E',n:'Ecosia'},{d:'geizhals.de',i:'G',n:'Geizhals'}],
-  'ios':             [{d:'getbring.com',i:'B',n:'Bring'},{d:'finanzguru.de',i:'F',n:'Finanzguru'},{d:'tailorapp.co',i:'T',n:'Tailor'}],
-    'macos':           [{d:'automute.app',i:'A',n:'AutoMute'},{d:'bluestacks.com',i:'B',n:'BlueStacks'},{d:'macpaw.com',i:'C',n:'CleanMyMac'},{d:'geekbench.com',i:'G',n:'Geekbench 6'},{d:'magnet.crowdcafe.com',i:'M',n:'Magnet'}],
-    'ki':              [{d:'claude.ai',i:'C',n:'Claude'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'kagi.com',i:'K',n:'Kagi'}],
+  'sparen':          [{d:'geizhals.de',i:'G',n:'Geizhals'},{d:'mydealz.de',i:'M',n:'MyDealz'},{d:'payback.de',i:'P',n:'Payback'},{d:'spartanien.de',i:'S',n:'Spartanien'},{d:'topcashback.de',i:'T',n:'TopCashback'}],
+  'versicherungen':  [{d:'wgv.de',i:'W',n:'WGV'},{d:'huk.de',i:'H',n:'HUK-COBURG'}],
+  'ki':              [{d:'x.ai',i:'G',n:'Grok'},{d:'claude.ai',i:'C',n:'Claude'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'kagi.com',i:'K',n:'Kagi Translate'}],
+  'ios':             [{d:'getbring.com',i:'B',n:'Bring'},{d:'finanzguru.de',i:'F',n:'Finanzguru'},{d:'justwatch.com',i:'J',n:'JustWatch'},{d:'quickscan.app',i:'Q',n:'QuickScan'},{d:'thetailor.app',i:'T',n:'Tailor'}],
+  'macos':           [{d:'automute.app',i:'A',n:'AutoMute'},{d:'bluestacks.com',i:'B',n:'BlueStacks'},{d:'macpaw.com',i:'C',n:'CleanMyMac'},{d:'geekbench.com',i:'G',n:'Geekbench 6'},{d:'magnet.crowdcafe.com',i:'M',n:'Magnet'},{d:'monkeymoney.app',i:'M',n:'MoneyMoney'},{d:'parallels.com',i:'P',n:'Parallels'},{d:'portfolio-performance.info',i:'P',n:'Portfolio Performance'}],
+  'ios':             [{d:'getbring.com',i:'B',n:'Bring'},{d:'finanzguru.de',i:'F',n:'Finanzguru'},{d:'justwatch.com',i:'J',n:'JustWatch'},{d:'quickscan.app',i:'Q',n:'QuickScan'},{d:'www.thetailorcam.com',i:'T',n:'Tailor'}],
+  'macos':           [{d:'automute.app',i:'A',n:'AutoMute'},{d:'bluestacks.com',i:'B',n:'BlueStacks'},{d:'macpaw.com',i:'C',n:'CleanMyMac'},{d:'geekbench.com',i:'G',n:'Geekbench 6'},{d:'magnet.crowdcafe.com',i:'M',n:'Magnet'},{d:'monkeymoney.app',i:'M',n:'MoneyMoney'},{d:'parallels.com',i:'P',n:'Parallels'},{d:'portfolio-performance.info',i:'P',n:'Portfolio Performance'}],
   'steuern':         [{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'},{d:'lexware.de',i:'L',n:'Lexware'},{d:'taxpool.de',i:'T',n:'Taxpool'}],
 };
 
@@ -1393,14 +1532,18 @@ function setTheme(t){
 function filter(cat,btn){
   currentFilter=cat;
   document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active');});
-  btn.classList.add('active');
+  if(btn && btn.classList && btn.classList.contains('filter-btn')) btn.classList.add('active');
+  if(cat==='all'){
+    document.querySelectorAll('.filter-dropdown-menu button').forEach(function(b){b.classList.remove('active');});
+    var db=document.getElementById('dropdownBtn');if(db)db.classList.remove('active');
+  }
   var isAll=cat==='all';
   document.querySelectorAll('.section-label').forEach(function(s){
     var show=isAll||s.dataset.cat===cat;
     s.style.display=show?'':'none';
+    var prev=document.getElementById('preview-'+s.dataset.cat);
     var body=document.getElementById('body-'+s.dataset.cat);
-    var prev=document.getElementById('prev-'+s.dataset.cat);
-    if(body){body.style.display=show?'':(body.classList.contains('collapsed')?'none':'');}
+    if(body){body.style.display=show?'':(isAll?'':'none');}
     if(show&&!isAll){collapseSection(s,false);if(prev)prev.style.display='none';}
     if(show&&isAll){collapseSection(s,true);if(prev)prev.style.display='';}
     if(!show&&prev)prev.style.display='none';
@@ -1413,15 +1556,45 @@ function collapseSection(label,collapsed){
   var preview=document.getElementById('preview-'+cat);
   var body=document.getElementById('body-'+cat);
   if(collapsed){
-    if(body){body.classList.add('collapsed');}
+    if(body)body.classList.add('collapsed');
     label.classList.add('collapsed');
-    if(preview){preview.classList.remove('hidden');preview.style.display='';}
+    if(preview){preview.style.display='';}
   }else{
-    if(body){body.classList.remove('collapsed');}
+    if(body)body.classList.remove('collapsed');
     label.classList.remove('collapsed');
-    if(preview){preview.classList.add('hidden');preview.style.display='none';}
+    if(preview)preview.style.display='none';
   }
 }
+
+function toggleDropdown(){
+  document.getElementById('dropdownMenu').classList.toggle('open');
+}
+function filterFromDropdown(cat, btn){
+  document.getElementById('dropdownMenu').classList.remove('open');
+  document.querySelectorAll('.filter-dropdown-menu button').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  document.getElementById('dropdownBtn').classList.add('active');
+  document.querySelector('.filter-btn.active') && document.querySelector('.filter-btn.active').classList.remove('active');
+  // Call filter with a dummy btn that won't cause issues
+  currentFilter=cat;
+  var isAll=false;
+  document.querySelectorAll('.section-label').forEach(function(s){
+    var show=s.dataset.cat===cat;
+    s.style.display=show?'':'none';
+    var prev=document.getElementById('preview-'+s.dataset.cat);
+    var body=document.getElementById('body-'+s.dataset.cat);
+    if(body)body.style.display=show?'':(body.classList.contains('collapsed')?'none':'');
+    if(show){collapseSection(s,false);if(prev)prev.style.display='none';}
+    else{if(prev)prev.style.display='none';}
+  });
+  document.querySelectorAll('.card').forEach(function(c){c.style.display='';});
+}
+// Close dropdown on outside click
+document.addEventListener('click', function(e){
+  var dd = document.querySelector('.filter-dropdown');
+  if(dd && !dd.contains(e.target)) document.getElementById('dropdownMenu').classList.remove('open');
+});
+
 
 function toggleSection(label){
   if(currentFilter!=='all')return;
@@ -1442,8 +1615,7 @@ function onSearch(val){
     if(show)any=true;
   });
   document.querySelectorAll('.section-label').forEach(function(s){
-    var body=null;var el=s.nextElementSibling;
-    while(el){if(el.classList.contains('section-body')){body=el;break;}el=el.nextElementSibling;}
+    var body=document.getElementById('body-'+s.dataset.cat);
     var vis=body&&Array.from(body.querySelectorAll('.card')).some(function(c){return c.style.display!=='none';});
     s.style.display=vis?'':'none';
     if(vis)collapseSection(s,false);
@@ -1469,13 +1641,13 @@ function openImpressum(){document.getElementById('impressumModal').classList.add
 function closeImpressum(){document.getElementById('impressumModal').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeImpressum();});
 
-// Logo loader + preview chips + init
 (function(){
   var svcs=[
     function(d){return 'https://icons.duckduckgo.com/ip3/'+d+'.ico';},
     function(d){return 'https://www.google.com/s2/favicons?domain='+d+'&sz=64';}
   ];
 
+  // Logo loader
   document.querySelectorAll('.card-logo-placeholder[data-domain]').forEach(function(el){
     var d=el.dataset.domain;if(!d)return;
     var span=el.querySelector('span');
@@ -1490,10 +1662,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeImpress
     tryNext();
   });
 
-  var total=document.querySelectorAll('.card').length;
-  document.getElementById('searchInput').placeholder='Durchsuche '+total+' Empfehlungen…';
-
-  // Init sections FIRST (creates preview divs)
+  // Init sections FIRST
   document.querySelectorAll('.section-label').forEach(function(label){
     var cat=label.dataset.cat;
     var siblings=[];
@@ -1519,20 +1688,17 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeImpress
     label.addEventListener('click',function(){toggleSection(label);});
   });
 
-  document.querySelector('.container').dataset.filterMode='all';
-
-  // THEN fill preview chips (divs now exist)
+  // THEN fill preview chips
   Object.keys(PD).forEach(function(cat){
     var items=PD[cat];
     var el=document.getElementById('preview-'+cat);if(!el)return;
     items.slice(0,3).forEach(function(item){
-      var domain=item.d,init=item.i,name=item.n;
       var chip=document.createElement('span');chip.className='section-preview-chip';
       var img=document.createElement('img');img.className='chip-logo';
-      img.src=svcs[0](domain);img.alt='';
-      var fb=document.createElement('span');fb.className='chip-initial';fb.textContent=init;fb.style.display='none';
+      img.src=svcs[0](item.d);img.alt='';
+      var fb=document.createElement('span');fb.className='chip-initial';fb.textContent=item.i;fb.style.display='none';
       img.onerror=function(){this.style.display='none';fb.style.display='inline-flex';};
-      chip.appendChild(img);chip.appendChild(fb);chip.appendChild(document.createTextNode(name));
+      chip.appendChild(img);chip.appendChild(fb);chip.appendChild(document.createTextNode(item.n));
       el.appendChild(chip);
     });
     if(items.length>3){
@@ -1541,6 +1707,8 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeImpress
     }
   });
 
+  var total=document.querySelectorAll('.card').length;
+  document.getElementById('searchInput').placeholder='Durchsuche '+total+' Empfehlungen…';
 })();
 </script>
 </body>
