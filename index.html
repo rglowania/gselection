@@ -362,6 +362,14 @@ footer{
 .modal-label{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;}
 .modal-value{font-size:13px;color:var(--text);line-height:1.6;}
 .modal-value a{color:var(--accent);text-decoration:none;}
+
+.oss-badge{
+  display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;
+  letter-spacing:1.5px;text-transform:uppercase;
+  background:rgba(93,158,122,0.15);border:1px solid var(--accent);
+  color:var(--accent);padding:2px 7px;margin-bottom:8px;
+}
+[data-theme="light"] .oss-badge{background:rgba(46,122,80,0.1);border-color:var(--accent);}
 </style>
 </head>
 <body>
@@ -403,6 +411,7 @@ footer{
         <button onclick="filterFromDropdown('versorger',this)">Versorger</button>
         <button onclick="filterFromDropdown('versicherungen',this)">Versicherungen</button>
         <button onclick="filterFromDropdown('hardware',this)">Hardware</button>
+        <button onclick="filterFromDropdown('medien',this)">Medien</button>
         <button onclick="filterFromDropdown('software',this)">Tools/Allgemein</button>
         <button onclick="filterFromDropdown('ki',this)">Tools/KI</button>
         <button onclick="filterFromDropdown('sparen',this)">Tools/Sparen</button>
@@ -413,61 +422,9 @@ footer{
     </div>
   </div>
 
-  <!-- FINANZEN -->
+
+  <!-- BANKEN -->
   <div class="section-label" data-cat="banken"><span class="sl-emoji">🏦</span><span class="sl-title">Banken</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="banken">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="c24.de" data-initial="C"><span>C</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Girokonto</div>
-          <div class="card-name">C24</div>
-        </div>
-      </div>
-        <div class="card-reason">Kostenloses Girokonto mit starker App, automatischer Ausgabenkategorisierung und attraktivem Zinssatz. Mein Hauptkonto für den Alltag.</div>
-        <div class="card-tags">
-          <span class="tag">Kostenlos</span>
-          <span class="tag">App-first</span>
-        </div>
-        <a class="card-link" href="https://www.c24n.de/uL31GLv" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="banken">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="revolut.com" data-initial="R"><span>R</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Girokonto · Business-Konto</div>
-          <div class="card-name">Revolut</div>
-        </div>
-      </div>
-        <div class="card-reason">Für Privat und Business: Konten ohne Schufa-Abfrage, starke App, gute Wechselkurse und weltweites Abheben. Das Business-Konto bietet zusätzlich mehrere Währungskonten, Teamkarten und Ausgabenlimits.</div>
-        <div class="card-tags">
-          <span class="tag">Keine Schufa</span>
-          <span class="tag">Multi-Währung</span>
-          <span class="tag">Weltweit</span>
-        </div>
-        <a class="card-link" href="https://revolut.com/referral/?referral-code=r_glowania!FEB1-26-VR-DE-AE&geo-redirect" target="_blank">Privat <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a class="card-link" href="https://business.revolut.com/signup?promo=referabusiness&ext=6ead2e06-f33f-e24c-0140-1fca949f3004&context=B2B_REFERRAL" target="_blank" style="margin-top:6px;">Business <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-  <!-- BANKEN BUSINESS -->
 
   <div class="card" data-cat="banken">
     <div class="card-inner">
@@ -507,6 +464,48 @@ footer{
           <span class="tag">200 € Bonus</span>
         </div>
         <a class="card-link" href="https://www.tide.co/de/" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="banken">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="c24.de" data-initial="C"><span>C</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Girokonto</div>
+          <div class="card-name">C24</div>
+        </div>
+      </div>
+        <div class="card-reason">Kostenloses Girokonto mit starker App, automatischer Ausgabenkategorisierung und attraktivem Zinssatz. Mein Hauptkonto für den Alltag.</div>
+        <div class="card-tags">
+          <span class="tag">Kostenlos</span>
+          <span class="tag">App-first</span>
+        </div>
+        <a class="card-link" href="https://www.c24n.de/uL31GLv" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="banken">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="revolut.com" data-initial="R"><span>R</span></div>
+        <div class="card-header-text">
+          <div class="card-cat">Girokonto · Business-Konto</div>
+          <div class="card-name">Revolut</div>
+        </div>
+      </div>
+        <div class="card-reason">Für Privat und Business: Konten ohne Schufa-Abfrage, starke App, gute Wechselkurse und weltweites Abheben. Das Business-Konto bietet zusätzlich mehrere Währungskonten, Teamkarten und Ausgabenlimits.</div>
+        <div class="card-tags">
+          <span class="tag">Keine Schufa</span>
+          <span class="tag">Multi-Währung</span>
+          <span class="tag">Weltweit</span>
+        </div>
+        <a class="card-link" href="https://revolut.com/referral/?referral-code=r_glowania!FEB1-26-VR-DE-AE&geo-redirect" target="_blank">Privat <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://business.revolut.com/signup?promo=referabusiness&ext=6ead2e06-f33f-e24c-0140-1fca949f3004&context=B2B_REFERRAL" target="_blank" style="margin-top:6px;">Business <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -654,7 +653,6 @@ footer{
     </div></div>
   </div>
 
-
   <div class="card" data-cat="broker">
     <div class="card-inner">
       <div>
@@ -697,7 +695,6 @@ footer{
     </div>
   </div>
 
-
   <!-- FINANZ -->
   <div class="section-label" data-cat="finanz"><span class="sl-emoji">💶</span><span class="sl-title">Finanz-Dienstleister</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
@@ -711,6 +708,7 @@ footer{
       <a class="card-link" href="https://wise.com/de/" target="_blank">wise.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
+
   <div class="card" data-cat="finanz">
     <div class="card-inner">
       <div>
@@ -731,6 +729,7 @@ footer{
       </div>
     </div>
   </div>
+
   <!-- VERSORGER -->
   <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Versorger</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
@@ -798,7 +797,7 @@ footer{
     </div></div>
   </div>
 
-  <!-- HARDWARE -->
+  <!-- VERSICHERUNGEN -->
   <div class="section-label" data-cat="versicherungen"><span class="sl-emoji">🛡️</span><span class="sl-title">Versicherungen</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="versicherungen">
@@ -813,7 +812,7 @@ footer{
       </div>
         <div class="card-reason">Günstige Rechtsschutzversicherung aus dem Südwesten — solide Leistungen für Privat, Beruf und Verkehr zu fairen Prämien.</div>
         <div class="card-tags"><span class="tag">Rechtsschutz</span><span class="tag">Günstig</span><span class="tag">Privat</span></div>
-        <a class="card-link" href="https://www.wgv.de" target="_blank">wgv.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://www.wgv.de/?p_verm_nr=104828" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
@@ -835,9 +834,7 @@ footer{
     </div>
   </div>
 
-
-  <!-- IOS -->
-
+  <!-- HARDWARE -->
   <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="hardware">
@@ -904,8 +901,6 @@ footer{
     </div>
   </div>
 
-
-
   <div class="card" data-cat="hardware">
     <div class="card-inner">
       <div>
@@ -927,13 +922,34 @@ footer{
     </div>
   </div>
 
+
+  <!-- MEDIEN -->
+  <div class="section-label" data-cat="medien"><span class="sl-emoji">🎵</span><span class="sl-title">Medien</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="medien">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="spotify.com" data-initial="S"><span>S</span></div>
+      <div class="card-header-text"><div class="card-cat">Musik · Podcasts</div><div class="card-name">Spotify</div></div></div>
+      <div class="card-reason">Größte Musik-Streaming-Plattform — riesige Auswahl, exzellente Empfehlungsalgorithmen und nahtlose Podcast-Integration. Meine erste Wahl für Musik und Podcasts unterwegs.</div>
+      <div class="card-tags"><span class="tag">Musik</span><span class="tag">Podcasts</span><span class="tag">Offline</span></div>
+      <a class="card-link" href="https://www.spotify.com/de/" target="_blank">spotify.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="medien">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="thalia.de" data-initial="T"><span>T</span></div>
+      <div class="card-header-text"><div class="card-cat">Hörbuch- &amp; E-Book-Abo</div><div class="card-name">Thalia Lesen und Hören</div></div></div>
+      <div class="card-reason">Zugang zu Tausenden Hörbüchern und E-Books für eine monatliche Flatrate — große deutschsprachige Auswahl, offline verfügbar und direkt über die Thalia-App nutzbar.</div>
+      <div class="card-tags"><span class="tag">Hörbücher</span><span class="tag">E-Books</span><span class="tag">Flatrate</span></div>
+      <a class="card-link" href="https://www.thalia.de/hoerbuch-abo" target="_blank">thalia.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
   <!-- SOFTWARE -->
-
-
-
-
-
-  <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Tools/Allgemein</span><span class="sl-count">0</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Tools/Allgemein</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="software">
     <div class="card-inner">
@@ -998,7 +1014,6 @@ footer{
     </div>
   </div>
 
-
   <div class="card" data-cat="software">
     <div class="card-inner">
       <div>
@@ -1041,132 +1056,6 @@ footer{
   </div>
 
 
-
-
-
-  <div class="card" data-cat="software">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="thalia.de" data-initial="T"><span>T</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Hörbuch-Abo</div>
-          <div class="card-name">Thalia Hörbücher</div>
-        </div>
-      </div>
-        <div class="card-reason">Zugang zu Tausenden Hörbüchern für eine monatliche Flatrate — große deutschsprachige Auswahl, offline verfügbar und direkt über die Thalia-App nutzbar. Ideal für unterwegs.</div>
-        <div class="card-tags">
-          <span class="tag">Hörbücher</span>
-          <span class="tag">Flatrate</span>
-          <span class="tag">Offline</span>
-        </div>
-        <a class="card-link" href="https://www.thalia.de/hoerbuch-abo" target="_blank">thalia.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <!-- SPAREN -->
-
-  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">Tools/KI</span><span class="sl-count">9</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-
-
-  <div class="card" data-cat="ki">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="claude.ai" data-initial="C"><span>C</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">KI · Coding &amp; komplexe Aufgaben</div>
-          <div class="card-name">Claude</div>
-        </div>
-      </div>
-        <div class="card-reason">Meine erste Wahl für komplexe Analysen, Coding und längere Texte — starkes Reasoning, großes Kontextfenster und sehr präzise Ausgaben.</div>
-        <div class="card-tags">
-          <span class="tag">Coding</span>
-          <span class="tag">Analyse</span>
-          <span class="tag">Reasoning</span>
-        </div>
-        <a class="card-link" href="https://claude.ai" target="_blank">claude.ai <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="card" data-cat="ki">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="notebooklm.google" data-initial="N"><span>N</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">KI · Audio-Zusammenfassungen</div>
-          <div class="card-name">NotebookLM</div>
-        </div>
-      </div>
-        <div class="card-reason">Lädt eigene Dokumente hoch und erstellt daraus Zusammenfassungen, Podcasts und Antworten — ideal für Recherche, Lernstoff und lange PDFs.</div>
-        <div class="card-tags">
-          <span class="tag">Dokumente</span>
-          <span class="tag">Audio</span>
-          <span class="tag">Zusammenfassung</span>
-        </div>
-        <a class="card-link" href="https://notebooklm.google.com" target="_blank">notebooklm.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="ki">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="gemini.google.com" data-initial="G"><span>G</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">KI · Alltag &amp; Recherche</div>
-          <div class="card-name">Gemini</div>
-        </div>
-      </div>
-        <div class="card-reason">Stark in die Google-Suche integriert, exzellente Multimodalität, schnelle Antworten für alltägliche Fragen und Recherchen.</div>
-        <div class="card-tags">
-          <span class="tag">Multimodal</span>
-          <span class="tag">Recherche</span>
-          <span class="tag">Google-Integration</span>
-        </div>
-        <a class="card-link" href="https://gemini.google.com" target="_blank">gemini.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="ki">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="kagi.com" data-initial="K"><span>K</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Übersetzen · Zusammenfassen · Maps</div>
-          <div class="card-name">Kagi</div>
-        </div>
-      </div>
-        <div class="card-reason">Drei kostenlose Datenschutz-Tools: <strong style="color:var(--accent-lt)">Translate</strong> (240+ Sprachen, keine Werbung), <strong style="color:var(--accent-lt)">Universal Summarizer</strong> (Webseiten, PDFs und Videos zusammenfassen) und <strong style="color:var(--accent-lt)">Maps</strong> (datenschutzfreundliche Karten ohne Tracking).</div>
-        <div class="card-tags">
-          <span class="tag">Übersetzen</span>
-          <span class="tag">Zusammenfassen</span>
-          <span class="tag">Maps</span>
-        </div>
-        <a class="card-link" href="https://translate.kagi.com" target="_blank">Translate <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a class="card-link" href="https://kagi.com/summarizer" target="_blank" style="margin-top:6px;">Summarizer <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a class="card-link" href="https://kagi.com/maps" target="_blank" style="margin-top:6px;">Maps <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- VERSICHERUNGEN -->
-
-  <div class="section-label" data-cat="sparen"><span class="sl-emoji">💰</span><span class="sl-title">Tools/Sparen</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="sparen">
     <div class="card-inner">
@@ -1226,7 +1115,18 @@ footer{
       <div class="card-header-text"><div class="card-cat">Schnäppchen &amp; Deals</div><div class="card-name">Spartanien</div></div></div>
       <div class="card-reason">Kuratierte Sammlung der besten aktuellen Deals, Rabattcodes und Angebote — übersichtlich aufbereitet und täglich aktualisiert. Ideal um beim Online-Shopping systematisch zu sparen.</div>
       <div class="card-tags"><span class="tag">Deals</span><span class="tag">Rabatte</span><span class="tag">Täglich</span></div>
-      <a class="card-link" href="https://spartanien.de" target="_blank">spartanien.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="card-link" href="https://www.spartanien.de/?u=193188" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="sparen">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="spliiit.com" data-initial="S"><span>S</span></div>
+      <div class="card-header-text"><div class="card-cat">Abo-Sharing</div><div class="card-name">Spliiit</div></div></div>
+      <div class="card-reason">Plattform zum Teilen von Streaming- und Software-Abonnements mit anderen Nutzern — Netflix, Spotify, Adobe und mehr günstiger nutzen durch legales Gruppen-Splitting.</div>
+      <div class="card-tags"><span class="tag">Abo-Sharing</span><span class="tag">Sparen</span><span class="tag">Streaming</span></div>
+      <a class="card-link" href="https://spliiit.com" target="_blank">spliiit.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
@@ -1242,90 +1142,112 @@ footer{
       </div>
         <div class="card-reason">Cashback beim Online-Shopping über tausende Partner — ein Teil des Kaufpreises wird direkt zurückerstattet. Einfach vor dem Kauf über TopCashback einloggen.</div>
         <div class="card-tags"><span class="tag">Cashback</span><span class="tag">Online-Shopping</span><span class="tag">Kostenlos</span></div>
-        <a class="card-link" href="https://www.topcashback.de" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://www.topcashback.de/ref/DealzFox/?source=App-iOS-TAFPage" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
 
-
-
-
-
-
   <!-- KI -->
+  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">Tools/KI</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
 
 
+  <div class="card" data-cat="ki">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="gemini.google.com" data-initial="G"><span>G</span></div>
+      <div class="card-header-text"><div class="card-cat">KI · Alltag &amp; Recherche</div><div class="card-name">Gemini</div></div></div>
+      <div class="card-reason">Stark in die Google-Suche integriert, exzellente Multimodalität, schnelle Antworten für alltägliche Fragen und Recherchen.</div>
+      <div class="card-tags"><span class="tag">Multimodal</span><span class="tag">Recherche</span><span class="tag">Google-Integration</span></div>
+      <a class="card-link" href="https://gemini.google.com" target="_blank">gemini.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="ki">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="notebooklm.google" data-initial="N"><span>N</span></div>
+      <div class="card-header-text"><div class="card-cat">KI · Audio-Zusammenfassungen</div><div class="card-name">NotebookLM</div></div></div>
+      <div class="card-reason">Lädt eigene Dokumente hoch und erstellt daraus Zusammenfassungen, Podcasts und Antworten — ideal für Recherche, Lernstoff und lange PDFs.</div>
+      <div class="card-tags"><span class="tag">Dokumente</span><span class="tag">Audio</span><span class="tag">Zusammenfassung</span></div>
+      <a class="card-link" href="https://notebooklm.google.com" target="_blank">notebooklm.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="ki">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="claude.ai" data-initial="C"><span>C</span></div>
+      <div class="card-header-text"><div class="card-cat">KI · Coding &amp; komplexe Aufgaben</div><div class="card-name">Claude</div></div></div>
+      <div class="card-reason">Meine erste Wahl für komplexe Analysen, Coding und längere Texte — starkes Reasoning, großes Kontextfenster und sehr präzise Ausgaben.</div>
+      <div class="card-tags"><span class="tag">Coding</span><span class="tag">Analyse</span><span class="tag">Reasoning</span></div>
+      <a class="card-link" href="https://claude.ai" target="_blank">claude.ai <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="ki">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="kagi.com" data-initial="K"><span>K</span></div>
+      <div class="card-header-text"><div class="card-cat">Übersetzung · Suche</div><div class="card-name">Kagi</div></div></div>
+      <div class="card-reason">Datenschutzfreundlicher Übersetzungsdienst ohne Tracking und Werbung. Unterstützt über 240 Sprachen und liefert qualitativ hochwertige Übersetzungen — eine saubere Alternative zu Google Translate.</div>
+      <div class="card-tags"><span class="tag">Datenschutz</span><span class="tag">240+ Sprachen</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://translate.kagi.com" target="_blank">translate.kagi.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <!-- STEUERN -->
   <div class="section-label" data-cat="steuern"><span class="sl-emoji">🧾</span><span class="sl-title">Tools/Steuern</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="steuern">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="wiso-steuer.de" data-initial="W"><span>W</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Steuersoftware</div>
-          <div class="card-name">WISO Steuer</div>
-        </div>
-      </div>
-        <div class="card-reason">Beste Benutzerführung für die private Steuererklärung — intuitive Oberfläche, gute Plausibilitätsprüfung, direkter ELSTER-Upload.</div>
-        <div class="card-tags">
-          <span class="tag">Steuererklärung</span>
-          <span class="tag">ELSTER-Upload</span>
-        </div>
-        <a class="card-link" href="https://www.buhl.de/wiso-steuer" target="_blank">buhl.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="wiso-steuer.de" data-initial="W"><span>W</span></div>
+      <div class="card-header-text"><div class="card-cat">Steuersoftware</div><div class="card-name">WISO Steuer</div></div></div>
+      <div class="card-reason">Beste Benutzerführung für die private Steuererklärung — intuitive Oberfläche, gute Plausibilitätsprüfung, direkter ELSTER-Upload.</div>
+      <div class="card-tags"><span class="tag">Steuererklärung</span><span class="tag">ELSTER-Upload</span></div>
+      <a class="card-link" href="https://www.buhl.de/wiso-steuer" target="_blank">buhl.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
   <div class="card" data-cat="steuern">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="lexware.de" data-initial="L"><span>L</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Buchhaltung · Browser-basiert</div>
-          <div class="card-name">Lexware</div>
-        </div>
-      </div>
-        <div class="card-reason">Modernes, browserbasiertes Buchhaltungstool — einfacher Einstieg, klare Oberfläche, gut geeignet für Selbstständige und kleine Unternehmen. <strong style="color:var(--accent-lt)">6 Monate gratis</strong> über den Empfehlungslink.</div>
-        <div class="card-tags">
-          <span class="tag">Browser-basiert</span>
-          <span class="tag">DATEV-kompatibel</span>
-          <span class="tag">FIBU</span>
-        </div>
-        <a class="card-link" href="https://www.lexware.de/preise?pid=nDwdEle1ot&pdata=ggGe7XKLsH&cid=1777&utm_medium=affiliate&utm_source=recommend-nDwdEle1ot&utm_campaign=kunden-werben-kunden&couponCode=LXOK4YWK" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="lexware.de" data-initial="L"><span>L</span></div>
+      <div class="card-header-text"><div class="card-cat">Buchhaltung · Browser-basiert</div><div class="card-name">Lexware</div></div></div>
+      <div class="card-reason">Modernes, browserbasiertes Buchhaltungstool — einfacher Einstieg, klare Oberfläche, gut geeignet für Selbstständige und kleine Unternehmen. <strong style="color:var(--accent-lt)">6 Monate gratis</strong> über den Empfehlungslink.</div>
+      <div class="card-tags"><span class="tag">Browser-basiert</span><span class="tag">DATEV-kompatibel</span><span class="tag">FIBU</span></div>
+      <a class="card-link" href="https://www.lexware.de/preise?pid=nDwdEle1ot&pdata=ggGe7XKLsH&cid=1777&utm_medium=affiliate&utm_source=recommend-nDwdEle1ot&utm_campaign=kunden-werben-kunden&couponCode=LXOK4YWK" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
   <div class="card" data-cat="steuern">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-        <div class="card-logo-placeholder" data-domain="taxpool.de" data-initial="T"><span>T</span></div>
-        <div class="card-header-text">
-          <div class="card-cat">Buchhaltung · Lokal</div>
-          <div class="card-name">Taxpool</div>
-        </div>
-      </div>
-        <div class="card-reason">Lokale Desktop-Software für komplexere buchhalterische Anforderungen — tiefe DATEV-Kompatibilität, bewährt im Steuerberatungsumfeld und für anspruchsvollere Mandanten.</div>
-        <div class="card-tags">
-          <span class="tag">Desktop</span>
-          <span class="tag">DATEV-kompatibel</span>
-          <span class="tag">Komplex</span>
-        </div>
-        <a class="card-link" href="https://www.taxpool.de" target="_blank">taxpool.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="taxpool.de" data-initial="T"><span>T</span></div>
+      <div class="card-header-text"><div class="card-cat">Buchhaltung · Lokal</div><div class="card-name">Taxpool</div></div></div>
+      <div class="card-reason">Lokale Desktop-Software für komplexere buchhalterische Anforderungen — tiefe DATEV-Kompatibilität, bewährt im Steuerberatungsumfeld und für anspruchsvollere Mandanten.</div>
+      <div class="card-tags"><span class="tag">Desktop</span><span class="tag">DATEV-kompatibel</span><span class="tag">Komplex</span></div>
+      <a class="card-link" href="https://www.taxpool.de" target="_blank">taxpool.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
   </div>
 
-  <div class="section-label" data-cat="ios"><span class="sl-emoji">📱</span><span class="sl-title">Tools/iOS</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+
+
+
+  <!-- SPAREN -->
+  <div class="section-label" data-cat="sparen"><span class="sl-emoji">💰</span><span class="sl-title">Tools/Sparen</span><span class="sl-count">0</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+
+
+  <!-- IOS -->
+  <div class="section-label" data-cat="ios"><span class="sl-emoji">📲</span><span class="sl-title">Tools/iOS</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="ios">
     <div class="card-inner"><div>
       <div class="card-header">
-      <div class="card-logo-placeholder" data-domain="getbring.com" data-initial="B"><span>B</span></div>
+      <div class="card-logo-placeholder" data-domain="apps.apple.com" data-initial="B"><span>B</span></div>
       <div class="card-header-text"><div class="card-cat">Einkaufsliste</div><div class="card-name">Bring</div></div></div>
       <div class="card-reason">Geteilte Einkaufslisten für den Alltag — mehrere Personen können gleichzeitig Artikel hinzufügen und abhaken. Übersichtlich, schnell und mit Rezeptintegration.</div>
       <div class="card-tags"><span class="tag">Einkauf</span><span class="tag">Geteilt</span><span class="tag">Kostenlos</span></div>
@@ -1358,7 +1280,7 @@ footer{
   <div class="card" data-cat="ios">
     <div class="card-inner"><div>
       <div class="card-header">
-      <div class="card-logo-placeholder" data-domain="quickscan.app" data-initial="Q"><span>Q</span></div>
+      <div class="card-logo-placeholder" data-domain="apps.apple.com" data-initial="Q"><span>Q</span></div>
       <div class="card-header-text"><div class="card-cat">Scanner</div><div class="card-name">QuickScan</div></div></div>
       <div class="card-reason">Schneller und präziser Dokumentenscanner für iOS — automatische Kantenerkennung, PDF-Export und iCloud-Integration. Ideal für unterwegs schnell Dokumente digitalisieren.</div>
       <div class="card-tags"><span class="tag">Scanner</span><span class="tag">PDF</span><span class="tag">iCloud</span></div>
@@ -1369,7 +1291,7 @@ footer{
   <div class="card" data-cat="ios">
     <div class="card-inner"><div>
       <div class="card-header">
-      <div class="card-logo-placeholder" data-domain="thetailor.app" data-initial="T"><span>T</span></div>
+      <div class="card-logo-placeholder" data-domain="apps.apple.com" data-initial="T"><span>T</span></div>
       <div class="card-header-text"><div class="card-cat">Screenshot-App</div><div class="card-name">Tailor</div></div></div>
       <div class="card-reason">Fügt mehrere Screenshots automatisch zu einem langen Bild zusammen — praktisch für lange Chats, Webseiten oder Dokumente. Einfache Bedienung, saubere Ergebnisse.</div>
       <div class="card-tags"><span class="tag">Screenshots</span><span class="tag">Zusammenfügen</span><span class="tag">Kostenlos</span></div>
@@ -1378,61 +1300,17 @@ footer{
   </div>
 
   <!-- MACOS -->
+  <div class="section-label" data-cat="macos"><span class="sl-emoji">🖥️</span><span class="sl-title">Tools/macOS</span><span class="sl-count">7</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
-  <div class="section-label" data-cat="macos"><span class="sl-emoji">🖥️</span><span class="sl-title">Tools/macOS</span><span class="sl-count">8</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="macos">
+  <div class="card" data-cat="macos" data-oss="true">
     <div class="card-inner"><div>
       <div class="card-header">
-      <div class="card-logo-placeholder" data-domain="automute.app" data-initial="A"><span>A</span></div>
-      <div class="card-header-text"><div class="card-cat">Produktivität</div><div class="card-name">AutoMute</div></div></div>
-      <div class="card-reason">Schaltet das Mikrofon automatisch stumm, wenn man einem Meeting beitritt — verhindert ungewolltes Übertragen von Hintergrundgeräuschen. Einfach, effektiv, unverzichtbar.</div>
-      <div class="card-tags"><span class="tag">Meeting</span><span class="tag">Mikrofon</span><span class="tag">Automatisch</span></div>
-      <a class="card-link" href="https://apps.apple.com/de/app/automute-no-more-oopsies/id1118136179?mt=12" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos">
-    <div class="card-inner"><div>
-      <div class="card-header">
-      <div class="card-logo-placeholder" data-domain="bluestacks.com" data-initial="B"><span>B</span></div>
-      <div class="card-header-text"><div class="card-cat">Android-Emulator</div><div class="card-name">BlueStacks</div></div></div>
-      <div class="card-reason">Führt Android-Apps auf dem Mac aus — nützlich zum Testen von Apps oder zum Nutzen von Android-exklusiven Anwendungen. Kostenlos und einfach einzurichten.</div>
-      <div class="card-tags"><span class="tag">Android</span><span class="tag">Emulator</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://www.bluestacks.com/de/mac" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos">
-    <div class="card-inner"><div>
-      <div class="card-header">
-      <div class="card-logo-placeholder" data-domain="macpaw.com" data-initial="C"><span>C</span></div>
-      <div class="card-header-text"><div class="card-cat">System-Cleaner</div><div class="card-name">CleanMyMac</div></div></div>
-      <div class="card-reason">Entfernt Junk-Dateien, alte Caches und unnötige Sprachdateien — hält den Mac schlank und schnell. Übersichtliche Oberfläche, schnelle Scans, gut für regelmäßige Wartung.</div>
-      <div class="card-tags"><span class="tag">Cleaner</span><span class="tag">Optimierung</span><span class="tag">Mac</span></div>
-      <a class="card-link" href="https://macpaw.com/cleanmymac" target="_blank">macpaw.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos">
-    <div class="card-inner"><div>
-      <div class="card-header">
-      <div class="card-logo-placeholder" data-domain="geekbench.com" data-initial="G"><span>G</span></div>
-      <div class="card-header-text"><div class="card-cat">Benchmark</div><div class="card-name">Geekbench 6</div></div></div>
-      <div class="card-reason">Industriestandard für CPU- und GPU-Benchmarks — misst die Systemleistung reproduzierbar und vergleichbar. Ideal zum Einschätzen neuer Hardware oder zur Diagnose von Performance-Problemen.</div>
-      <div class="card-tags"><span class="tag">Benchmark</span><span class="tag">CPU</span><span class="tag">GPU</span></div>
-      <a class="card-link" href="https://www.geekbench.com" target="_blank">geekbench.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos">
-    <div class="card-inner"><div>
-      <div class="card-header">
-      <div class="card-logo-placeholder" data-domain="magnet.crowdcafe.com" data-initial="M"><span>M</span></div>
-      <div class="card-header-text"><div class="card-cat">Fenstermanager</div><div class="card-name">Magnet</div></div></div>
-      <div class="card-reason">Fenster per Tastenkürzel oder Drag-and-Drop an Bildschirmkanten einrasten — macht Multi-Window-Workflows auf dem Mac deutlich effizienter.</div>
-      <div class="card-tags"><span class="tag">Fenstermanager</span><span class="tag">Produktivität</span><span class="tag">Shortcuts</span></div>
-      <a class="card-link" href="https://apps.apple.com/de/app/magnet/id441258766?mt=12" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="card-logo-placeholder" data-domain="objective-see.org" data-initial="L"><span>L</span></div>
+      <div class="card-header-text"><div class="card-cat">Firewall</div><div class="card-name">LuLu</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Kostenlose Open-Source-Firewall für macOS — blockiert unerwünschte ausgehende Netzwerkverbindungen und zeigt welche Apps nach Hause telefonieren. Unverzichtbar für datenschutzbewusste Mac-Nutzer.</div>
+      <div class="card-tags"><span class="tag">Firewall</span><span class="tag">Datenschutz</span><span class="tag">Netzwerk</span></div>
+      <a class="card-link" href="https://objective-see.org/products/lulu.html" target="_blank">objective-see.org <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
@@ -1447,35 +1325,85 @@ footer{
     </div></div>
   </div>
 
-  <div class="card" data-cat="macos">
-    <div class="card-inner"><div>
-      <div class="card-header">
-      <div class="card-logo-placeholder" data-domain="parallels.com" data-initial="P"><span>P</span></div>
-      <div class="card-header-text"><div class="card-cat">Virtualisierung</div><div class="card-name">Parallels</div></div></div>
-      <div class="card-reason">Führt Windows nativ auf dem Mac aus — ohne Neustart, mit voller Leistung und nahtloser Integration. Unverzichtbar für alle, die gelegentlich Windows-Software benötigen.</div>
-      <div class="card-tags"><span class="tag">Windows</span><span class="tag">Virtualisierung</span><span class="tag">Mac</span></div>
-      <a class="card-link" href="https://www.parallels.com/de/" target="_blank">parallels.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos">
+  <div class="card" data-cat="macos" data-oss="true">
     <div class="card-inner"><div>
       <div class="card-header">
       <div class="card-logo-placeholder" data-domain="portfolio-performance.info" data-initial="P"><span>P</span></div>
       <div class="card-header-text"><div class="card-cat">Depot-Verwaltung</div><div class="card-name">Portfolio Performance</div></div></div>
+      <span class="oss-badge">Open Source</span>
       <div class="card-reason">Kostenlose Open-Source-Software zur Verwaltung und Analyse von Wertpapierdepots — Renditeberechnung, Dividenden-Tracking und detaillierte Auswertungen für mehrere Depots.</div>
       <div class="card-tags"><span class="tag">Depot</span><span class="tag">Open Source</span><span class="tag">Kostenlos</span></div>
       <a class="card-link" href="https://www.portfolio-performance.info" target="_blank">portfolio-performance.info <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
+  <div class="card" data-cat="macos" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="github.com" data-initial="P"><span>P</span></div>
+      <div class="card-header-text"><div class="card-cat">Medien-Konverter</div><div class="card-name">PureMac</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Schlankes Open-Source-Tool zum Konvertieren und Verarbeiten von Mediendateien auf dem Mac — einfache Bedienung ohne unnötige Komplexität.</div>
+      <div class="card-tags"><span class="tag">Medien</span><span class="tag">Konverter</span><span class="tag">Open Source</span></div>
+      <a class="card-link" href="https://github.com/momenbasel/PureMac?tab=readme-ov-file" target="_blank">github.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
 
-  <!-- STEUERN -->
+  <div class="card" data-cat="macos" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="rectangleapp.com" data-initial="R"><span>R</span></div>
+      <div class="card-header-text"><div class="card-cat">Fenstermanager</div><div class="card-name">Rectangle</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Kostenloser Open-Source-Fenstermanager — Fenster per Tastenkürzel oder Drag-and-Drop positionieren. Schlanker und schneller als kostenpflichtige Alternativen, komplett gratis.</div>
+      <div class="card-tags"><span class="tag">Fenstermanager</span><span class="tag">Shortcuts</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://rectangleapp.com" target="_blank">rectangleapp.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="macos" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="rustdesk.com" data-initial="R"><span>R</span></div>
+      <div class="card-header-text"><div class="card-cat">Fernwartung</div><div class="card-name">RustDesk</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Open-Source-Alternative zu TeamViewer und AnyDesk — sicherer Fernzugriff auf andere Rechner, selbst hostbar und ohne Abo-Kosten. Plattformübergreifend und datenschutzfreundlich.</div>
+      <div class="card-tags"><span class="tag">Fernwartung</span><span class="tag">Selbst-hostbar</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://rustdesk.com/de" target="_blank">rustdesk.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="macos" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header">
+      <div class="card-logo-placeholder" data-domain="mac.getutm.app" data-initial="U"><span>U</span></div>
+      <div class="card-header-text"><div class="card-cat">Virtualisierung</div><div class="card-name">UTM</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Kostenlose Open-Source-Virtualisierungslösung für macOS — führt Windows, Linux und andere Betriebssysteme aus, optimiert für Apple Silicon. Kostenlose Alternative zu Parallels.</div>
+      <div class="card-tags"><span class="tag">Virtualisierung</span><span class="tag">Apple Silicon</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://mac.getutm.app" target="_blank">mac.getutm.app <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <div class="no-results" id="noResults">Keine Treffer gefunden.</div>
 </div>
 
-<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 13.04.2026 &nbsp;·&nbsp; <a href="https://rglowania.github.io/gselection/impressum" style="color:var(--text-muted);text-decoration:none;">Impressum</a></footer>
+<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 14.04.2026 &nbsp;·&nbsp; <a href="https://rglowania.github.io/gselection/impressum" style="color:var(--text-muted);text-decoration:none;">Impressum</a></footer>
 
 <div class="modal-overlay" id="impressumModal" onclick="if(event.target===this)closeImpressum()">
   <div class="modal-box">
@@ -1507,14 +1435,15 @@ var PD={
   'finanz':          [{d:'wise.com',i:'W',n:'Wise'},{d:'sumup.com',i:'S',n:'SumUp'}],
   'versorger':       [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'sim.de',i:'S',n:'sim.de'},{d:'telekom.de',i:'T',n:'Telekom'},{d:'starlink.com',i:'S',n:'Starlink'}],
   'hardware':        [{d:'apple.com',i:'A',n:'Apple'},{d:'zendure.com',i:'Z',n:'Zendure'},{d:'tesla.com',i:'T',n:'Tesla'},{d:'fritz.com',i:'F',n:'FritzBox'}],
-  'software':        [{d:'tuta.com',i:'T',n:'Tuta'},{d:'proton.me',i:'P',n:'Proton'},{d:'brave.com',i:'B',n:'Brave'},{d:'thalia.de',i:'T',n:'Thalia Hörbücher'},{d:'ublockorigin.com',i:'U',n:'uBlock Origin'},{d:'ecosia.org',i:'E',n:'Ecosia'},{d:'geizhals.de',i:'G',n:'Geizhals'}],
+  'medien':          [{d:'spotify.com',i:'S',n:'Spotify'},{d:'thalia.de',i:'T',n:'Thalia'}],
+  'software':        [{d:'tuta.com',i:'T',n:'Tuta'},{d:'proton.me',i:'P',n:'Proton'},{d:'brave.com',i:'B',n:'Brave'},{d:'ublockorigin.com',i:'U',n:'uBlock Origin'},{d:'ecosia.org',i:'E',n:'Ecosia'},{d:'geizhals.de',i:'G',n:'Geizhals'}],
   'sparen':          [{d:'geizhals.de',i:'G',n:'Geizhals'},{d:'mydealz.de',i:'M',n:'MyDealz'},{d:'payback.de',i:'P',n:'Payback'},{d:'spartanien.de',i:'S',n:'Spartanien'},{d:'topcashback.de',i:'T',n:'TopCashback'}],
   'versicherungen':  [{d:'wgv.de',i:'W',n:'WGV'},{d:'huk.de',i:'H',n:'HUK-COBURG'}],
-  'ki':              [{d:'x.ai',i:'G',n:'Grok'},{d:'claude.ai',i:'C',n:'Claude'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'kagi.com',i:'K',n:'Kagi Translate'}],
+  'ki':              [{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'claude.ai',i:'C',n:'Claude'},{d:'kagi.com',i:'K',n:'Kagi'}],
   'ios':             [{d:'getbring.com',i:'B',n:'Bring'},{d:'finanzguru.de',i:'F',n:'Finanzguru'},{d:'justwatch.com',i:'J',n:'JustWatch'},{d:'quickscan.app',i:'Q',n:'QuickScan'},{d:'thetailor.app',i:'T',n:'Tailor'}],
-  'macos':           [{d:'automute.app',i:'A',n:'AutoMute'},{d:'bluestacks.com',i:'B',n:'BlueStacks'},{d:'macpaw.com',i:'C',n:'CleanMyMac'},{d:'geekbench.com',i:'G',n:'Geekbench 6'},{d:'magnet.crowdcafe.com',i:'M',n:'Magnet'},{d:'monkeymoney.app',i:'M',n:'MoneyMoney'},{d:'parallels.com',i:'P',n:'Parallels'},{d:'portfolio-performance.info',i:'P',n:'Portfolio Performance'}],
+  'macos':           [{d:'objective-see.org',i:'L',n:'LuLu'},{d:'github.com',i:'P',n:'PureMac'},{d:'rectangleapp.com',i:'R',n:'Rectangle'},{d:'rustdesk.com',i:'R',n:'RustDesk'},{d:'mac.getutm.app',i:'U',n:'UTM'},{d:'monkeymoney.app',i:'M',n:'MoneyMoney'},{d:'portfolio-performance.info',i:'P',n:'Portfolio Performance'}],
   'ios':             [{d:'getbring.com',i:'B',n:'Bring'},{d:'finanzguru.de',i:'F',n:'Finanzguru'},{d:'justwatch.com',i:'J',n:'JustWatch'},{d:'quickscan.app',i:'Q',n:'QuickScan'},{d:'www.thetailorcam.com',i:'T',n:'Tailor'}],
-  'macos':           [{d:'automute.app',i:'A',n:'AutoMute'},{d:'bluestacks.com',i:'B',n:'BlueStacks'},{d:'macpaw.com',i:'C',n:'CleanMyMac'},{d:'geekbench.com',i:'G',n:'Geekbench 6'},{d:'magnet.crowdcafe.com',i:'M',n:'Magnet'},{d:'monkeymoney.app',i:'M',n:'MoneyMoney'},{d:'parallels.com',i:'P',n:'Parallels'},{d:'portfolio-performance.info',i:'P',n:'Portfolio Performance'}],
+  'macos':           [{d:'objective-see.org',i:'L',n:'LuLu'},{d:'github.com',i:'P',n:'PureMac'},{d:'rectangleapp.com',i:'R',n:'Rectangle'},{d:'rustdesk.com',i:'R',n:'RustDesk'},{d:'mac.getutm.app',i:'U',n:'UTM'},{d:'monkeymoney.app',i:'M',n:'MoneyMoney'},{d:'portfolio-performance.info',i:'P',n:'Portfolio Performance'}],
   'steuern':         [{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'},{d:'lexware.de',i:'L',n:'Lexware'},{d:'taxpool.de',i:'T',n:'Taxpool'}],
 };
 
@@ -1574,18 +1503,16 @@ function filterFromDropdown(cat, btn){
   document.querySelectorAll('.filter-dropdown-menu button').forEach(function(b){b.classList.remove('active');});
   btn.classList.add('active');
   document.getElementById('dropdownBtn').classList.add('active');
-  document.querySelector('.filter-btn.active') && document.querySelector('.filter-btn.active').classList.remove('active');
-  // Call filter with a dummy btn that won't cause issues
+  var active=document.querySelector('.filter-btn.active');if(active)active.classList.remove('active');
   currentFilter=cat;
-  var isAll=false;
   document.querySelectorAll('.section-label').forEach(function(s){
     var show=s.dataset.cat===cat;
     s.style.display=show?'':'none';
     var prev=document.getElementById('preview-'+s.dataset.cat);
-    var body=document.getElementById('body-'+s.dataset.cat);
-    if(body)body.style.display=show?'':(body.classList.contains('collapsed')?'none':'');
-    if(show){collapseSection(s,false);if(prev)prev.style.display='none';}
-    else{if(prev)prev.style.display='none';}
+    if(prev)prev.style.display='none';
+    if(show){
+      collapseSection(s,false);
+    }
   });
   document.querySelectorAll('.card').forEach(function(c){c.style.display='';});
 }
