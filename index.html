@@ -452,7 +452,7 @@ footer{
             <div class="card-name">Trade Republic</div>
           </div>
         </div>
-        <div class="card-reason">Modernes Konto mit 3,25 % Zinsen auf den gesamten Cashbestand, kostenloser Visa-Karte und nahtloser Integration ins Depot. Ideal für alle, die Konto und Investment in einer App vereinen wollen.</div>
+        <div class="card-reason">Modernes Konto mit 2 % Zinsen p.a. auf den gesamten Cashbestand, kostenloser Visa-Karte und nahtloser Integration ins Depot. Ideal für alle, die Konto und Investment in einer App vereinen wollen.</div>
         <div class="card-tags">
           <span class="tag">Girokonto</span>
           <span class="tag">Zinsen</span>
@@ -1672,6 +1672,42 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeImpress
 
   var total=document.querySelectorAll('.card').length;
   document.getElementById('searchInput').placeholder='Durchsuche '+total+' Empfehlungen…';
+})();
+
+// ── Trade Republic Zinsen: Live-Check ────────────────────────
+(function(){
+  // Fallback-Rate hardcoded (manuell aktualisiert: 2 % per April 2026)
+  var fallbackRate = '2';
+
+  function updateTRRate(rate) {
+    // Update all TR cards (banken + broker)
+    document.querySelectorAll('.card').forEach(function(card) {
+      var nameEl = card.querySelector('.card-name');
+      if (!nameEl || nameEl.textContent !== 'Trade Republic') return;
+      var reason = card.querySelector('.card-reason');
+      if (!reason) return;
+      reason.innerHTML = reason.innerHTML
+        .replace(/\d+[,.]?\d*\s*%\s*Zinsen p\.a\./g, rate + '\u00a0% Zinsen p.a.')
+        .replace(/\d+[,.]?\d*\s*%\s*Zinsen/g, rate + '\u00a0% Zinsen');
+    });
+  }
+
+  // Try to fetch current rate from Trade Republic's public API
+  // Using the ECB deposit facility rate as proxy (TR tracks it 1:1)
+  fetch('https://data-api.ecb.europa.eu/service/data/FM/B.U2.EUR.4F.KR.DFR.LEV?lastNObservations=1&format=jsondata')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      var obs = data.dataSets[0].series['0:0:0:0:0:0:0'].observations;
+      var keys = Object.keys(obs).sort(function(a,b){return +a-+b;});
+      var rate = parseFloat(obs[keys[keys.length-1]][0]);
+      // TR passes ECB deposit rate through directly
+      var rateStr = rate.toFixed(2).replace('.',',');
+      updateTRRate(rateStr);
+    })
+    .catch(function(){
+      // Fallback: use hardcoded rate
+      updateTRRate(fallbackRate);
+    });
 })();
 </script>
 </body>
