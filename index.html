@@ -399,29 +399,31 @@ footer{
   </div>
 
   <div class="filter-bar">
-    <button class="filter-btn active" onclick="filter('all',this)">Alle</button>
-    <div class="filter-dropdown">
-      <button class="filter-dropdown-btn" onclick="toggleDropdown()" id="dropdownBtn">Kategorie ▾</button>
-      <div class="filter-dropdown-menu" id="dropdownMenu">
-        <button onclick="filterFromDropdown('banken',this)">Banken</button>
-        <button onclick="filterFromDropdown('kreditkarten',this)">Kreditkarten</button>
-        <button onclick="filterFromDropdown('broker',this)">Broker &amp; Krypto</button>
-        <button onclick="filterFromDropdown('finanz',this)">Finanz-Dienstleister</button>
-        <button onclick="filterFromDropdown('versorger',this)">Strom, Gas, Internet</button>
-        <button onclick="filterFromDropdown('versicherungen',this)">Versicherungen</button>
-        <button onclick="filterFromDropdown('hardware',this)">Hardware</button>
-        <button onclick="filterFromDropdown('medien',this)">Medien</button>
-        <button onclick="filterFromDropdown('software',this)">Tools/Allgemein</button>
-        <button onclick="filterFromDropdown('ki',this)">Tools/KI</button>
-        <button onclick="filterFromDropdown('sparen',this)">Tools/Sparen</button>
-        <button onclick="filterFromDropdown('steuern',this)">Tools/Steuern</button>
-        <button onclick="filterFromDropdown('ios',this)">Tools/iOS</button>
-        <button onclick="filterFromDropdown('macos',this)">Tools/macOS</button>
+      <button class="filter-btn active" onclick="filter('all',this)">Alle</button>
+      <div class="filter-dropdown">
+        <button class="filter-dropdown-btn" onclick="toggleDropdown()" id="dropdownBtn">Kategorie ▾</button>
+        <div class="filter-dropdown-menu" id="dropdownMenu">
+          <button onclick="filterFromDropdown('banken',this)">Banken</button>
+          <button onclick="filterFromDropdown('broker',this)">Broker/Krypto</button>
+          <button onclick="filterFromDropdown('cashback',this)">Cashback/Rabatte</button>
+          <button onclick="filterFromDropdown('cloudmail',this)">Cloud/Mail/VPN</button>
+          <button onclick="filterFromDropdown('finanzen',this)">Finanzen</button>
+          <button onclick="filterFromDropdown('hardware',this)">Hardware</button>
+          <button onclick="filterFromDropdown('helferlein',this)">Helferlein</button>
+          <button onclick="filterFromDropdown('ki',this)">KI</button>
+          <button onclick="filterFromDropdown('kreditkarten',this)">Kreditkarten</button>
+          <button onclick="filterFromDropdown('medien',this)">Medien</button>
+          <button onclick="filterFromDropdown('steuern',this)">Steuern</button>
+          <button onclick="filterFromDropdown('versorger',this)">Strom/Gas/Internet</button>
+          <button onclick="filterFromDropdown('versicherungen',this)">Versicherungen</button>
+        </div>
       </div>
     </div>
   </div>
 
 
+  <!-- BANKEN -->
+  <!-- BANKEN -->
   <!-- BANKEN -->
   <!-- BANKEN -->
   <div class="section-label" data-cat="banken"><span class="sl-emoji">🏦</span><span class="sl-title">Banken</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
@@ -492,55 +494,9 @@ footer{
 
   <!-- KREDITKARTEN -->
   <!-- KREDITKARTEN -->
-  <div class="section-label" data-cat="kreditkarten"><span class="sl-emoji">💳</span><span class="sl-title">Kreditkarten</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="kreditkarten">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-          <div class="card-logo-placeholder" data-domain="americanexpress.com" data-initial="A"><span>A</span></div>
-          <div class="card-header-text">
-            <div class="card-cat">Kreditkarte</div>
-            <div class="card-name">American Express</div>
-          </div>
-        </div>
-        <div class="card-reason">Premium-Karte mit starken Reiseleistungen, Lounge-Zugang und attraktivem Membership-Rewards-Programm. <strong style="color:var(--accent-lt)">Bis zu 200.000 Membership Rewards Punkte</strong> über den Empfehlungslink. Für Vielreisende rechnet sich die Jahresgebühr schnell.</div>
-        <div class="card-tags">
-          <span class="tag">Premium</span>
-          <span class="tag">Lounge-Zugang</span>
-          <span class="tag">Reiseschutz</span>
-        </div>
-        <a class="card-link" href="https://americanexpress.com/de-de/referral/business-platinum?ref=vANESSwWeH&XL=MIMNS" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="kreditkarten">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-          <div class="card-logo-placeholder" data-domain="easybank.at" data-initial="E"><span>E</span></div>
-          <div class="card-header-text">
-            <div class="card-cat">Kreditkarte · Kostenlos</div>
-            <div class="card-name">Easybank</div>
-          </div>
-        </div>
-        <div class="card-reason">Kostenlose Kreditkarte ohne Jahresgebühr — kein Fremdwährungsaufschlag, weltweite Akzeptanz und solide Konditionen.</div>
-        <div class="card-tags">
-          <span class="tag">Kostenlos</span>
-          <span class="tag">Kein FX-Aufschlag</span>
-          <span class="tag">Weltweit</span>
-        </div>
-        <a class="card-link" href="https://www.easybank.de" target="_blank">easybank.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- BROKER -->
-  <!-- BROKER -->
-  <!-- BROKER -->
-  <!-- BROKER -->
-  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker &amp; Krypto</span><span class="sl-count">7</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <!-- KREDITKARTEN -->
+  <!-- KREDITKARTEN -->
+  <div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker/Krypto</span><span class="sl-count">7</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="banken">
     <div class="card-inner">
@@ -700,83 +656,180 @@ footer{
   </div>
 
   <!-- FINANZ -->
-  <div class="section-label" data-cat="finanz"><span class="sl-emoji">💶</span><span class="sl-title">Finanz-Dienstleister</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <!-- SPAREN -->
+  <!-- SPAREN -->
+  <!-- SPAREN -->
+  <div class="section-label" data-cat="cashback"><span class="sl-emoji">💰</span><span class="sl-title">Cashback/Rabatte</span><span class="sl-count">6</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
-  <div class="card" data-cat="finanz">
+  <div class="card" data-cat="cashback">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="wise.com" data-initial="W"><span>W</span></div><div class="card-header-text"><div class="card-cat">Auslandsüberweisung · Karte</div><div class="card-name">Wise</div></div></div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="geizhals.de" data-initial="G"><span>G</span></div><div class="card-header-text"><div class="card-cat">Preisvergleich</div><div class="card-name">Geizhals</div></div></div>
+      <div class="card-reason">Umfangreicher Preisvergleich für Hardware, Elektronik und mehr — mit Preisverlauf, Produktbewertungen und Händlerübersicht.</div>
+      <div class="card-tags"><span class="tag">Preisvergleich</span><span class="tag">Hardware</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://geizhals.de" target="_blank">geizhals.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="cashback">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="mydealz.de" data-initial="M"><span>M</span></div><div class="card-header-text"><div class="card-cat">Deal-Community</div><div class="card-name">MyDealz</div></div></div>
+      <div class="card-reason">Größte deutschsprachige Deal-Community — Nutzer teilen Rabattaktionen, Gutscheincodes und Schnäppchen in Echtzeit.</div>
+      <div class="card-tags"><span class="tag">Deals</span><span class="tag">Rabatte</span><span class="tag">Community</span></div>
+      <a class="card-link" href="https://www.mydealz.de" target="_blank">mydealz.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="cashback">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="payback.de" data-initial="P"><span>P</span></div><div class="card-header-text"><div class="card-cat">Bonusprogramm</div><div class="card-name">Payback</div></div></div>
+      <div class="card-reason">Deutschlands größtes Bonusprogramm — Punkte bei über 680 Partnern sammeln und in Prämien, Gutscheine oder Bargeld umwandeln.</div>
+      <div class="card-tags"><span class="tag">Bonuspunkte</span><span class="tag">Cashback</span><span class="tag">Gutscheine</span></div>
+      <a class="card-link" href="https://www.payback.de" target="_blank">payback.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="cashback">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="spartanien.de" data-initial="S"><span>S</span></div><div class="card-header-text"><div class="card-cat">Schnäppchen &amp; Deals</div><div class="card-name">Spartanien</div></div></div>
+      <div class="card-reason">Kuratierte Sammlung der besten aktuellen Deals, Rabattcodes und Angebote — übersichtlich aufbereitet und täglich aktualisiert.</div>
+      <div class="card-tags"><span class="tag">Deals</span><span class="tag">Rabatte</span><span class="tag">Täglich</span></div>
+      <a class="card-link" href="https://www.spartanien.de/?u=193188" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="cashback">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="spliiit.com" data-initial="S"><span>S</span></div><div class="card-header-text"><div class="card-cat">Abo-Sharing</div><div class="card-name">Spliiit</div></div></div>
+      <div class="card-reason">Plattform zum Teilen von Streaming- und Software-Abonnements — Netflix, Spotify, Adobe und mehr günstiger nutzen durch legales Gruppen-Splitting.</div>
+      <div class="card-tags"><span class="tag">Abo-Sharing</span><span class="tag">Sparen</span><span class="tag">Streaming</span></div>
+      <a class="card-link" href="https://spliiit.com" target="_blank">spliiit.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="cashback">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="topcashback.de" data-initial="T"><span>T</span></div><div class="card-header-text"><div class="card-cat">Cashback</div><div class="card-name">TopCashback</div></div></div>
+      <div class="card-reason">Cashback-Portal mit einer der höchsten Rückvergütungen am Markt — bei Hunderten Online-Shops Geld zurückbekommen.</div>
+      <div class="card-tags"><span class="tag">Cashback</span><span class="tag">Online-Shopping</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://www.topcashback.de/ref/DealzFox/?source=App-iOS-TAFPage" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="section-label" data-cat="cloudmail"><span class="sl-emoji">☁️</span><span class="sl-title">Cloud/Mail/VPN</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="cloudmail">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="emclient.com" data-initial="E"><span>E</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">E-Mail · Kalender · Kontakte</div>
+            <div class="card-name">eM Client</div>
+          </div>
+        </div>
+        <div class="card-reason">Vollwertiger E-Mail-Client mit Kalender- und Kontaktverwaltung — unterstützt alle gängigen Mail-Protokolle, übersichtliche Oberfläche und nahtlose Synchronisation mit dem Desktop-Client.</div>
+        <div class="card-tags">
+          <span class="tag">E-Mail</span>
+          <span class="tag">Kalender</span>
+          <span class="tag">Kontakte</span>
+        </div>
+        <a class="card-link" href="https://apps.apple.com/de/app/em-client/id1639597372" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="cloudmail">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="proton.me" data-initial="P"><span>P</span></div><div class="card-header-text"><div class="card-cat">Passwörter · Cloudspeicher · VPN</div><div class="card-name">Proton</div></div></div>
+      <div class="card-reason">Datenschutz-Ökosystem aus der Schweiz — Proton Pass, Proton Drive und Proton VPN in einem. End-to-end verschlüsselt, kein Tracking.</div>
+      <div class="card-tags"><span class="tag">E2E-verschlüsselt</span><span class="tag">Open Source</span><span class="tag">Schweiz</span></div>
+      <a class="card-link" href="https://proton.me/de" target="_blank">proton.me <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="cloudmail">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="tuta.com" data-initial="T"><span>T</span></div><div class="card-header-text"><div class="card-cat">Mail · Kalender · Verschlüsselt</div><div class="card-name">Tuta</div></div></div>
+      <div class="card-reason">End-to-end-verschlüsselter E-Mail-Dienst aus Deutschland — kein Tracking, Open Source. Kostenlose Basis-Version verfügbar.</div>
+      <div class="card-tags"><span class="tag">E2E-verschlüsselt</span><span class="tag">Open Source</span><span class="tag">Deutschland</span></div>
+      <a class="card-link" href="https://app.tuta.com/signup?ref=anNtbXlqUkY&s=0" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="section-label" data-cat="finanzen"><span class="sl-emoji">📊</span><span class="sl-title">Finanzen</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="finanzen">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="finanzguru.de" data-initial="F"><span>F</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">Finanzen · Überblick</div>
+            <div class="card-name">Finanzguru</div>
+          </div>
+        </div>
+        <div class="card-reason">Alle Konten, Ausgaben und Abonnements auf einen Blick — automatische Kategorisierung, Ausgabenanalyse und Budgetplanung. Datenschutzfreundlich und in Deutschland entwickelt.</div>
+        <div class="card-tags">
+          <span class="tag">Finanzen</span>
+          <span class="tag">Budget</span>
+          <span class="tag">Deutschland</span>
+        </div>
+        <a class="card-link" href="https://finanzguru.de" target="_blank">finanzguru.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="finanzen">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="moneymoney-app.com" data-initial="M"><span>M</span></div><div class="card-header-text"><div class="card-cat">Haushaltsbuch</div><div class="card-name">MoneyMoney</div></div></div>
+      <div class="card-reason">Übersichtliches Haushaltsbuch für macOS — Transaktionen importieren, Kategorien zuweisen und Ausgaben analysieren. Lokale Datenhaltung.</div>
+      <div class="card-tags"><span class="tag">Haushaltsbuch</span><span class="tag">Budget</span><span class="tag">Lokal</span></div>
+      <a class="card-link" href="https://moneymoney-app.com" target="_blank">moneymoney-app.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="finanzen" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="portfolio-performance.info" data-initial="P"><span>P</span></div><div class="card-header-text"><div class="card-cat">Depot-Verwaltung</div><div class="card-name">Portfolio Performance</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Kostenlose Open-Source-Software zur Verwaltung und Analyse von Wertpapierdepots — Renditeberechnung, Dividenden-Tracking und detaillierte Auswertungen.</div>
+      <div class="card-tags"><span class="tag">Depot</span><span class="tag">Open Source</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://www.portfolio-performance.info" target="_blank">portfolio-performance.info <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+    <div class="card" data-cat="finanzen">
+    <div class="card-inner"><div>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="wise.com" data-initial="W"><span>W</span></div>
+        <div class="card-header-text"><div class="card-cat">Auslandsüberweisung · Karte</div><div class="card-name">Wise</div></div>
+      </div>
       <div class="card-reason">Günstigste Lösung für internationale Überweisungen und Fremdwährungen — echter Wechselkurs (Mid-Market Rate), keine versteckten Aufschläge. Ideal für Grenzgänger und alle mit regelmäßigen Auslandszahlungen.</div>
       <div class="card-tags"><span class="tag">Überweisung</span><span class="tag">Kein FX-Aufschlag</span><span class="tag">Weltweit</span></div>
       <a class="card-link" href="https://wise.com/de/" target="_blank">wise.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
-  <div class="card" data-cat="finanz">
+  <div class="card" data-cat="finanzen">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="sumup.com" data-initial="S"><span>S</span></div><div class="card-header-text"><div class="card-cat">Kartenzahlung · Business</div><div class="card-name">SumUp</div></div></div>
-      <div class="card-reason">Kompaktes Kartenlesegerät für Selbstständige und kleine Betriebe — einfache Einrichtung, keine Grundgebühr. Bis zu 100 € Rabatt über den Empfehlungslink.</div>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="sumup.com" data-initial="S"><span>S</span></div>
+        <div class="card-header-text"><div class="card-cat">Kartenzahlung · Business</div><div class="card-name">SumUp</div></div>
+      </div>
+      <div class="card-reason">Kompaktes Kartenlesegerät für Selbstständige und kleine Betriebe — einfache Einrichtung, keine Grundgebühr. Bis zu 100 € Rabatt für dich auf den ersten Einkauf über den Empfehlungslink.</div>
       <div class="card-tags"><span class="tag">Kartenzahlung</span><span class="tag">Business</span><span class="tag">Keine Grundgebühr</span></div>
       <a class="card-link" href="https://join.sumup.com/J9QrlnMa?share_id=tce94kMj9qrlnma" target="_blank">Zum Angebot <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
-  <!-- VERSORGER -->
-  <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Strom, Gas, Internet</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="versorger">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="octopusenergy.de" data-initial="O"><span>O</span></div><div class="card-header-text"><div class="card-cat">Strom &amp; Gas</div><div class="card-name">Octopus Energy</div></div></div>
-      <div class="card-reason">Transparente Preisstruktur, dynamische Tarifoptionen und exzellenter Kundenservice. <strong style="color:var(--accent-lt)">100 € Bonus</strong> über den Empfehlungslink.</div>
-      <div class="card-tags"><span class="tag">Ökostrom</span><span class="tag">Dynamisch</span><span class="tag">Smart Home</span></div>
-      <a class="card-link" href="https://share.octopusenergy.de/crisp-lion-905" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="versorger">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="sim.de" data-initial="S"><span>S</span></div><div class="card-header-text"><div class="card-cat">DSL · Festnetz</div><div class="card-name">sim.de DSL</div></div></div>
-      <div class="card-reason">Günstiger DSL-Anbieter im Telekom-Netz — zuverlässige Verbindung zu fairen Konditionen ohne lange Vertragslaufzeiten.</div>
-      <div class="card-tags"><span class="tag">DSL</span><span class="tag">Günstig</span><span class="tag">Telekom-Netz</span></div>
-      <a class="card-link" href="https://www.sim.de" target="_blank">sim.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="versorger">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="starlink.com" data-initial="S"><span>S</span></div><div class="card-header-text"><div class="card-cat">Satelliteninternet</div><div class="card-name">Starlink</div></div></div>
-      <div class="card-reason">Satelliteninternet von SpaceX — überall verfügbar, auch in ländlichen Gebieten ohne Glasfaseranschluss. Hohe Geschwindigkeit, geringe Latenz und schnell eingerichtet.</div>
-      <div class="card-tags"><span class="tag">Satellit</span><span class="tag">Überall</span><span class="tag">Schnell</span></div>
-      <a class="card-link" href="https://www.starlink.com/de" target="_blank">starlink.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <!-- VERSICHERUNGEN -->
-  <div class="section-label" data-cat="versicherungen"><span class="sl-emoji">🛡️</span><span class="sl-title">Versicherungen</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="versicherungen">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="wgv.de" data-initial="W"><span>W</span></div><div class="card-header-text"><div class="card-cat">Rechtsschutzversicherung</div><div class="card-name">WGV</div></div></div>
-      <div class="card-reason">Günstige Rechtsschutzversicherung aus dem Südwesten — solide Leistungen für Privat, Beruf und Verkehr zu fairen Prämien.</div>
-      <div class="card-tags"><span class="tag">Rechtsschutz</span><span class="tag">Günstig</span><span class="tag">Privat</span></div>
-      <a class="card-link" href="https://www.wgv.de/?p_verm_nr=104828" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="versicherungen">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="huk.de" data-initial="H"><span>H</span></div><div class="card-header-text"><div class="card-cat">Kfz &amp; Sonstige Versicherungen</div><div class="card-name">HUK-COBURG</div></div></div>
-      <div class="card-reason">Günstigste Vollkasko-Prämien bei solider Schadenregulierung — Direktversicherer ohne teure Vertriebsstruktur. Neben Kfz auch Hausrat, Haftpflicht und weitere Versicherungen.</div>
-      <div class="card-tags"><span class="tag">Günstig</span><span class="tag">Direktversicherer</span><span class="tag">Kfz</span></div>
-      <a class="card-link" href="https://www.huk.de" target="_blank">huk.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <!-- HARDWARE -->
-  <div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+<div class="section-label" data-cat="hardware"><span class="sl-emoji">📱</span><span class="sl-title">Hardware</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="hardware">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="apple.com" data-initial="A"><span>A</span></div><div class="card-header-text"><div class="card-cat">Smartphone · Mac · Tablet</div><div class="card-name">Apple</div></div></div>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="apple.com" data-initial="A"><span>A</span></div>
+        <div class="card-header-text"><div class="card-cat">Smartphone · Mac · Tablet</div><div class="card-name">Apple</div></div>
+      </div>
       <div class="card-reason">Meine klare Empfehlung für alle drei Geräteklassen: iPhones, Macs und iPads bilden ein starkes Ökosystem für Alltag, Arbeit und kreative Aufgaben.</div>
       <div class="card-tags"><span class="tag">iPhone</span><span class="tag">Mac</span><span class="tag">iPad</span></div>
       <a class="card-link" href="https://www.apple.com/de/shop/buy-iphone" target="_blank">iPhone <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -787,16 +840,35 @@ footer{
 
   <div class="card" data-cat="hardware">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="zendure.com" data-initial="Z"><span>Z</span></div><div class="card-header-text"><div class="card-cat">Balkonkraftwerk</div><div class="card-name">Zendure</div></div></div>
-      <div class="card-reason">Balkonkraftwerke mit integriertem Akku — Sonnenenergie tagsüber speichern und flexibel verbrauchen. Einfache App-Steuerung, solide Verarbeitung.</div>
-      <div class="card-tags"><span class="tag">Plug &amp; Play</span><span class="tag">Akku</span></div>
-      <a class="card-link" href="https://www.zendure.com/de" target="_blank">zendure.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="fritz.com" data-initial="F"><span>F</span></div>
+        <div class="card-header-text"><div class="card-cat">Router · Smart Home</div><div class="card-name">FritzBox</div></div>
+      </div>
+      <div class="card-reason">Beste Router-Serie für den Heimgebrauch — zuverlässiges WLAN, integrierte Telefonanlage, umfangreiche Smart-Home-Funktionen und regelmäßige Firmware-Updates. Marktführer in Deutschland aus gutem Grund.</div>
+      <div class="card-tags"><span class="tag">Router</span><span class="tag">Smart Home</span><span class="tag">WLAN</span></div>
+      <a class="card-link" href="https://fritz.com/collections/fritz-box" target="_blank">fritz.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="hardware" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="home-assistant.io" data-initial="H"><span>H</span></div>
+        <div class="card-header-text"><div class="card-cat">Smart Home · Automatisierung</div><div class="card-name">Home Assistant</div></div>
+      </div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Die mächtigste Open-Source-Smart-Home-Plattform — verbindet Geräte aller Hersteller, vollständig lokal betreibbar ohne Cloud-Zwang. Raspberry Pi oder dedizierte Hardware, grenzenlose Automatisierungen.</div>
+      <div class="card-tags"><span class="tag">Smart Home</span><span class="tag">Lokal</span><span class="tag">Open Source</span></div>
+      <a class="card-link" href="https://www.home-assistant.io" target="_blank">home-assistant.io <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
   <div class="card" data-cat="hardware">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="tesla.com" data-initial="T"><span>T</span></div><div class="card-header-text"><div class="card-cat">Auto</div><div class="card-name">Tesla</div></div></div>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="tesla.com" data-initial="T"><span>T</span></div>
+        <div class="card-header-text"><div class="card-cat">Auto</div><div class="card-name">Tesla</div></div>
+      </div>
       <div class="card-reason">Niedrige Betriebskosten, exzellentes Supercharger-Netz und Over-the-Air-Updates. <strong style="color:var(--accent-lt)">1.000 km Supercharger gratis</strong> über den Empfehlungslink.</div>
       <div class="card-tags"><span class="tag">Elektro</span><span class="tag">Supercharger</span><span class="tag">Performance</span></div>
       <a class="card-link" href="https://www.tesla.com/de_de/referral/vanessa47370" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
@@ -805,15 +877,293 @@ footer{
 
   <div class="card" data-cat="hardware">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="fritz.com" data-initial="F"><span>F</span></div><div class="card-header-text"><div class="card-cat">Router · Smart Home</div><div class="card-name">FritzBox</div></div></div>
-      <div class="card-reason">Beste Router-Serie für den Heimgebrauch — zuverlässiges WLAN, integrierte Telefonanlage, umfangreiche Smart-Home-Funktionen und regelmäßige Firmware-Updates.</div>
-      <div class="card-tags"><span class="tag">Router</span><span class="tag">Smart Home</span><span class="tag">WLAN</span></div>
-      <a class="card-link" href="https://fritz.com/collections/fritz-box" target="_blank">fritz.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="zendure.com" data-initial="Z"><span>Z</span></div>
+        <div class="card-header-text"><div class="card-cat">Balkonkraftwerk</div><div class="card-name">Zendure</div></div>
+      </div>
+      <div class="card-reason">Balkonkraftwerke mit integriertem Akku — Sonnenenergie tagsüber speichern und flexibel verbrauchen. Einfache App-Steuerung, solide Verarbeitung.</div>
+      <div class="card-tags"><span class="tag">Plug &amp; Play</span><span class="tag">Akku</span></div>
+      <a class="card-link" href="https://www.zendure.com/de" target="_blank">zendure.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
-  <!-- MEDIEN -->
-  <div class="section-label" data-cat="medien"><span class="sl-emoji">🎵</span><span class="sl-title">Medien</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="helferlein"><span class="sl-emoji">🛠️</span><span class="sl-title">Helferlein</span><span class="sl-count">11</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="helferlein" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="brave.com" data-initial="B"><span>B</span></div><div class="card-header-text"><div class="card-cat">Browser &amp; Suche</div><div class="card-name">Brave</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Datenschutzfokussierter Browser mit eingebautem Werbeblocker und Tracker-Schutz. Chromium-basiert, schnell und ohne Google-Tracking.</div>
+      <div class="card-tags"><span class="tag">Browser</span><span class="tag">Datenschutz</span><span class="tag">Anpassbar</span></div>
+      <a class="card-link" href="https://brave.com/de/" target="_blank">brave.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="helferlein">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="getbring.com" data-initial="B"><span>B</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">Einkaufsliste</div>
+            <div class="card-name">Bring</div>
+          </div>
+        </div>
+        <div class="card-reason">Geteilte Einkaufslisten für den Alltag — mehrere Personen können gleichzeitig Artikel hinzufügen und abhaken. Übersichtlich, schnell und mit Rezeptintegration.</div>
+        <div class="card-tags">
+          <span class="tag">Einkauf</span>
+          <span class="tag">Geteilt</span>
+          <span class="tag">Kostenlos</span>
+        </div>
+        <a class="card-link" href="https://apps.apple.com/de/app/bring-einkaufsliste-rezepte/id580669177" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="helferlein" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="objective-see.org" data-initial="L"><span>L</span></div><div class="card-header-text"><div class="card-cat">Firewall</div><div class="card-name">LuLu</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Kostenlose Open-Source-Firewall für macOS — blockiert unerwünschte ausgehende Netzwerkverbindungen.</div>
+      <div class="card-tags"><span class="tag">Firewall</span><span class="tag">Datenschutz</span><span class="tag">Netzwerk</span></div>
+      <a class="card-link" href="https://objective-see.org/products/lulu.html" target="_blank">objective-see.org <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="helferlein">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="noir.app" data-initial="N"><span>N</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">Safari-Erweiterung</div>
+            <div class="card-name">Noir</div>
+          </div>
+        </div>
+        <div class="card-reason">Aktiviert Dark Mode auf allen Webseiten in Safari — auch auf Seiten die keinen eigenen Dark Mode haben. Einfache Bedienung, sehr gute Darstellung und kaum Akkuverbrauch.</div>
+        <div class="card-tags">
+          <span class="tag">Dark Mode</span>
+          <span class="tag">Safari</span>
+          <span class="tag">Erweiterung</span>
+        </div>
+        <a class="card-link" href="https://apps.apple.com/de/app/noir-dark-mode-for-safari/id1581140954" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="helferlein" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="github.com" data-initial="P"><span>P</span></div><div class="card-header-text"><div class="card-cat">Medien-Konverter</div><div class="card-name">PureMac</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Schlankes Open-Source-Tool zum Konvertieren und Verarbeiten von Mediendateien auf dem Mac.</div>
+      <div class="card-tags"><span class="tag">Medien</span><span class="tag">Konverter</span><span class="tag">Open Source</span></div>
+      <a class="card-link" href="https://github.com/momenbasel/PureMac?tab=readme-ov-file" target="_blank">github.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="helferlein">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="getquickscan.com" data-initial="Q"><span>Q</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">Scanner</div>
+            <div class="card-name">QuickScan</div>
+          </div>
+        </div>
+        <div class="card-reason">Schneller und präziser Dokumentenscanner für iOS — automatische Kantenerkennung, PDF-Export und iCloud-Integration. Ideal für unterwegs schnell Dokumente digitalisieren.</div>
+        <div class="card-tags">
+          <span class="tag">Scanner</span>
+          <span class="tag">PDF</span>
+          <span class="tag">iCloud</span>
+        </div>
+        <a class="card-link" href="https://apps.apple.com/de/app/ocr-scanner-quickscan/id1513790291" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="helferlein" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="rectangleapp.com" data-initial="R"><span>R</span></div><div class="card-header-text"><div class="card-cat">Fenstermanager</div><div class="card-name">Rectangle</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Kostenloser Open-Source-Fenstermanager — Fenster per Tastenkürzel oder Drag-and-Drop positionieren.</div>
+      <div class="card-tags"><span class="tag">Fenstermanager</span><span class="tag">Shortcuts</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://rectangleapp.com" target="_blank">rectangleapp.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="helferlein" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="rustdesk.com" data-initial="R"><span>R</span></div><div class="card-header-text"><div class="card-cat">Fernwartung</div><div class="card-name">RustDesk</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Open-Source-Alternative zu TeamViewer — sicherer Fernzugriff auf andere Rechner, selbst hostbar und ohne Abo-Kosten.</div>
+      <div class="card-tags"><span class="tag">Fernwartung</span><span class="tag">Selbst-hostbar</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://rustdesk.com/de" target="_blank">rustdesk.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="helferlein">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="supercardsapp.com" data-initial="S"><span>S</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">Kundenkarten-Wallet</div>
+            <div class="card-name">SuperCards</div>
+          </div>
+        </div>
+        <div class="card-reason">Alle Kundenkarten, Bonusprogramme und Treuekarten in einer App — über 4.000 Vorlagen, kein Account erforderlich, werbefrei und vollständig offline nutzbar. Die beste Stocard-Alternative mit lokalem Datenschutz.</div>
+        <div class="card-tags">
+          <span class="tag">Kundenkarten</span>
+          <span class="tag">Werbefrei</span>
+          <span class="tag">Offline</span>
+        </div>
+        <a class="card-link" href="https://apps.apple.com/de/app/supercards-store-card/id6482576688" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="helferlein">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="thetailor.app" data-initial="T"><span>T</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">Screenshot-App</div>
+            <div class="card-name">Tailor</div>
+          </div>
+        </div>
+        <div class="card-reason">Fügt mehrere Screenshots automatisch zu einem langen Bild zusammen — praktisch für lange Chats, Webseiten oder Dokumente. Einfache Bedienung, saubere Ergebnisse.</div>
+        <div class="card-tags">
+          <span class="tag">Screenshots</span>
+          <span class="tag">Zusammenfügen</span>
+          <span class="tag">Kostenlos</span>
+        </div>
+        <a class="card-link" href="https://apps.apple.com/de/app/tailor-screenshot-stitching/id926653095" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="helferlein" data-oss="true">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="ublockorigin.com" data-initial="U"><span>U</span></div><div class="card-header-text"><div class="card-cat">Werbeblocker</div><div class="card-name">uBlock Origin</div></div></div>
+      <span class="oss-badge">Open Source</span>
+      <div class="card-reason">Der effektivste und ressourcenschonendste Werbeblocker — Open Source, kostenlos, blockiert Werbung, Tracker und Malware-Domains.</div>
+      <div class="card-tags"><span class="tag">Open Source</span><span class="tag">Kostenlos</span><span class="tag">Datenschutz</span></div>
+      <a class="card-link" href="https://ublockorigin.com/de" target="_blank">ublockorigin.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">KI</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="ki">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="claude.ai" data-initial="C"><span>C</span></div><div class="card-header-text"><div class="card-cat">KI · Coding &amp; komplexe Aufgaben</div><div class="card-name">Claude</div></div></div>
+      <div class="card-reason">Meine erste Wahl für komplexe Analysen, Coding und längere Texte — starkes Reasoning, großes Kontextfenster und sehr präzise Ausgaben.</div>
+      <div class="card-tags"><span class="tag">Coding</span><span class="tag">Analyse</span><span class="tag">Reasoning</span></div>
+      <a class="card-link" href="https://claude.ai" target="_blank">claude.ai <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="ki">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="gemini.google.com" data-initial="G"><span>G</span></div><div class="card-header-text"><div class="card-cat">KI · Alltag &amp; Recherche</div><div class="card-name">Gemini</div></div></div>
+      <div class="card-reason">Stark in die Google-Suche integriert, exzellente Multimodalität, schnelle Antworten für alltägliche Fragen und Recherchen.</div>
+      <div class="card-tags"><span class="tag">Multimodal</span><span class="tag">Recherche</span><span class="tag">Google-Integration</span></div>
+      <a class="card-link" href="https://gemini.google.com" target="_blank">gemini.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="ki">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="kagi.com" data-initial="K"><span>K</span></div><div class="card-header-text"><div class="card-cat">Übersetzung · Suche</div><div class="card-name">Kagi</div></div></div>
+      <div class="card-reason">Datenschutzfreundlicher Übersetzungsdienst ohne Tracking. Unterstützt über 240 Sprachen — saubere Alternative zu Google Translate.</div>
+      <div class="card-tags"><span class="tag">Datenschutz</span><span class="tag">240+ Sprachen</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://translate.kagi.com" target="_blank">translate.kagi.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="card" data-cat="ki">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="notebooklm.google" data-initial="N"><span>N</span></div><div class="card-header-text"><div class="card-cat">KI · Audio-Zusammenfassungen</div><div class="card-name">NotebookLM</div></div></div>
+      <div class="card-reason">Lädt eigene Dokumente hoch und erstellt daraus Zusammenfassungen, Podcasts und Antworten — ideal für Recherche, Lernstoff und lange PDFs.</div>
+      <div class="card-tags"><span class="tag">Dokumente</span><span class="tag">Audio</span><span class="tag">Zusammenfassung</span></div>
+      <a class="card-link" href="https://notebooklm.google.com" target="_blank">notebooklm.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+  <div class="section-label" data-cat="kreditkarten"><span class="sl-emoji">💳</span><span class="sl-title">Kreditkarten</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="kreditkarten">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="americanexpress.com" data-initial="A"><span>A</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">Kreditkarte</div>
+            <div class="card-name">American Express</div>
+          </div>
+        </div>
+        <div class="card-reason">Premium-Karte mit starken Reiseleistungen, Lounge-Zugang und attraktivem Membership-Rewards-Programm. <strong style="color:var(--accent-lt)">Bis zu 200.000 Membership Rewards Punkte</strong> über den Empfehlungslink. Für Vielreisende rechnet sich die Jahresgebühr schnell.</div>
+        <div class="card-tags">
+          <span class="tag">Premium</span>
+          <span class="tag">Lounge-Zugang</span>
+          <span class="tag">Reiseschutz</span>
+        </div>
+        <a class="card-link" href="https://americanexpress.com/de-de/referral/business-platinum?ref=vANESSwWeH&XL=MIMNS" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="kreditkarten">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="easybank.at" data-initial="E"><span>E</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">Kreditkarte · Kostenlos</div>
+            <div class="card-name">Easybank</div>
+          </div>
+        </div>
+        <div class="card-reason">Kostenlose Kreditkarte ohne Jahresgebühr — kein Fremdwährungsaufschlag, weltweite Akzeptanz und solide Konditionen.</div>
+        <div class="card-tags">
+          <span class="tag">Kostenlos</span>
+          <span class="tag">Kein FX-Aufschlag</span>
+          <span class="tag">Weltweit</span>
+        </div>
+        <a class="card-link" href="https://www.easybank.de" target="_blank">easybank.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BROKER -->
+  <!-- BROKER -->
+  <!-- BROKER -->
+  <!-- BROKER -->
+  <!-- BROKER -->
+  <!-- BROKER -->
+  <div class="section-label" data-cat="medien"><span class="sl-emoji">🎵</span><span class="sl-title">Medien</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="medien">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="justwatch.com" data-initial="J"><span>J</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">Streaming-Suche</div>
+            <div class="card-name">JustWatch</div>
+          </div>
+        </div>
+        <div class="card-reason">Zeigt auf einen Blick, auf welchem Streaming-Dienst ein Film oder eine Serie verfügbar ist — spart endloses Suchen und hilft beim Verwalten der Watchlist.</div>
+        <div class="card-tags">
+          <span class="tag">Streaming</span>
+          <span class="tag">Kostenlos</span>
+          <span class="tag">Watchlist</span>
+        </div>
+        <a class="card-link" href="https://www.justwatch.com" target="_blank">justwatch.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
 
   <div class="card" data-cat="medien">
     <div class="card-inner"><div>
@@ -833,97 +1183,7 @@ footer{
     </div></div>
   </div>
 
-  <!-- SOFTWARE -->
-  <div class="section-label" data-cat="software"><span class="sl-emoji">💻</span><span class="sl-title">Tools/Allgemein</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="software">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="tuta.com" data-initial="T"><span>T</span></div><div class="card-header-text"><div class="card-cat">Mail · Kalender · Verschlüsselt</div><div class="card-name">Tuta</div></div></div>
-      <div class="card-reason">End-to-end-verschlüsselter E-Mail-Dienst aus Deutschland — kein Tracking, Open Source. Kostenlose Basis-Version verfügbar.</div>
-      <div class="card-tags"><span class="tag">E2E-verschlüsselt</span><span class="tag">Open Source</span><span class="tag">Deutschland</span></div>
-      <a class="card-link" href="https://app.tuta.com/signup?ref=anNtbXlqUkY&s=0" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="software">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="proton.me" data-initial="P"><span>P</span></div><div class="card-header-text"><div class="card-cat">Passwörter · Cloudspeicher · VPN</div><div class="card-name">Proton</div></div></div>
-      <div class="card-reason">Datenschutz-Ökosystem aus der Schweiz — Proton Pass, Proton Drive und Proton VPN in einem. End-to-end verschlüsselt, kein Tracking.</div>
-      <div class="card-tags"><span class="tag">E2E-verschlüsselt</span><span class="tag">Open Source</span><span class="tag">Schweiz</span></div>
-      <a class="card-link" href="https://proton.me/de" target="_blank">proton.me <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="software" data-oss="true">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="brave.com" data-initial="B"><span>B</span></div><div class="card-header-text"><div class="card-cat">Browser &amp; Suche</div><div class="card-name">Brave</div></div></div>
-      <span class="oss-badge">Open Source</span>
-      <div class="card-reason">Datenschutzfokussierter Browser mit eingebautem Werbeblocker und Tracker-Schutz. Chromium-basiert, schnell und ohne Google-Tracking.</div>
-      <div class="card-tags"><span class="tag">Browser</span><span class="tag">Datenschutz</span><span class="tag">Anpassbar</span></div>
-      <a class="card-link" href="https://brave.com/de/" target="_blank">brave.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="software" data-oss="true">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="ublockorigin.com" data-initial="U"><span>U</span></div><div class="card-header-text"><div class="card-cat">Werbeblocker</div><div class="card-name">uBlock Origin</div></div></div>
-      <span class="oss-badge">Open Source</span>
-      <div class="card-reason">Der effektivste und ressourcenschonendste Werbeblocker — Open Source, kostenlos, blockiert Werbung, Tracker und Malware-Domains.</div>
-      <div class="card-tags"><span class="tag">Open Source</span><span class="tag">Kostenlos</span><span class="tag">Datenschutz</span></div>
-      <a class="card-link" href="https://ublockorigin.com/de" target="_blank">ublockorigin.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="software">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="kagi.com" data-initial="K"><span>K</span></div><div class="card-header-text"><div class="card-cat">Übersetzung · Suche</div><div class="card-name">Kagi</div></div></div>
-      <div class="card-reason">Datenschutzfreundlicher Übersetzungsdienst ohne Tracking. Unterstützt über 240 Sprachen — saubere Alternative zu Google Translate.</div>
-      <div class="card-tags"><span class="tag">Datenschutz</span><span class="tag">240+ Sprachen</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://translate.kagi.com" target="_blank">translate.kagi.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <!-- KI -->
-  <div class="section-label" data-cat="ki"><span class="sl-emoji">🤖</span><span class="sl-title">Tools/KI</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="ki">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="gemini.google.com" data-initial="G"><span>G</span></div><div class="card-header-text"><div class="card-cat">KI · Alltag &amp; Recherche</div><div class="card-name">Gemini</div></div></div>
-      <div class="card-reason">Stark in die Google-Suche integriert, exzellente Multimodalität, schnelle Antworten für alltägliche Fragen und Recherchen.</div>
-      <div class="card-tags"><span class="tag">Multimodal</span><span class="tag">Recherche</span><span class="tag">Google-Integration</span></div>
-      <a class="card-link" href="https://gemini.google.com" target="_blank">gemini.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="ki">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="notebooklm.google" data-initial="N"><span>N</span></div><div class="card-header-text"><div class="card-cat">KI · Audio-Zusammenfassungen</div><div class="card-name">NotebookLM</div></div></div>
-      <div class="card-reason">Lädt eigene Dokumente hoch und erstellt daraus Zusammenfassungen, Podcasts und Antworten — ideal für Recherche, Lernstoff und lange PDFs.</div>
-      <div class="card-tags"><span class="tag">Dokumente</span><span class="tag">Audio</span><span class="tag">Zusammenfassung</span></div>
-      <a class="card-link" href="https://notebooklm.google.com" target="_blank">notebooklm.google.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="ki">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="claude.ai" data-initial="C"><span>C</span></div><div class="card-header-text"><div class="card-cat">KI · Coding &amp; komplexe Aufgaben</div><div class="card-name">Claude</div></div></div>
-      <div class="card-reason">Meine erste Wahl für komplexe Analysen, Coding und längere Texte — starkes Reasoning, großes Kontextfenster und sehr präzise Ausgaben.</div>
-      <div class="card-tags"><span class="tag">Coding</span><span class="tag">Analyse</span><span class="tag">Reasoning</span></div>
-      <a class="card-link" href="https://claude.ai" target="_blank">claude.ai <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <!-- STEUERN -->
-  <div class="section-label" data-cat="steuern"><span class="sl-emoji">🧾</span><span class="sl-title">Tools/Steuern</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="steuern">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="wiso-steuer.de" data-initial="W"><span>W</span></div><div class="card-header-text"><div class="card-cat">Steuersoftware</div><div class="card-name">WISO Steuer</div></div></div>
-      <div class="card-reason">Beste Benutzerführung für die private Steuererklärung — intuitive Oberfläche, gute Plausibilitätsprüfung, direkter ELSTER-Upload. <strong style="color:var(--accent-lt)">Jetzt 10 € sparen</strong> über den Empfehlungslink.</div>
-      <div class="card-tags"><span class="tag">Steuererklärung</span><span class="tag">ELSTER-Upload</span><span class="tag">10 € Rabatt</span></div>
-      <a class="card-link" href="https://www.buhl.de/shop/wisosteuer/auswahl?2025=agv&var=steuer&wkz=SHOPIOSKWK&src=PHONE&kwkcn=LUNX83Chn9r49DWOtsamX1Cp1%2F678re9oJCeNSgUq%2FU%3D" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
+  <div class="section-label" data-cat="steuern"><span class="sl-emoji">🧾</span><span class="sl-title">Steuern</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="steuern">
     <div class="card-inner"><div>
@@ -943,190 +1203,83 @@ footer{
     </div></div>
   </div>
 
-  <!-- SPAREN -->
-  <div class="section-label" data-cat="sparen"><span class="sl-emoji">💰</span><span class="sl-title">Tools/Sparen</span><span class="sl-count">6</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="sparen">
+  <div class="card" data-cat="steuern">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="geizhals.de" data-initial="G"><span>G</span></div><div class="card-header-text"><div class="card-cat">Preisvergleich</div><div class="card-name">Geizhals</div></div></div>
-      <div class="card-reason">Umfangreicher Preisvergleich für Hardware, Elektronik und mehr — mit Preisverlauf, Produktbewertungen und Händlerübersicht.</div>
-      <div class="card-tags"><span class="tag">Preisvergleich</span><span class="tag">Hardware</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://geizhals.de" target="_blank">geizhals.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="wiso-steuer.de" data-initial="W"><span>W</span></div><div class="card-header-text"><div class="card-cat">Steuersoftware</div><div class="card-name">WISO Steuer</div></div></div>
+      <div class="card-reason">Beste Benutzerführung für die private Steuererklärung — intuitive Oberfläche, gute Plausibilitätsprüfung, direkter ELSTER-Upload. <strong style="color:var(--accent-lt)">Jetzt 10 € sparen</strong> über den Empfehlungslink.</div>
+      <div class="card-tags"><span class="tag">Steuererklärung</span><span class="tag">ELSTER-Upload</span><span class="tag">10 € Rabatt</span></div>
+      <a class="card-link" href="https://www.buhl.de/shop/wisosteuer/auswahl?2025=agv&var=steuer&wkz=SHOPIOSKWK&src=PHONE&kwkcn=LUNX83Chn9r49DWOtsamX1Cp1%2F678re9oJCeNSgUq%2FU%3D" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
-  <div class="card" data-cat="sparen">
+  <div class="section-label" data-cat="versorger"><span class="sl-emoji">⚡️</span><span class="sl-title">Strom/Gas/Internet</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="versorger">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="mydealz.de" data-initial="M"><span>M</span></div><div class="card-header-text"><div class="card-cat">Deal-Community</div><div class="card-name">MyDealz</div></div></div>
-      <div class="card-reason">Größte deutschsprachige Deal-Community — Nutzer teilen Rabattaktionen, Gutscheincodes und Schnäppchen in Echtzeit.</div>
-      <div class="card-tags"><span class="tag">Deals</span><span class="tag">Rabatte</span><span class="tag">Community</span></div>
-      <a class="card-link" href="https://www.mydealz.de" target="_blank">mydealz.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="octopusenergy.de" data-initial="O"><span>O</span></div>
+        <div class="card-header-text"><div class="card-cat">Strom &amp; Gas</div><div class="card-name">Octopus Energy</div></div>
+      </div>
+      <div class="card-reason">Transparente Preisstruktur, dynamische Tarifoptionen und exzellenter Kundenservice. <strong style="color:var(--accent-lt)">100 € Bonus</strong> über den Empfehlungslink.</div>
+      <div class="card-tags"><span class="tag">Ökostrom</span><span class="tag">Dynamisch</span><span class="tag">Smart Home</span></div>
+      <a class="card-link" href="https://share.octopusenergy.de/crisp-lion-905" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
-  <div class="card" data-cat="sparen">
+  <div class="card" data-cat="versorger">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="payback.de" data-initial="P"><span>P</span></div><div class="card-header-text"><div class="card-cat">Bonusprogramm</div><div class="card-name">Payback</div></div></div>
-      <div class="card-reason">Deutschlands größtes Bonusprogramm — Punkte bei über 680 Partnern sammeln und in Prämien, Gutscheine oder Bargeld umwandeln.</div>
-      <div class="card-tags"><span class="tag">Bonuspunkte</span><span class="tag">Cashback</span><span class="tag">Gutscheine</span></div>
-      <a class="card-link" href="https://www.payback.de" target="_blank">payback.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="sim.de" data-initial="S"><span>S</span></div>
+        <div class="card-header-text"><div class="card-cat">DSL · Festnetz</div><div class="card-name">sim.de DSL</div></div>
+      </div>
+      <div class="card-reason">Günstiger DSL-Anbieter im Telekom-Netz — zuverlässige Verbindung zu fairen Konditionen ohne lange Vertragslaufzeiten.</div>
+      <div class="card-tags"><span class="tag">DSL</span><span class="tag">Günstig</span><span class="tag">Telekom-Netz</span></div>
+      <a class="card-link" href="https://www.sim.de" target="_blank">sim.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
-  <div class="card" data-cat="sparen">
+  <div class="card" data-cat="versorger">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="spartanien.de" data-initial="S"><span>S</span></div><div class="card-header-text"><div class="card-cat">Schnäppchen &amp; Deals</div><div class="card-name">Spartanien</div></div></div>
-      <div class="card-reason">Kuratierte Sammlung der besten aktuellen Deals, Rabattcodes und Angebote — übersichtlich aufbereitet und täglich aktualisiert.</div>
-      <div class="card-tags"><span class="tag">Deals</span><span class="tag">Rabatte</span><span class="tag">Täglich</span></div>
-      <a class="card-link" href="https://www.spartanien.de/?u=193188" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="starlink.com" data-initial="S"><span>S</span></div>
+        <div class="card-header-text"><div class="card-cat">Satelliteninternet</div><div class="card-name">Starlink</div></div>
+      </div>
+      <div class="card-reason">Satelliteninternet von SpaceX — überall verfügbar, auch in ländlichen Gebieten ohne Glasfaseranschluss. Hohe Geschwindigkeit, geringe Latenz und schnell eingerichtet.</div>
+      <div class="card-tags"><span class="tag">Satellit</span><span class="tag">Überall</span><span class="tag">Schnell</span></div>
+      <a class="card-link" href="https://www.starlink.com/de" target="_blank">starlink.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
-  <div class="card" data-cat="sparen">
+  <div class="section-label" data-cat="versicherungen"><span class="sl-emoji">🛡️</span><span class="sl-title">Versicherungen</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="versicherungen">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="spliiit.com" data-initial="S"><span>S</span></div><div class="card-header-text"><div class="card-cat">Abo-Sharing</div><div class="card-name">Spliiit</div></div></div>
-      <div class="card-reason">Plattform zum Teilen von Streaming- und Software-Abonnements — Netflix, Spotify, Adobe und mehr günstiger nutzen durch legales Gruppen-Splitting.</div>
-      <div class="card-tags"><span class="tag">Abo-Sharing</span><span class="tag">Sparen</span><span class="tag">Streaming</span></div>
-      <a class="card-link" href="https://spliiit.com" target="_blank">spliiit.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="wgv.de" data-initial="W"><span>W</span></div>
+        <div class="card-header-text"><div class="card-cat">Rechtsschutzversicherung</div><div class="card-name">WGV</div></div>
+      </div>
+      <div class="card-reason">Günstige Rechtsschutzversicherung aus dem Südwesten — solide Leistungen für Privat, Beruf und Verkehr zu fairen Prämien.</div>
+      <div class="card-tags"><span class="tag">Rechtsschutz</span><span class="tag">Günstig</span><span class="tag">Privat</span></div>
+      <a class="card-link" href="https://www.wgv.de/?p_verm_nr=104828" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
-  <div class="card" data-cat="sparen">
+  <div class="card" data-cat="versicherungen">
     <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="topcashback.de" data-initial="T"><span>T</span></div><div class="card-header-text"><div class="card-cat">Cashback</div><div class="card-name">TopCashback</div></div></div>
-      <div class="card-reason">Cashback-Portal mit einer der höchsten Rückvergütungen am Markt — bei Hunderten Online-Shops Geld zurückbekommen.</div>
-      <div class="card-tags"><span class="tag">Cashback</span><span class="tag">Online-Shopping</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://www.topcashback.de/ref/DealzFox/?source=App-iOS-TAFPage" target="_blank">Zum Angebot <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <!-- IOS -->
-  <div class="section-label" data-cat="ios"><span class="sl-emoji">📲</span><span class="sl-title">Tools/iOS</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="ios">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="getbring.com" data-initial="B"><span>B</span></div><div class="card-header-text"><div class="card-cat">Einkaufsliste</div><div class="card-name">Bring</div></div></div>
-      <div class="card-reason">Geteilte Einkaufslisten für den Alltag — mehrere Personen können gleichzeitig Artikel hinzufügen und abhaken.</div>
-      <div class="card-tags"><span class="tag">Einkauf</span><span class="tag">Geteilt</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://apps.apple.com/de/app/bring-einkaufsliste-rezepte/id580669177" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="ios">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="finanzguru.de" data-initial="F"><span>F</span></div><div class="card-header-text"><div class="card-cat">Finanzen · Überblick</div><div class="card-name">Finanzguru</div></div></div>
-      <div class="card-reason">Alle Konten, Ausgaben und Abonnements auf einen Blick — automatische Kategorisierung, Ausgabenanalyse und Budgetplanung.</div>
-      <div class="card-tags"><span class="tag">Finanzen</span><span class="tag">Budget</span><span class="tag">Deutschland</span></div>
-      <a class="card-link" href="https://finanzguru.de" target="_blank">finanzguru.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="ios">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="justwatch.com" data-initial="J"><span>J</span></div><div class="card-header-text"><div class="card-cat">Streaming-Suche</div><div class="card-name">JustWatch</div></div></div>
-      <div class="card-reason">Zeigt auf einen Blick, auf welchem Streaming-Dienst ein Film oder eine Serie verfügbar ist.</div>
-      <div class="card-tags"><span class="tag">Streaming</span><span class="tag">Kostenlos</span><span class="tag">Watchlist</span></div>
-      <a class="card-link" href="https://www.justwatch.com" target="_blank">justwatch.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="ios">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="getquickscan.com" data-initial="Q"><span>Q</span></div><div class="card-header-text"><div class="card-cat">Scanner</div><div class="card-name">QuickScan</div></div></div>
-      <div class="card-reason">Schneller und präziser Dokumentenscanner für iOS — automatische Kantenerkennung, PDF-Export und iCloud-Integration.</div>
-      <div class="card-tags"><span class="tag">Scanner</span><span class="tag">PDF</span><span class="tag">iCloud</span></div>
-      <a class="card-link" href="https://apps.apple.com/de/app/ocr-scanner-quickscan/id1513790291" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="ios">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="thetailor.app" data-initial="T"><span>T</span></div><div class="card-header-text"><div class="card-cat">Screenshot-App</div><div class="card-name">Tailor</div></div></div>
-      <div class="card-reason">Fügt mehrere Screenshots automatisch zu einem langen Bild zusammen — praktisch für lange Chats, Webseiten oder Dokumente.</div>
-      <div class="card-tags"><span class="tag">Screenshots</span><span class="tag">Zusammenfügen</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://apps.apple.com/de/app/tailor-screenshot-stitching/id926653095" target="_blank">App Store <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <!-- MACOS -->
-  <div class="section-label" data-cat="macos"><span class="sl-emoji">🖥️</span><span class="sl-title">Tools/macOS</span><span class="sl-count">7</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="macos" data-oss="true">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="objective-see.org" data-initial="L"><span>L</span></div><div class="card-header-text"><div class="card-cat">Firewall</div><div class="card-name">LuLu</div></div></div>
-      <span class="oss-badge">Open Source</span>
-      <div class="card-reason">Kostenlose Open-Source-Firewall für macOS — blockiert unerwünschte ausgehende Netzwerkverbindungen.</div>
-      <div class="card-tags"><span class="tag">Firewall</span><span class="tag">Datenschutz</span><span class="tag">Netzwerk</span></div>
-      <a class="card-link" href="https://objective-see.org/products/lulu.html" target="_blank">objective-see.org <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="moneymoney-app.com" data-initial="M"><span>M</span></div><div class="card-header-text"><div class="card-cat">Haushaltsbuch</div><div class="card-name">MoneyMoney</div></div></div>
-      <div class="card-reason">Übersichtliches Haushaltsbuch für macOS — Transaktionen importieren, Kategorien zuweisen und Ausgaben analysieren. Lokale Datenhaltung.</div>
-      <div class="card-tags"><span class="tag">Haushaltsbuch</span><span class="tag">Budget</span><span class="tag">Lokal</span></div>
-      <a class="card-link" href="https://moneymoney-app.com" target="_blank">moneymoney-app.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos" data-oss="true">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="portfolio-performance.info" data-initial="P"><span>P</span></div><div class="card-header-text"><div class="card-cat">Depot-Verwaltung</div><div class="card-name">Portfolio Performance</div></div></div>
-      <span class="oss-badge">Open Source</span>
-      <div class="card-reason">Kostenlose Open-Source-Software zur Verwaltung und Analyse von Wertpapierdepots — Renditeberechnung, Dividenden-Tracking und detaillierte Auswertungen.</div>
-      <div class="card-tags"><span class="tag">Depot</span><span class="tag">Open Source</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://www.portfolio-performance.info" target="_blank">portfolio-performance.info <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos" data-oss="true">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="github.com" data-initial="P"><span>P</span></div><div class="card-header-text"><div class="card-cat">Medien-Konverter</div><div class="card-name">PureMac</div></div></div>
-      <span class="oss-badge">Open Source</span>
-      <div class="card-reason">Schlankes Open-Source-Tool zum Konvertieren und Verarbeiten von Mediendateien auf dem Mac.</div>
-      <div class="card-tags"><span class="tag">Medien</span><span class="tag">Konverter</span><span class="tag">Open Source</span></div>
-      <a class="card-link" href="https://github.com/momenbasel/PureMac?tab=readme-ov-file" target="_blank">github.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos" data-oss="true">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="rectangleapp.com" data-initial="R"><span>R</span></div><div class="card-header-text"><div class="card-cat">Fenstermanager</div><div class="card-name">Rectangle</div></div></div>
-      <span class="oss-badge">Open Source</span>
-      <div class="card-reason">Kostenloser Open-Source-Fenstermanager — Fenster per Tastenkürzel oder Drag-and-Drop positionieren.</div>
-      <div class="card-tags"><span class="tag">Fenstermanager</span><span class="tag">Shortcuts</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://rectangleapp.com" target="_blank">rectangleapp.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos" data-oss="true">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="rustdesk.com" data-initial="R"><span>R</span></div><div class="card-header-text"><div class="card-cat">Fernwartung</div><div class="card-name">RustDesk</div></div></div>
-      <span class="oss-badge">Open Source</span>
-      <div class="card-reason">Open-Source-Alternative zu TeamViewer — sicherer Fernzugriff auf andere Rechner, selbst hostbar und ohne Abo-Kosten.</div>
-      <div class="card-tags"><span class="tag">Fernwartung</span><span class="tag">Selbst-hostbar</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://rustdesk.com/de" target="_blank">rustdesk.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
-  <div class="card" data-cat="macos" data-oss="true">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="mac.getutm.app" data-initial="U"><span>U</span></div><div class="card-header-text"><div class="card-cat">Virtualisierung</div><div class="card-name">UTM</div></div></div>
-      <span class="oss-badge">Open Source</span>
-      <div class="card-reason">Kostenlose Open-Source-Virtualisierungslösung für macOS — führt Windows, Linux und andere Betriebssysteme aus, optimiert für Apple Silicon.</div>
-      <div class="card-tags"><span class="tag">Virtualisierung</span><span class="tag">Apple Silicon</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://mac.getutm.app" target="_blank">mac.getutm.app <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <div class="card-header">
+        <div class="card-logo-placeholder" data-domain="huk.de" data-initial="H"><span>H</span></div>
+        <div class="card-header-text"><div class="card-cat">Kfz &amp; Sonstige Versicherungen</div><div class="card-name">HUK-COBURG</div></div>
+      </div>
+      <div class="card-reason">Günstigste Vollkasko-Prämien bei solider Schadenregulierung — Direktversicherer ohne teure Vertriebsstruktur. Neben Kfz auch Hausrat, Haftpflicht und weitere Versicherungen.</div>
+      <div class="card-tags"><span class="tag">Günstig</span><span class="tag">Direktversicherer</span><span class="tag">Kfz</span></div>
+      <a class="card-link" href="https://www.huk.de" target="_blank">huk.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
   </div>
 
   <div class="no-results" id="noResults">Keine Treffer gefunden.</div>
 </div>
 
-
-
-
-<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 22.04.2026 &nbsp;·&nbsp; <a href="https://rglowania.github.io/gselection/impressum" style="color:var(--text-muted);text-decoration:none;">Impressum</a></footer>
+<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 23.04.2026 &nbsp;·&nbsp; <a href="https://rglowania.github.io/gselection/impressum" style="color:var(--text-muted);text-decoration:none;">Impressum</a></footer>
 
 <div class="modal-overlay" id="impressumModal" onclick="if(event.target===this)closeImpressum()">
   <div class="modal-box">
@@ -1139,20 +1292,19 @@ footer{
 
 <script>
 var PD={
-  'banken':          [{d:'traderepublic.com',i:'T',n:'Trade Republic'},{d:'c24.de',i:'C',n:'C24'},{d:'finom.co',i:'F',n:'Finom'}],
-  'kreditkarten':    [{d:'americanexpress.com',i:'A',n:'American Express'},{d:'easybank.at',i:'E',n:'Easybank'}],
-  'broker':          [{d:'traderepublic.com',i:'T',n:'Trade Republic'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'naga.com',i:'N',n:'NAGA'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'bitvavo.com',i:'B',n:'Bitvavo'}],
-  'finanz':          [{d:'wise.com',i:'W',n:'Wise'},{d:'sumup.com',i:'S',n:'SumUp'}],
-  'versorger':       [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'sim.de',i:'S',n:'sim.de DSL'},{d:'starlink.com',i:'S',n:'Starlink'}],
-  'versicherungen':  [{d:'wgv.de',i:'W',n:'WGV'},{d:'huk.de',i:'H',n:'HUK-COBURG'}],
-  'hardware':        [{d:'apple.com',i:'A',n:'Apple'},{d:'zendure.com',i:'Z',n:'Zendure'},{d:'tesla.com',i:'T',n:'Tesla'},{d:'fritz.com',i:'F',n:'FritzBox'}],
-  'medien':          [{d:'spotify.com',i:'S',n:'Spotify'},{d:'thalia.de',i:'T',n:'Thalia Hörbuch-Abo'}],
-  'software':        [{d:'tuta.com',i:'T',n:'Tuta'},{d:'proton.me',i:'P',n:'Proton'},{d:'brave.com',i:'B',n:'Brave'},{d:'ublockorigin.com',i:'U',n:'uBlock Origin'},{d:'kagi.com',i:'K',n:'Kagi'}],
-  'ki':              [{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'notebooklm.google',i:'N',n:'NotebookLM'},{d:'claude.ai',i:'C',n:'Claude'}],
-  'steuern':         [{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'},{d:'lexware.de',i:'L',n:'Lexware'},{d:'taxpool.de',i:'T',n:'Taxpool'}],
-  'sparen':          [{d:'geizhals.de',i:'G',n:'Geizhals'},{d:'mydealz.de',i:'M',n:'MyDealz'},{d:'payback.de',i:'P',n:'Payback'},{d:'spartanien.de',i:'S',n:'Spartanien'},{d:'spliiit.com',i:'S',n:'Spliiit'},{d:'topcashback.de',i:'T',n:'TopCashback'}],
-  'ios':             [{d:'getbring.com',i:'B',n:'Bring'},{d:'finanzguru.de',i:'F',n:'Finanzguru'},{d:'justwatch.com',i:'J',n:'JustWatch'},{d:'getquickscan.com',i:'Q',n:'QuickScan'},{d:'thetailor.app',i:'T',n:'Tailor'}],
-  'macos':           [{d:'objective-see.org',i:'L',n:'LuLu'},{d:'moneymoney-app.com',i:'M',n:'MoneyMoney'},{d:'portfolio-performance.info',i:'P',n:'Portfolio Performance'},{d:'github.com',i:'P',n:'PureMac'},{d:'rectangleapp.com',i:'R',n:'Rectangle'},{d:'rustdesk.com',i:'R',n:'RustDesk'},{d:'mac.getutm.app',i:'U',n:'UTM'}],
+  'banken':      [{d:'traderepublic.com',i:'T',n:'Trade Republic'},{d:'c24.de',i:'C',n:'C24'},{d:'finom.co',i:'F',n:'Finom'}],
+  'kreditkarten':[{d:'americanexpress.com',i:'A',n:'American Express'},{d:'easybank.at',i:'E',n:'Easybank'}],
+  'broker':      [{d:'traderepublic.com',i:'T',n:'Trade Republic'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'naga.com',i:'N',n:'NAGA'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'bitvavo.com',i:'B',n:'Bitvavo'}],
+  'cashback':    [{d:'geizhals.de',i:'G',n:'Geizhals'},{d:'mydealz.de',i:'M',n:'MyDealz'},{d:'payback.de',i:'P',n:'Payback'},{d:'spartanien.de',i:'S',n:'Spartanien'},{d:'spliiit.com',i:'S',n:'Spliiit'},{d:'topcashback.de',i:'T',n:'TopCashback'}],
+    'versorger':   [{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'sim.de',i:'S',n:'sim.de DSL'},{d:'starlink.com',i:'S',n:'Starlink'}],
+  'versicherungen':[{d:'wgv.de',i:'W',n:'WGV'},{d:'huk.de',i:'H',n:'HUK-COBURG'}],
+  'hardware':    [{d:'apple.com',i:'A',n:'Apple'},{d:'fritz.com',i:'F',n:'FritzBox'},{d:'home-assistant.io',i:'H',n:'Home Assistant'},{d:'tesla.com',i:'T',n:'Tesla'},{d:'zendure.com',i:'Z',n:'Zendure'}],
+  'cloudmail':   [{d:'emclient.com',i:'E',n:'eM Client'},{d:'proton.me',i:'P',n:'Proton'},{d:'tuta.com',i:'T',n:'Tuta'}],
+  'finanzen':    [{d:'finanzguru.de',i:'F',n:'Finanzguru'},{d:'moneymoney-app.com',i:'M',n:'MoneyMoney'},{d:'portfolio-performance.info',i:'P',n:'Portfolio Performance'},{d:'wise.com',i:'W',n:'Wise'},{d:'sumup.com',i:'S',n:'SumUp'}],
+  'helferlein':  [{d:'brave.com',i:'B',n:'Brave'},{d:'getbring.com',i:'B',n:'Bring'},{d:'objective-see.org',i:'L',n:'LuLu'},{d:'noir.app',i:'N',n:'Noir'},{d:'github.com',i:'P',n:'PureMac'}],
+  'ki':          [{d:'claude.ai',i:'C',n:'Claude'},{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'kagi.com',i:'K',n:'Kagi'},{d:'notebooklm.google',i:'N',n:'NotebookLM'}],
+  'medien':      [{d:'justwatch.com',i:'J',n:'JustWatch'},{d:'spotify.com',i:'S',n:'Spotify'},{d:'thalia.de',i:'T',n:'Thalia Hörbuch-Abo'}],
+  'steuern':     [{d:'lexware.de',i:'L',n:'Lexware'},{d:'taxpool.de',i:'T',n:'Taxpool'},{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'}],
 };
 var currentFilter='all';
 function setTheme(t){if(t==='system')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('g-theme',t);}catch(e){}document.querySelectorAll('.theme-toggle button').forEach(function(b){b.classList.remove('active');});var b=document.getElementById('btn-'+t);if(b)b.classList.add('active');}
