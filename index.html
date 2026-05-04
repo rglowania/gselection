@@ -404,10 +404,8 @@ footer{
       <div class="filter-dropdown">
         <button class="filter-dropdown-btn" onclick="toggleDropdown()" id="dropdownBtn">Kategorie ▾</button>
         <div class="filter-dropdown-menu" id="dropdownMenu">
-          <button onclick="filterFromDropdown('bankengirokonto',this)">Banken/Girokonto</button>
-          <button onclick="filterFromDropdown('bankenkreditkarten',this)">Banken/Kreditkarten</button>
-          <button onclick="filterFromDropdown('brokerinland',this)">Broker/Inländisch</button>
-          <button onclick="filterFromDropdown('brokerausland',this)">Broker/Ausländisch</button>
+          <button onclick="filterFromDropdown('bankkonten',this)">Bankkonten & Kreditkarten</button>
+          <button onclick="filterFromDropdown('broker',this)">Broker</button>
           <button onclick="filterFromDropdown('cashback',this)">Cashback/Rabatte</button>
           <button onclick="filterFromDropdown('internet',this)">DSL/Internet</button>
           <button onclick="filterFromDropdown('finanzen',this)">Finanzen</button>
@@ -427,9 +425,9 @@ footer{
   <!-- BANKEN -->
   <!-- BANKEN -->
   <!-- BANKEN -->
-  <div class="section-label" data-cat="bankengirokonto"><span class="sl-emoji">🏦</span><span class="sl-title">Banken/Girokonto</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+  <div class="section-label" data-cat="bankkonten"><span class="sl-emoji">🏦</span><span class="sl-title">Bankkonten/Kreditkarten</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
-  <div class="card" data-cat="bankengirokonto" data-top-pick="true">
+  <div class="card" data-cat="bankkonten" data-top-pick="true">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -450,7 +448,28 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="bankengirokonto">
+  <div class="card" data-cat="bankkonten" data-top-pick="true">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="eventim.de" data-initial="E"><span>E</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">Girokonto · Karte</div>
+            <div class="card-name">📌 Eventimcard</div>
+          </div>
+        </div>
+        <div class="card-reason">Kostenloses Girokonto mit Visa-Karte und integriertem Eventim-Bonusprogramm — Punkte sammeln bei Ticketkäufen und im Alltag, einlösbar für Konzert- und Eventtickets. Ideal für alle die regelmäßig Eventim nutzen.</div>
+        <div class="card-tags">
+          <span class="tag">Kostenlos</span>
+          <span class="tag">Girokonto</span>
+          <span class="tag">Eventim-Punkte</span>
+        </div>
+        <a class="card-link" href="https://www.eventim.de/eventimcard/" target="_blank">eventim.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-cat="bankkonten">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -471,7 +490,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="bankengirokonto">
+  <div class="card" data-cat="bankkonten">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -492,53 +511,9 @@ footer{
     </div>
   </div>
 
-<div class="section-label" data-cat="bankenkreditkarten"><span class="sl-emoji">💳</span><span class="sl-title">Banken/Kreditkarten</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+<div class="section-label" data-cat="broker"><span class="sl-emoji">📈</span><span class="sl-title">Broker</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
-  <div class="card" data-cat="bankenkreditkarten">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-          <div class="card-logo-placeholder" data-domain="americanexpress.com" data-initial="A"><span>A</span></div>
-          <div class="card-header-text">
-            <div class="card-cat">Kreditkarte</div>
-            <div class="card-name">American Express</div>
-          </div>
-        </div>
-        <div class="card-reason">Premium-Karte mit starken Reiseleistungen, Lounge-Zugang und attraktivem Membership-Rewards-Programm. <strong style="color:var(--accent-lt)">Bis zu 200.000 Membership Rewards Punkte</strong> über den Empfehlungslink. Für Vielreisende rechnet sich die Jahresgebühr schnell.</div>
-        <div class="card-tags">
-          <span class="tag">Premium</span>
-          <span class="tag">Lounge-Zugang</span>
-          <span class="tag">Reiseschutz</span>
-        </div>
-        <a class="card-link" href="https://americanexpress.com/de-de/referral/business-platinum?ref=vANESSwWeH&XL=MIMNS" target="_blank">americanexpress.com <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="bankenkreditkarten">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-          <div class="card-logo-placeholder" data-domain="easybank.at" data-initial="E"><span>E</span></div>
-          <div class="card-header-text">
-            <div class="card-cat">Kreditkarte · Kostenlos</div>
-            <div class="card-name">Easybank</div>
-          </div>
-        </div>
-        <div class="card-reason">Kostenlose Kreditkarte ohne Jahresgebühr — kein Fremdwährungsaufschlag, weltweite Akzeptanz und solide Konditionen.</div>
-        <div class="card-tags">
-          <span class="tag">Kostenlos</span>
-          <span class="tag">Kein FX-Aufschlag</span>
-          <span class="tag">Weltweit</span>
-        </div>
-        <a class="card-link" href="https://www.easybank.de" target="_blank">easybank.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-<div class="section-label" data-cat="brokerinland"><span class="sl-emoji">🏦</span><span class="sl-title">Broker/Inländisch</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="brokerinland" data-top-pick="true">
+  <div class="card" data-cat="broker" data-top-pick="true">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -559,7 +534,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="brokerinland" data-top-pick="true">
+  <div class="card" data-cat="broker" data-top-pick="true">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -580,7 +555,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="brokerinland">
+  <div class="card" data-cat="broker">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -601,72 +576,7 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="brokerinland">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-          <div class="card-logo-placeholder" data-domain="quirion.de" data-initial="Q"><span>Q</span></div>
-          <div class="card-header-text">
-            <div class="card-cat">Robo-Advisor · Depot</div>
-            <div class="card-name">Quirion</div>
-          </div>
-        </div>
-        <div class="card-reason">Deutschlands erster zugelassener Robo-Advisor — vollautomatisiertes ETF-Depot mit BaFin-Lizenz, niedrige Gebühren und nachhaltige Anlagestrategien verfügbar. <strong style="color:var(--accent-lt)">25 € Bonus</strong> mit Code <strong style="color:var(--accent-lt)">A6F32</strong>.</div>
-        <div class="card-tags">
-          <span class="tag">Robo-Advisor</span>
-          <span class="tag">ETF</span>
-          <span class="tag">BaFin</span>
-        </div>
-        <a class="card-link" href="https://www.quirion.de/?promocode=A6F32" target="_blank">quirion.de <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="brokerinland">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-          <div class="card-logo-placeholder" data-domain="ginmon.de" data-initial="G"><span>G</span></div>
-          <div class="card-header-text">
-            <div class="card-cat">Depot · VL</div>
-            <div class="card-name">Ginmon</div>
-          </div>
-        </div>
-        <div class="card-reason">Meine Empfehlung für das VL-Depot (Vermögenswirksame Leistungen) — automatisiertes ETF-Investieren, staatliche Arbeitnehmer-Sparzulage nutzbar, einfache Einrichtung.</div>
-        <div class="card-tags">
-          <span class="tag">VL-Depot</span>
-          <span class="tag">ETF</span>
-          <span class="tag">Automatisiert</span>
-        </div>
-        <a class="card-link" href="https://go.ginmon.de/ref/?r=ZMQX6DS0X3" target="_blank">ginmon.de <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-<div class="section-label" data-cat="brokerausland"><span class="sl-emoji">🌍</span><span class="sl-title">Broker/Ausländisch</span><span class="sl-count">3</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
-
-  <div class="card" data-cat="brokerausland">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-          <div class="card-logo-placeholder" data-domain="interactivebrokers.com" data-initial="I"><span>I</span></div>
-          <div class="card-header-text">
-            <div class="card-cat">Depot · Trading</div>
-            <div class="card-name">Interactive Brokers</div>
-          </div>
-        </div>
-        <div class="card-reason">Professionelle Ordertypen, günstigste Handelskonditionen weltweit, direkter Marktzugang. <strong style="color:var(--accent-lt)">Bis zu 1.000 $ in IBKR-Aktien</strong> über den Empfehlungslink. Für aktive Trader und alle, die mehr als ETF-Sparpläne wollen.</div>
-        <div class="card-tags">
-          <span class="tag">Profi-Trading</span>
-          <span class="tag">Weltweit</span>
-          <span class="tag">Günstig</span>
-        </div>
-        <a class="card-link" href="https://ibkr.com/referral/robin601" target="_blank">ibkr.com <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="card" data-cat="brokerausland">
+  <div class="card" data-cat="broker">
     <div class="card-inner">
       <div>
         <div class="card-header">
@@ -687,28 +597,39 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="brokerausland">
+  <div class="card" data-cat="broker">
     <div class="card-inner">
       <div>
         <div class="card-header">
-          <div class="card-logo-placeholder" data-domain="bitvavo.com" data-initial="B"><span>B</span></div>
+          <div class="card-logo-placeholder" data-domain="trading212.com" data-initial="T"><span>T</span></div>
           <div class="card-header-text">
-            <div class="card-cat">Krypto-Broker</div>
-            <div class="card-name">Bitvavo</div>
+            <div class="card-cat">Depot · CFD · Krypto</div>
+            <div class="card-name">Trading 212</div>
           </div>
         </div>
-        <div class="card-reason">Niedrigste Handelsgebühren in Europa, breite Coin-Auswahl, übersichtliche Oberfläche. Meine erste Wahl für den Krypto-Einstieg und regelmäßige Käufe.</div>
+        <div class="card-reason">Beliebt für Wohnsitze außerhalb Deutschlands — kostenlose Aktien und ETFs ohne Ordergebühren, Bruchstückkäufe ab 1 €, attraktive Zinsen auf nicht investiertes Cash. Reguliert durch FCA (UK) und FSC, kein steuereinfacher Broker für DE-Wohnsitz.</div>
         <div class="card-tags">
-          <span class="tag">Krypto</span>
-          <span class="tag">Günstig</span>
-          <span class="tag">Europa</span>
+          <span class="tag">Kostenlos</span>
+          <span class="tag">Bruchstücke</span>
+          <span class="tag">International</span>
         </div>
-        <a class="card-link" href="https://bitvavo.com/invite?a=391E6541F5" target="_blank">bitvavo.com <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="card-link" href="https://www.trading212.com" target="_blank">trading212.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
   </div>
 
 <div class="section-label" data-cat="cashback"><span class="sl-emoji">💰</span><span class="sl-title">Cashback/Rabatte</span><span class="sl-count">6</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+
+  <div class="card" data-cat="cashback" data-top-pick="true">
+    <div class="card-inner"><div>
+      <div class="card-header"><div class="card-logo-placeholder" data-domain="topcashback.de" data-initial="T"><span>T</span></div><div class="card-header-text"><div class="card-cat">Cashback</div><div class="card-name">📌 TopCashback</div></div></div>
+      <div class="card-reason">Cashback-Portal mit einer der höchsten Rückvergütungen am Markt — bei Hunderten Online-Shops Geld zurückbekommen.</div>
+      <div class="card-tags"><span class="tag">Cashback</span><span class="tag">Online-Shopping</span><span class="tag">Kostenlos</span></div>
+      <a class="card-link" href="https://www.topcashback.de/ref/DealzFox/?source=App-iOS-TAFPage" target="_blank">topcashback.de <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div></div>
+  </div>
+
+
 
   <div class="card" data-cat="cashback">
     <div class="card-inner"><div>
@@ -755,15 +676,6 @@ footer{
     </div></div>
   </div>
 
-  <div class="card" data-cat="cashback">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="topcashback.de" data-initial="T"><span>T</span></div><div class="card-header-text"><div class="card-cat">Cashback</div><div class="card-name">TopCashback</div></div></div>
-      <div class="card-reason">Cashback-Portal mit einer der höchsten Rückvergütungen am Markt — bei Hunderten Online-Shops Geld zurückbekommen.</div>
-      <div class="card-tags"><span class="tag">Cashback</span><span class="tag">Online-Shopping</span><span class="tag">Kostenlos</span></div>
-      <a class="card-link" href="https://www.topcashback.de/ref/DealzFox/?source=App-iOS-TAFPage" target="_blank">topcashback.de <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
-  </div>
-
 <div class="section-label" data-cat="internet"><span class="sl-emoji">🌐</span><span class="sl-title">DSL/Internet</span><span class="sl-count">2</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="internet">
@@ -790,7 +702,7 @@ footer{
     </div></div>
   </div>
 
-<div class="section-label" data-cat="finanzen"><span class="sl-emoji">📊</span><span class="sl-title">Finanzen</span><span class="sl-count">5</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+<div class="section-label" data-cat="finanzen"><span class="sl-emoji">📊</span><span class="sl-title">Finanzen</span><span class="sl-count">4</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="finanzen">
     <div class="card-inner">
@@ -811,15 +723,6 @@ footer{
         <a class="card-link" href="https://finanzguru.de" target="_blank">finanzguru.de <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-  </div>
-
-  <div class="card" data-cat="finanzen">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="moneymoney-app.com" data-initial="M"><span>M</span></div><div class="card-header-text"><div class="card-cat">Haushaltsbuch</div><div class="card-name">MoneyMoney</div></div></div>
-      <div class="card-reason">Übersichtliches Haushaltsbuch für macOS — Transaktionen importieren, Kategorien zuweisen und Ausgaben analysieren. Lokale Datenhaltung.</div>
-      <div class="card-tags"><span class="tag">Haushaltsbuch</span><span class="tag">Budget</span><span class="tag">Lokal</span></div>
-      <a class="card-link" href="https://moneymoney-app.com" target="_blank">moneymoney-app.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
   </div>
 
   <div class="card" data-cat="finanzen" data-oss="true">
@@ -921,7 +824,7 @@ footer{
     </div></div>
   </div>
 
-<div class="section-label" data-cat="helferlein"><span class="sl-emoji">🛠️</span><span class="sl-title">Helferlein</span><span class="sl-count">7</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
+<div class="section-label" data-cat="helferlein"><span class="sl-emoji">🛠️</span><span class="sl-title">Helferlein</span><span class="sl-count">6</span><span class="chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span></div>
 
   <div class="card" data-cat="helferlein">
     <div class="card-inner">
@@ -963,16 +866,6 @@ footer{
         <a class="card-link" href="https://www.getbring.com/en/home" target="_blank">getbring.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
     </div>
-  </div>
-
-  <div class="card" data-cat="helferlein" data-oss="true">
-    <div class="card-inner"><div>
-      <div class="card-header"><div class="card-logo-placeholder" data-domain="github.com" data-initial="P"><span>P</span></div><div class="card-header-text"><div class="card-cat">Medien-Konverter</div><div class="card-name">PureMac</div></div></div>
-      <span class="oss-badge">Open Source</span>
-      <div class="card-reason">Schlankes Open-Source-Tool zum Konvertieren und Verarbeiten von Mediendateien auf dem Mac.</div>
-      <div class="card-tags"><span class="tag">Medien</span><span class="tag">Konverter</span><span class="tag">Open Source</span></div>
-      <a class="card-link" href="https://github.com/momenbasel/PureMac?tab=readme-ov-file" target="_blank">github.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-    </div></div>
   </div>
 
   <div class="card" data-cat="helferlein">
@@ -1236,27 +1129,6 @@ footer{
     </div>
   </div>
 
-  <div class="card" data-cat="onlinetools">
-    <div class="card-inner">
-      <div>
-        <div class="card-header">
-          <div class="card-logo-placeholder" data-domain="nordvpn.com" data-initial="N"><span>N</span></div>
-          <div class="card-header-text">
-            <div class="card-cat">VPN</div>
-            <div class="card-name">NordVPN</div>
-          </div>
-        </div>
-        <div class="card-reason">Einer der meistgenutzten VPN-Dienste weltweit — schnelle Server in über 60 Ländern, No-Log-Policy, integrierter Threat-Protection-Modus und einfache Apps für alle Plattformen.</div>
-        <div class="card-tags">
-          <span class="tag">VPN</span>
-          <span class="tag">No-Log</span>
-          <span class="tag">Alle Plattformen</span>
-        </div>
-        <a class="card-link" href="https://nordvpn.com/de/" target="_blank">nordvpn.com <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      </div>
-    </div>
-  </div>
-
   <div class="card" data-cat="onlinetools" data-oss="true">
     <div class="card-inner"><div>
       <div class="card-header"><div class="card-logo-placeholder" data-domain="rustdesk.com" data-initial="R"><span>R</span></div><div class="card-header-text"><div class="card-cat">Fernwartung</div><div class="card-name">RustDesk</div></div></div>
@@ -1265,6 +1137,27 @@ footer{
       <div class="card-tags"><span class="tag">Fernwartung</span><span class="tag">Selbst-hostbar</span><span class="tag">Kostenlos</span></div>
       <a class="card-link" href="https://rustdesk.com/de" target="_blank">rustdesk.com <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
+  </div>
+
+  <div class="card" data-cat="onlinetools">
+    <div class="card-inner">
+      <div>
+        <div class="card-header">
+          <div class="card-logo-placeholder" data-domain="surfshark.com" data-initial="S"><span>S</span></div>
+          <div class="card-header-text">
+            <div class="card-cat">VPN · Datenschutz</div>
+            <div class="card-name">Surfshark</div>
+          </div>
+        </div>
+        <div class="card-reason">Das Besondere an Surfshark: <strong style="color:var(--accent-lt)">unbegrenzt viele Geräte</strong> mit einem einzigen Abo — ideal für den ganzen Haushalt. Über 4.500 Server in 100+ Ländern, WireGuard-Protokoll mit Post-Quanten-Verschlüsselung (seit Januar 2026), integrierter CleanWeb-Blocker für Werbung und Tracker, Camouflage-Modus (verbirgt VPN-Nutzung) und unabhängig geprüfte No-Logs-Policy. Ab ca. 2 €/Monat im 2-Jahres-Abo.</div>
+        <div class="card-tags">
+          <span class="tag">Unbegrenzte Geräte</span>
+          <span class="tag">WireGuard</span>
+          <span class="tag">No-Log</span>
+        </div>
+        <a class="card-link" href="https://surfshark.com/de/" target="_blank">surfshark.com <span class="affiliate-star" title="Affiliate-Link">*</span> <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      </div>
+    </div>
   </div>
 
   <div class="card" data-cat="onlinetools">
@@ -1391,7 +1284,7 @@ footer{
   <div class="no-results" id="noResults">Keine Treffer gefunden.</div>
 </div>
 
-<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 01.05.2026 &nbsp;·&nbsp; <a href="https://rglowania.github.io/gselection/impressum" style="color:var(--text-muted);text-decoration:none;">Impressum</a></footer>
+<footer><span style="opacity:0.8">* Affiliate-Link — ich erhalte ggf. eine Provision oder einen Bonus, für dich entstehen keine Mehrkosten.</span><br><br>&copy; Robin Glowania &nbsp;·&nbsp; Zuletzt aktualisiert: 04.05.2026 &nbsp;·&nbsp; <a href="https://rglowania.github.io/gselection/impressum" style="color:var(--text-muted);text-decoration:none;">Impressum</a></footer>
 
 <div class="modal-overlay" id="impressumModal" onclick="if(event.target===this)closeImpressum()">
   <div class="modal-box">
@@ -1404,21 +1297,19 @@ footer{
 
 <script>
 var PD={
-  'bankengirokonto':[{d:'traderepublic.com',i:'T',n:'Trade Republic'},{d:'c24.de',i:'C',n:'C24'},{d:'finom.co',i:'F',n:'Finom'}],
-  'bankenkreditkarten':[{d:'americanexpress.com',i:'A',n:'American Express'},{d:'easybank.at',i:'E',n:'Easybank'}],
-  'brokerinland':[{d:'traderepublic.com',i:'T',n:'Trade Republic'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'ginmon.de',i:'G',n:'Ginmon'},{d:'quirion.de',i:'Q',n:'Quirion'}],
-  'brokerausland':[{d:'interactivebrokers.com',i:'I',n:'Interactive Brokers'},{d:'naga.com',i:'N',n:'NAGA'},{d:'bitvavo.com',i:'B',n:'Bitvavo'}],
-  'cashback':[{d:'geizhals.de',i:'G',n:'Geizhals'},{d:'mydealz.de',i:'M',n:'MyDealz'},{d:'payback.de',i:'P',n:'Payback'},{d:'spartanien.de',i:'S',n:'Spartanien'},{d:'spliiit.com',i:'S',n:'Spliiit'}],
-  'finanzen':[{d:'finanzguru.de',i:'F',n:'Finanzguru'},{d:'moneymoney-app.com',i:'M',n:'MoneyMoney'},{d:'portfolio-performance.info',i:'P',n:'Portfolio Performance'},{d:'sumup.com',i:'S',n:'SumUp'},{d:'wise.com',i:'W',n:'Wise'}],
+  'bankkonten':[{d:'traderepublic.com',i:'T',n:'Trade Republic'},{d:'eventim.de',i:'E',n:'Eventimcard'},{d:'c24.de',i:'C',n:'C24'},{d:'finom.co',i:'F',n:'Finom'}],
+  'broker':[{d:'traderepublic.com',i:'T',n:'Trade Republic'},{d:'scalable.capital',i:'S',n:'Scalable Capital'},{d:'ing.de',i:'I',n:'ING'},{d:'naga.com',i:'N',n:'NAGA'},{d:'trading212.com',i:'T',n:'Trading 212'}],
+  'cashback':[{d:'topcashback.de',i:'T',n:'TopCashback'},{d:'geizhals.de',i:'G',n:'Geizhals'},{d:'mydealz.de',i:'M',n:'MyDealz'},{d:'payback.de',i:'P',n:'Payback'},{d:'spartanien.de',i:'S',n:'Spartanien'},{d:'spliiit.com',i:'S',n:'Spliiit'}],
+  'internet':[{d:'sim.de',i:'S',n:'sim.de DSL'},{d:'starlink.com',i:'S',n:'Starlink'}],
+  'finanzen':[{d:'finanzguru.de',i:'F',n:'Finanzguru'},{d:'portfolio-performance.info',i:'P',n:'Portfolio Performance'},{d:'sumup.com',i:'S',n:'SumUp'},{d:'wise.com',i:'W',n:'Wise'}],
   'hardware':[{d:'apple.com',i:'A',n:'Apple'},{d:'fritz.com',i:'F',n:'FritzBox'},{d:'home-assistant.io',i:'H',n:'Home Assistant'},{d:'tesla.com',i:'T',n:'Tesla'},{d:'zendure.com',i:'Z',n:'Zendure'}],
-      'onlinetools':[{d:'tuta.com',i:'T',n:'Tuta'},{d:'proton.me',i:'P',n:'Proton Pass'},{d:'brave.com',i:'B',n:'Brave'},{d:'ecosia.org',i:'E',n:'Ecosia'},{d:'emclient.com',i:'E',n:'eM Client'}],
-  'helferlein':[{d:'audiobookbinder.com',i:'A',n:'Audiobook Binder'},{d:'getbring.com',i:'B',n:'Bring'},{d:'github.com',i:'P',n:'PureMac'},{d:'getquickscan.com',i:'Q',n:'QuickScan'},{d:'rectangleapp.com',i:'R',n:'Rectangle'}],
+  'helferlein':[{d:'audiobookbinder.com',i:'A',n:'Audiobook Binder'},{d:'getbring.com',i:'B',n:'Bring'},{d:'getquickscan.com',i:'Q',n:'QuickScan'},{d:'rectangleapp.com',i:'R',n:'Rectangle'},{d:'supercardsapp.com',i:'S',n:'SuperCards'},{d:'thetailor.app',i:'T',n:'Tailor'}],
   'ki':[{d:'claude.ai',i:'C',n:'Claude'},{d:'gemini.google.com',i:'G',n:'Gemini'},{d:'notebooklm.google',i:'N',n:'NotebookLM'}],
   'medien':[{d:'justwatch.com',i:'J',n:'JustWatch'},{d:'spotify.com',i:'S',n:'Spotify'},{d:'thalia.de',i:'T',n:'Thalia Hörbuch-Abo'}],
+  'onlinetools':[{d:'proton.me',i:'P',n:'Proton Pass'},{d:'tuta.com',i:'T',n:'Tuta'},{d:'brave.com',i:'B',n:'Brave'},{d:'ecosia.org',i:'E',n:'Ecosia'},{d:'kagi.com',i:'K',n:'Kagi Translate'},{d:'librespeed.org',i:'L',n:'LibreSpeed'}],
   'steuern':[{d:'lexware.de',i:'L',n:'Lexware'},{d:'taxpool.de',i:'T',n:'Taxpool'},{d:'wiso-steuer.de',i:'W',n:'WISO Steuer'}],
   'strom':[{d:'octopusenergy.de',i:'O',n:'Octopus Energy'},{d:'tibber.com',i:'T',n:'Tibber'}],
-  'internet':[{d:'sim.de',i:'S',n:'sim.de DSL'},{d:'starlink.com',i:'S',n:'Starlink'}],
-  'versicherungen':[{d:'wgv.de',i:'W',n:'WGV'},{d:'huk.de',i:'H',n:'HUK-COBURG'}],
+  'versicherungen':[{d:'huk.de',i:'H',n:'HUK-COBURG'},{d:'wgv.de',i:'W',n:'WGV'}]
 };
 var currentFilter='all';
 function setTheme(t){if(t==='system')document.documentElement.removeAttribute('data-theme');else document.documentElement.setAttribute('data-theme',t);try{localStorage.setItem('g-theme',t);}catch(e){}document.querySelectorAll('.theme-toggle button').forEach(function(b){b.classList.remove('active');});var b=document.getElementById('btn-'+t);if(b)b.classList.add('active');}
